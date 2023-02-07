@@ -24,6 +24,7 @@ public class MyController {
 		super();
 		this.pfMapper = pfMapper;
 		this.fsMapper = fsMapper;
+		this.rsMapper = rsMapper;
 	}
 	
 	
