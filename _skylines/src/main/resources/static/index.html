@@ -1,1127 +1,150 @@
 <!DOCTYPE html>
 <html>
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+	crossorigin="anonymous">
 <head>
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"
-	charset="UTF-8">
-<title>에어중앙</title>
-<meta name="viewport"   
-	content="width=device-width,initial-scale=1.0,maximum-scale=2.0,user-scalable=yes">
-<meta http-equiv="Expires" content="Mon, 06 Jan 1990 00:00:01 GMT">
-<meta http-equiv="Expires" content="-1">
-<meta http-equiv="Pragma" content="no-cache">
-<meta http-equiv="Cache-Control" content="no-cache">
-<link rel="stylesheet" type="text/css"
-	href="//story.airbusan.com/content/assets/stylesheets/common.min.css?ver=1675677635233">
-<link rel="stylesheet" type="text/css"
-	href="//story.airbusan.com/content/assets/stylesheets/plugin.min.css">
-<link rel="stylesheet" type="text/css"
-	href="//story.airbusan.com/content/assets/stylesheets/main.min.css">
-<link rel="stylesheet" type="text/css"
-	href="//story.airbusan.com/content/assets/stylesheets/contents.min.css?ver=1675677635233">
-<link rel="stylesheet" type="text/css"
-	href="//story.airbusan.com/content/assets/stylesheets/event.min.css">
-<!--[if IE]>
-			<script type="text/javascript" src="//story.airbusan.com/content/assets/javascripts/iefix.js"></script>
-		<![endif]-->
-
-<script type="text/javascript"
-	src="//story.airbusan.com/content/assets/javascripts/jquery-1.11.1.min.js"></script>
-<script type="text/javascript"
-	src="//story.airbusan.com/content/assets/javascripts/json2.min.js"></script>
-<script type="text/javascript"
-	src="//story.airbusan.com/content/assets/javascripts/jquery.form.min.js"></script>
-
-<script type="text/javascript"
-	src="//story.airbusan.com/content/assets/javascripts/common.js"></script>
-<script type="text/javascript"
-	src="//story.airbusan.com/content/assets/javascripts/default.js"></script>
-<script type="text/javascript"
-	src="//story.airbusan.com/content/assets/javascripts/js.js"></script>
-
-<script type="text/javascript"
-	src="//story.airbusan.com/web/assets/javascripts/js.js"></script>
-
-
-
-
-<meta http-equiv="origin-trial"
-	content="A751Xsk4ZW3DVQ8WZng2Dk5s3YzAyqncTzgv+VaE6wavgTY0QHkDvUTET1o7HanhuJO8lgv1Vvc88Ij78W1FIAAAAAB7eyJvcmlnaW4iOiJodHRwczovL3d3dy5nb29nbGV0YWdtYW5hZ2VyLmNvbTo0NDMiLCJmZWF0dXJlIjoiUHJpdmFjeVNhbmRib3hBZHNBUElzIiwiZXhwaXJ5IjoxNjgwNjUyNzk5LCJpc1RoaXJkUGFydHkiOnRydWV9">
-<meta http-equiv="origin-trial"
-	content="A751Xsk4ZW3DVQ8WZng2Dk5s3YzAyqncTzgv+VaE6wavgTY0QHkDvUTET1o7HanhuJO8lgv1Vvc88Ij78W1FIAAAAAB7eyJvcmlnaW4iOiJodHRwczovL3d3dy5nb29nbGV0YWdtYW5hZ2VyLmNvbTo0NDMiLCJmZWF0dXJlIjoiUHJpdmFjeVNhbmRib3hBZHNBUElzIiwiZXhwaXJ5IjoxNjgwNjUyNzk5LCJpc1RoaXJkUGFydHkiOnRydWV9">
-<script type="text/javascript" charset="euc-kr"
-	src=" https://realdmp.realclick.co.kr/rtarget/rtget.js?dsp_adid=airbusan"
-	async=""></script>
-<meta http-equiv="origin-trial"
-	content="A751Xsk4ZW3DVQ8WZng2Dk5s3YzAyqncTzgv+VaE6wavgTY0QHkDvUTET1o7HanhuJO8lgv1Vvc88Ij78W1FIAAAAAB7eyJvcmlnaW4iOiJodHRwczovL3d3dy5nb29nbGV0YWdtYW5hZ2VyLmNvbTo0NDMiLCJmZWF0dXJlIjoiUHJpdmFjeVNhbmRib3hBZHNBUElzIiwiZXhwaXJ5IjoxNjgwNjUyNzk5LCJpc1RoaXJkUGFydHkiOnRydWV9">
-<meta http-equiv="origin-trial"
-	content="A751Xsk4ZW3DVQ8WZng2Dk5s3YzAyqncTzgv+VaE6wavgTY0QHkDvUTET1o7HanhuJO8lgv1Vvc88Ij78W1FIAAAAAB7eyJvcmlnaW4iOiJodHRwczovL3d3dy5nb29nbGV0YWdtYW5hZ2VyLmNvbTo0NDMiLCJmZWF0dXJlIjoiUHJpdmFjeVNhbmRib3hBZHNBUElzIiwiZXhwaXJ5IjoxNjgwNjUyNzk5LCJpc1RoaXJkUGFydHkiOnRydWV9">
-<script type="text/javascript" async=""
-	src="https://googleads.g.doubleclick.net/pagead/viewthroughconversion/822065883/?random=1675668622448&amp;cv=11&amp;fst=1675668622448&amp;bg=ffffff&amp;guid=ON&amp;async=1&amp;gtm=45be3210&amp;u_w=1920&amp;u_h=1080&amp;hn=www.googleadservices.com&amp;frm=0&amp;url=https%3A%2F%2Fwww.airbusan.com%2Fcontent%2Findividual%2F&amp;ref=https%3A%2F%2Fwww.airbusan.com%2Fweb%2Fcommon%2Flogin%2F&amp;tiba=%EC%97%90%EC%96%B4%EB%B6%80%EC%82%B0&amp;auid=2008164652.1675319885&amp;uaa=x86&amp;uab=64&amp;uafvl=Not_A%2520Brand%3B99.0.0.0%7CGoogle%2520Chrome%3B109.0.5414.120%7CChromium%3B109.0.5414.120&amp;uamb=0&amp;uap=Windows&amp;uapv=15.0.0&amp;uaw=0&amp;data=event%3Dgtag.config&amp;rfmt=3&amp;fmt=4"></script>
+<meta charset="UTF-8" name="viewport"
+	content="width=device-width, initial-scale=1">
+<style>
+#slide {
+	width:100%;
+	height:700px;
+	
+}
+</style>
+<title>Insert title here</title>
 </head>
-<body style="zoom: 1" class="lang_ko">
-
-	<iframe height="0" width="0" style="display: none; visibility: hidden;"
-		src="https://9182766.fls.doubleclick.net/activityi;src=9182766;type=invmedia;cat=pc_rt0;ord=4525964042420;gtm=45He3210;auiddc=2008164652.1675319885;~oref=https%3A%2F%2Fwww.airbusan.com%2Fcontent%2Findividual%2F?"></iframe>
-	<div id="wrap" class="individual individual_2018 individual_2019">
-		<div id="headerWrap" class="header_2018">
-
-			<div>
-				<div id="header">
-					<h1 class="logo">
-						<a href="#"><img
-							src="//story.airbusan.com/content/assets/images/common/img_logo.png"
-							alt="AIR Choongang"></a>
-					</h1>
-					<div class="hGroup"></div>
-					<div class="hShortcut">
-						<a href="#">로그인</a> <a href="#">회원가입</a> <a href="#">공지사항</a>
-
-					</div>
-					<div id="gnb">
-						<div class="depth01">
-							<ul>
-								<li class="depth01Lists depth01List01"><a href="#">항공권
-										예약</a>
-									<div class="depth02" style="display: none;">
-										<ul>
-											<li class="depth02Lists depth02List01"
-												style="display: inherit; width: 181px;"></li>
-											<li class="depth02Lists depth02List04"
-												style="border-left: 0px; display: inherit; width: 181px;"></li>
-											<li class="depth02Lists depth02List02"></li>
-											<li class="depth02Lists depth02List05 menuHide"
-												style="position: absolute; width: 104px; height: 20px; left: -35px; margin-top: 56px; border-left: 0px;"></li>
-											<li class="depth02Lists depth02List06"></li>
-											<li class="depth02Lists depth02List07">
-												<div class="depth03">
-													<ul>
-														<li class="depth03Lists depth03List01"></li>
-														<li class="depth03Lists depth03List02"></li>
-														<li class="depth03Lists depth03List03"></li>
-														<li class="depth03Lists depth03List04"></li>
-													</ul>
-												</div>
-											</li>
-											<li class="depth02Lists depth02List08">
-												<div class="depth03">
-													<ul>
-														<li class="depth03Lists depth03List01"></li>
-														<li class="depth03Lists depth03List02"></li>
-													</ul>
-												</div>
-											</li>
-											<li class="depth02Lists depth02List10">
-												<div class="depth03">
-													<ul>
-														<li class="depth03Lists depth03List01"></li>
-														<li class="depth03Lists depth03List02"></li>
-														<li class="depth03Lists depth03List03"></li>
-														<li class="depth03Lists depth03List03"></li>
-													</ul>
-												</div>
-											</li>
-										</ul>
-									</div></li>
-								<li class="depth01Lists depth01List02"><a href="#">마이페이지</a>
-									<div class="depth02" style="display: none;">
-										<ul>
-											<li class="depth02Lists depth02List01"></li>
-											<li class="depth02Lists depth02List02"></li>
-											<li class="depth02Lists depth02List03"></li>
-											<li class="depth02Lists depth02List04">
-												<div class="depth03">
-													<ul>
-														<li class="depth03Lists depth03List01"></li>
-														<li class="depth03Lists depth03List01"></li>
-														<li class="depth03Lists depth03List02"></li>
-													</ul>
-												</div>
-											</li>
-											<li class="depth02Lists depth02List06">
-												<div class="depth03">
-													<ul>
-														<li class="depth03Lists depth03List01"></li>
-														<li class="depth03Lists depth03List02"></li>
-													</ul>
-												</div>
-											</li>
-											<li class="depth02Lists depth02List07">
-												<div class="depth03">
-													<ul>
-														<li class="depth03Lists depth03List01"></li>
-														<li class="depth03Lists depth03List02"></li>
-														<li class="depth03Lists depth03List01"></li>
-														<li class="depth03Lists depth03List04"></li>
-													</ul>
-												</div>
-											</li>
-										</ul>
-									</div></li>
-								<li class="depth01Lists depth01List03"><a href="#">공지
-										사항</a>
-									<div class="depth02" style="display: none;"></div>
-									<div class="depth02"></div></li>
-								<li class="depth01Lists depth01List05">
-									<div class="depth02">
-										<ul>
-											<li class="depth02Lists depth02List01"></li>
-											<li class="depth02Lists depth02List02">
-												<div class="depth03">
-													<ul>
-													</ul>
-												</div>
-											</li>
-											<li class="depth02Lists depth02List02">
-												<div class="depth03">
-													<ul>
-													</ul>
-												</div>
-											</li>
-											<li class="depth02Lists depth02List03">
-												<div class="depth03"></div>
-											</li>
-										</ul>
-									</div>
-								</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			</div>
-			<script type="text/javascript">
-	function popup(i){
-			var today = "";
-
-			var startDt = "202001201100";
-//			var endDt 	= "201801121730";
-			var endDt 	= "202001231600";
-
-			var nDate = new Date();
-			var year = nDate.getFullYear();
-			var mon = (nDate.getMonth()+1)>9 ? ''+(nDate.getMonth()+1) : '0'+(nDate.getMonth()+1);
-			var day = nDate.getDate()>9 ? ''+nDate.getDate() : '0'+nDate.getDate();
-			var hour = nDate.getHours()>9 ? ''+nDate.getHours() : '0'+nDate.getHours();
-			var minutes = nDate.getMinutes()>9 ? ''+nDate.getMinutes() : '0'+nDate.getMinutes();
-
-//			console.log(year+"/"+mon+"/"+day+"/"+hour+"/"+minutes);
-			today = year + "" + mon + "" + day+ "" +hour+ "" +minutes;
-
-//			console.log(today);
-//			console.log(parseInt(today, 10));
-//			console.log(parseInt(startDt, 10));
-//			console.log(parseInt(today, 10));
-//			console.log(parseInt(endDt, 10));
-			if(parseInt(today, 10) >= parseInt(startDt, 10) && parseInt(today, 10) <= parseInt(endDt, 10)){
-				$.bxAlert('FLY&SALE 기간(~1/23)에는 해당 메뉴 사용이 불가능하오니 일반예약메뉴를 이용 부탁드립니다.', function () {});
-			}else if(i == '1'){
-				location.href='/web/individual/booking/easyScheduling';
-			}
-	}
-</script>
-
-			<style>
-#gnb .depth01Lists.depth01List03 .depth02 {
-	width: 1166px !important;
-	margin-left: -314px !important;
-}
-</style>
-		</div>
-		<div id="container" class="noneSnb container_2018 container_2019">
-			<div id="contents">
-				<div class="main">
-					<div class="contentPopupLimitWidth"></div>
-					<div class="importantWrap new_bgType01_171122">
-						<div class="irT">에어부산, 대구에서 도쿄를 날다. 6월8일, 대구-도쿄(나리타) 신규취항!</div>
-						<div class="mainVisualSlide">
-
-							<div class="bx-wrapper" style="max-width: 100%;">
-								<div class="bx-viewport"
-									style="width: 100%; overflow: hidden; position: relative; height: 682px;">
-									<ul class="mainSlide" style="width: auto; position: relative;">
-										<li
-											style="float: none; list-style: none; position: absolute; width: 1320px; z-index: 0; display: none;"><a
-											href="https://www.airbusan.com/content/common/customercenter/noticeDetail?id=3953">
-												<img
-												src="//story.airbusan.com/attachments/b2f1d6cac0f8444fbd8f922636b76593?as=image/jpeg">
-										</a></li>
-										<li
-											style="float: none; list-style: none; position: absolute; width: 1320px; z-index: 50; display: list-item;">
-											<a
-											href="https://www.airbusan.com/content/common/flynjoy/flyNEvent/#">
-												<img
-												src="//story.airbusan.com/attachments/9c9a0d7c57684deb99a8f60b67d22662?as=image/jpeg">
-										</a>
-										</li>
-									</ul>
-								</div>
-								<div
-									class="bx-controls bx-has-pager bx-has-controls-direction bx-has-controls-auto">
-									<div class="bx-pager bx-default-pager">
-										<div class="bx-pager-item">
-											<a href="" data-slide-index="0" class="bx-pager-link">1</a>
-										</div>
-										<div class="bx-pager-item">
-											<a href="" data-slide-index="1" class="bx-pager-link active">2</a>
-										</div>
-									</div>
-									<div class="bx-controls-direction tablet">
-										<a class="bx-prev" href="">Prev</a> <a class="bx-next" href="">Next</a>
-									</div>
-									<div class="bx-controls-auto">
-										<div class="bx-controls-auto-item">
-											<a class="bx-start" href="" style="display: none;">Start</a>
-										</div>
-										<div class="bx-controls-auto-item">
-											<a class="bx-stop active" href="" style="display: block;">Stop</a>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-
-
-
-						<div class="importantArea">
-							<div class="searchForFlightsArea jsTab" style="margin-left: 0px;">
-								<ul class="jsTabList" style="display: none;">
-									<li class="list01 on"><a href="#" title="현재 선택 됨"><span>국내선</span></a></li>
-									<li class="list02"><a href="#"><span>국제선</span></a></li>
-									<li class="list06"><a
-										href="https://www.agoda.com/ko-kr/airbusan?cid=1747996"
-										target="_blank" rel="noopener noreferrer" title="새창"><span>호텔</span></a></li>
-									<li class="list05"><a
-										href="http://www.rentalcars.com/?affiliateCode=airbusan&amp;adplat=searchbox"
-										target="_blank" rel="noopener noreferrer" title="새창"><span>렌터카</span></a></li>
-									<li class="list07"><a
-										href="/web/individual/flynjoy/travelersInsurance"
-										target="_blank" rel="noopener noreferrer" title="새창"><span>여행자보험</span></a></li>
-								</ul>
-								<div class="box01 jsTabCont" style="">
-									<div class="tblmainRowData01">
-										<form name="formDomesticAvail"
-											action="/web/individual/booking/flightsAvail" method="POST">
-
-											<input type="hidden" name="bookingCategory"
-												value="Individual"> <input type="hidden"
-												name="onLoadSearchYN" value="Y"> <input
-												type="hidden" name="foc" value="N"> <input
-												type="hidden" name="tripType" value="RT"> <input
-												type="hidden" name="depCity1" value=""> <input
-												type="hidden" name="depCity2" value=""> <input
-												type="hidden" name="depCity3" value=""> <input
-												type="hidden" name="depCity4" value=""> <input
-												type="hidden" name="arrCity1" value=""> <input
-												type="hidden" name="arrCity2" value=""> <input
-												type="hidden" name="arrCity3" value=""> <input
-												type="hidden" name="arrCity4" value=""> <input
-												type="hidden" name="depDate1" value=""> <input
-												type="hidden" name="depDate2" value=""> <input
-												type="hidden" name="depDate3" value=""> <input
-												type="hidden" name="depDate4" value=""> <input
-												type="hidden" name="itinNo" value=""> <input
-												type="hidden" name="openReturnYN" value=""> <input
-												type="hidden" name="passengerCountCorp" value=""> <input
-												type="hidden" name="passengerCountAdult" value=""> <input
-												type="hidden" name="passengerCountChild" value=""> <input
-												type="hidden" name="passengerCountInfant" value="">
-											<ol>
-												<li class="radio radioType"><label class="radioBox on"><input
-														type="radio" name="focYN" value="N" checked="checked">
-														예약</label></li>
-												<li class="radio"><label class="radioBox on"><input
-														type="radio" name="domesticTripType" value="RT"
-														checked="checked"> 왕복</label> <label class="radioBox"><input
-														type="radio" name="domesticTripType" value="OW">
-														편도</label></li>
-												<li class="place"><input type="text" placeholder="출발지"
-													name="depCity" class="departCity" readonly="readonly"
-													onfocus="this.blur();" data-depcitycode="PUS"><a
-													href="#" class="citySelectIcon"></a>
-													<div class="citySelectWrap" style="display: flex">
-														<div class="citySelectList">
-															<h2 class="cityTit">출발지 선택</h2>
-															<div class="departPlace" name="depCityArea">
-																<ul>
-																	<li class="arriveList">한국</li>
-																	<li value="PUS"><a href="#">부산</a></li>
-																	<li value="ICN"><a href="#">서울(인천)</a></li>
-																	<li value="GMP"><a href="#">서울(김포)</a></li>
-																	<li value="CJU"><a href="#">제주</a></li>
-																	<li value="USN"><a href="#">울산</a></li>
-																</ul>
-																<ul>
-																	<li class="arriveList">동북아</li>
-																	<li value="NRT"><a href="#">도쿄(나리타)</a></li>
-																	<li value="KIX"><a href="#">오사카(간사이)</a></li>
-																	<li value="FUK"><a href="#">후쿠오카</a></li>
-																	<li value="CTS"><a href="#">삿포로(신치토세)</a></li>
-																	<li value="TAO"><a href="#">칭다오</a></li>
-																	<li value="YNJ"><a href="#">옌지</a></li>
-																	<li value="TPE"><a href="#">타이베이(타오위안)</a></li>
-																</ul>
-																<ul>
-																	<li class="arriveList">중앙아시아</li>
-																	<li value="UBN"><a href="#">울란바토르</a></li>
-																</ul>
-																<ul>
-																	<li class="arriveList">동남아</li>
-																	<li value="CEB"><a href="#">세부</a></li>
-																	<li value="DAD"><a href="#">다낭</a></li>
-																	<li value="BKI"><a href="#">코타키나발루</a></li>
-																	<li value="CXR"><a href="#">냐짱(나트랑)</a></li>
-																	<li value="BKK"><a href="#">방콕</a></li>
-																	<li value="CRK"><a href="#">클락</a></li>
-																</ul>
-															</div>
-															<a href="#" class="closeBtn" title="출발지 선택 레이어 닫기">출발지
-																선택 레이어 닫기</a>
-														</div>
-													</div></li>
-												<li class="place"><input type="text" placeholder="도착지"
-													name="arrCity" class="arriveCity" readonly="readonly"
-													onfocus="this.blur();" data-arrcitycode="GMP"><a
-													href="#" class="citySelectIcon"></a>
-													<div class="citySelectWrap" style="display: none;">
-														<div class="citySelectList">
-															<h2 class="cityTit">도착지 선택</h2>
-															<div class="arrivePlace" name="arrCityArea">
-																<ul>
-																	<li class="arriveList">한국</li>
-																	<li value="GMP"><a href="#">서울(김포)</a></li>
-																	<li value="CJU"><a href="#">제주</a></li>
-																</ul>
-																<ul>
-																	<li class="arriveList">동북아</li>
-																	<li value="NRT"><a href="#">도쿄(나리타)</a></li>
-																	<li value="KIX"><a href="#">오사카(간사이)</a></li>
-																	<li value="FUK"><a href="#">후쿠오카</a></li>
-																	<li value="CTS"><a href="#">삿포로(신치토세)</a></li>
-																	<li value="TAO"><a href="#">칭다오</a></li>
-																	<li value="YNJ"><a href="#">옌지<span
-																			class="tipIcon">NEW</span></a></li>
-																	<li value="TPE"><a href="#">타이베이(타오위안)</a></li>
-																</ul>
-																<ul>
-																	<li class="arriveList">중앙아시아</li>
-																	<li value="UBN"><a href="#">울란바토르</a></li>
-																</ul>
-																<ul>
-																	<li class="arriveList">동남아</li>
-																	<li value="CEB"><a href="#">세부</a></li>
-																	<li value="DAD"><a href="#">다낭</a></li>
-																	<li value="BKI"><a href="#">코타키나발루</a></li>
-																	<li value="CXR"><a href="#">냐짱(나트랑)</a></li>
-																	<li value="BKK"><a href="#">방콕</a></li>
-																	<li value="CRK"><a href="#">클락</a></li>
-																</ul>
-															</div>
-															<a href="#" class="closeBtn" title="도착지 선택 레이어 닫기">도착지
-																선택 레이어 닫기</a>
-														</div>
-													</div></li>
-												<li class="date">
-													<div>
-														<label> <span class="jqueryDatePickerSpan"><input
-																id="datePickerDeparture" name="dateGoing" type="text"
-																class="inpPicker" style="width: 120px" title="가는날 입력"
-																data-buttontitle="가는날 달력 레이어 팝업 열기"
-																data-selectedtitle="가는날 선택됨"><a
-																class="calendarIcon" href="#" title="가는날 달력 레이어 팝업 열기"
-																style="width: 36px; height: 36px;"></a></span>
-														</label>
-													</div> <span class="wave">~</span>
-													<div>
-														<label class="nativeSpanNotUseOW"> <span
-															class="jqueryDatePickerSpan"><input
-																id="datePickerArrival" name="dateReturn" type="text"
-																class="inpPicker" style="width: 136px" title="오는날 입력"
-																data-buttontitle="오는날 달력 레이어 팝업 열기"
-																data-selectedtitle="오는날 선택됨"><a
-																class="calendarIcon" href="#" title="오는날 달력 레이어 팝업 열기"
-																style="width: 36px; height: 36px;"></a></span>
-														</label>
-													</div>
-												</li>
-												<li class="number"><span
-													class="dib nativeSpanNotUseFoc passengerAdultIcon">
-														<span class="designNumberBoxWrap" data-minvalue="0"
-														data-maxvalue="9"> <span class="txt">성인</span> <input
-															name="passengerCountAdult1" type="text" value="1"
-															class="val" style="width: 22px" title="성인 인원수">
-															<div class="designNumberBtn">
-																<a class="increase" href="#"><span class="irT">성인
-																		1명 증가</span></a> <a class="reduction" href="#"><span
-																	class="irT">성인 1명 감소</span></a>
-															</div>
-													</span>
-												</span> <span class="dib nativeSpanNotUseFoc passengerChildIcon">
-														<span class="designNumberBoxWrap" data-minvalue="0"
-														data-maxvalue="9"> <span class="txt">소아</span> <input
-															name="passengerCountChild1" type="text" value="0"
-															class="val" style="width: 22px" title="소아 인원수">
-															<div class="designNumberBtn">
-																<a class="increase" href="#"><span class="irT">소아
-																		1명 증가</span></a> <a class="reduction" href="#"><span
-																	class="irT">소아 1명 감소</span></a>
-															</div>
-													</span>
-														<p class="info">만13세 미만</p>
-												</span> <span class="dib nativeSpanNotUseFoc"> <span
-														class="designNumberBoxWrap" data-minvalue="0"
-														data-maxvalue="9"> <span class="txt">유아</span> <input
-															name="passengerCountInfant1" type="text" value="0"
-															class="val" style="width: 22px" title="유아 인원수">
-															<div class="designNumberBtn">
-																<a class="increase" href="#"><span class="irT">유아
-																		1명 증가</span></a> <a class="reduction" href="#"><span
-																	class="irT">유아 1명 감소</span></a>
-															</div>
-													</span>
-														<p class="info">만2세 미만</p>
-												</span>
-													<div class="ageCalculatorBox nativeSpanNotUseFoc">
-														<span class="btn ssBtn"><a href="#"
-															onclick="showAgeCalculator(this, true,'Y');">나이계산기</a></span>
-													</div> <input name="passengerCountCorp1" type="hidden" value="0">
-													<span class="btn bBtn01"><a href="#"
-														id="buttonSearchAvail">항공권 검색</a></span></li>
-											</ol>
-										</form>
-									</div>
-
-								</div>
-								<div class="box05 jsTabCont" style="display: none;">
-									<div class="tblmainRowData01">
-										<form name="formDepartureArrival"
-											action="/web/individual/booking/departureArrival"
-											method="POST">
-											<table summary="">
-												<caption>개인</caption>
-												<colgroup>
-													<col>
-													<col style="width: 210px">
-													<col>
-													<col>
-												</colgroup>
-												<tbody>
-													<tr class="text">
-														<td colspan="4">
-															<p>
-																<strong>국내선/국제선 : 3일전 ~ 오늘기준</strong>
-															</p>
-														</td>
-													</tr>
-													<tr>
-														<th scope="row">출발지</th>
-														<td><span class="selectbox" style="width: 190px;">
-																<span class="selectform"> <span class="txt"
-																	id="txtCareer"></span> <span class="arrow"></span>
-															</span> <select name="depCity" title="여정 출발지"
-																style="width: 190px;">
-															</select>
-														</span></td>
-														<th scope="row">도착지</th>
-														<td><span class="selectbox" style="width: 190px;">
-																<span class="selectform"> <span class="txt"
-																	id="txtCareer"></span> <span class="arrow"></span>
-															</span> <select name="arrCity" title="여정 도착지"
-																style="width: 190px;">
-															</select>
-														</span></td>
-													</tr>
-												</tbody>
-											</table>
-										</form>
-									</div>
-									<div class="mgt30 tc">
-										<span class="btn bBtn01"><a href="#"
-											onclick="document.formDepartureArrival.submit();">조회</a></span>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="newContent">
-
-						<div class="lightning_banner lightning_banner_01">
-							<ul>
-								<li class="common_banner_img lightning_banner_img"><a
-									href="#"></a></li>
-								<li class="common_banner_img additionservice_banner_img mgl30"><a
-									href="#"></a></li>
-							</ul>
-						</div>
-
-
-						<div class="affiliates affiliates_06">
-							<h2>
-								에어중앙 고객을 위한 <b>다양한 여행상품</b>
-							</h2>
-							<div>
-								<div class="icon_box">
-									<div class="swiper-slide list01">
-										<a href="http://www.agoda.com/ko-kr/airbusan?cid=1747996"
-											target="_blank" rel="noopener noreferrer" title="호텔 새창열기">
-											<p>호텔</p>
-										</a>
-									</div>
-									<div class="swiper-slide list02">
-										<a href="#" title="렌터카 열기">
-											<p>렌터카</p>
-										</a>
-									</div>
-									<div class="swiper-slide list03">
-										<a
-											href="https://dutyfree.airbusan.com/foMain.do?globalLang=ko"
-											target="_blank" rel="noopener noreferrer" title="기내면세 새창열기">
-											<p>기내면세</p>
-										</a>
-									</div>
-									<div class="swiper-slide list04">
-										<a href="https://ap.wifidosirak.com/?airbusan-promo"
-											target="_blank" rel="noopener noreferrer" title="와이파이 새창열기">
-											<p>와이파이</p>
-										</a>
-									</div>
-									<div class="swiper-slide list05">
-										<a href="#" title="여행자 보험 열기">
-											<p>여행자보험</p>
-										</a>
-									</div>
-									<div class="swiper-slide list06">
-										<a href="#" title="제휴카드 열기">
-											<p>제휴카드</p>
-										</a>
-									</div>
-								</div>
-								<div class="swiper-scrollbar"></div>
-							</div>
-						</div>
-
-
-
-
-
-
-
-					</div>
-					<div class="eventWrap">
-						<div class="eventArea">
-							<div class="box02">
-								<div class="noticeArea jsTab">
-									<ul class="jsTabList">
-										<li class="tit on"><a href="#" title="현재 선택 됨">공지사항</a></li>
-										<li class="tit"><a href="#">변경운항공지</a></li>
-									</ul>
-									<div class="jsTabCont" style="display: block;">
-										<ul class="ulNotice">
-											<li><a
-												href="/content/common/customercenter/noticeDetail?id=3956">중국발
-													대한민국 입국자 대상 입국 전후 검사 및 Q-code 안내(1월 2일부)</a><span
-												class="iconNew" title="New"></span><span class="date">2023-01-02</span>
-											</li>
-											<li><a
-												href="/content/common/customercenter/noticeDetail?id=3859">💡
-													[중요] 취항지별 출입국 규정 (2/1 기준)</a><span class="iconNew" title="New"></span><span
-												class="date">2022-05-16</span></li>
-											<li><a
-												href="/content/common/customercenter/noticeDetail?id=3906">💡
-													2022년 동계 국제선 운항 스케줄 안내</a><span class="iconNew" title="New"></span><span
-												class="date">2022-08-25</span></li>
-											<li><a
-												href="/content/common/customercenter/noticeDetail?id=3953">[여행정보]
-													부산-옌지(단방향) 운항 안내</a><span class="iconNew" title="New"></span><span
-												class="date">2022-12-29</span></li>
-											<li><a
-												href="/content/common/customercenter/noticeDetail?id=3969">[일반]
-													2월 네이버페이 은행/증권사 시스템 점검 일정 안내</a><span class="iconNew"
-												title="New"></span><span class="date">2023-02-01</span></li>
-											<li><a
-												href="/content/common/customercenter/noticeDetail?id=3968">[일반]
-													개인정보 처리방침 변경 (2023년 02월 07일 부)</a><span class="iconNew"
-												title="New"></span><span class="date">2023-01-31</span></li>
-											<li><a
-												href="/content/common/customercenter/noticeDetail?id=3967">[일반]
-													2월 신용카드 할부 지원 안내</a><span class="iconNew" title="New"></span><span
-												class="date">2023-01-30</span></li>
-											<li><a
-												href="/content/common/customercenter/noticeDetail?id=3964">제주공항
-													악기상으로 인한 비정상 운항 안내</a><span class="iconNew" title="New"></span><span
-												class="date">2023-01-21</span></li>
-										</ul>
-										<a href="/content/common/customercenter/noticeList"
-											class="more"><img
-											src="//story.airbusan.com/content/assets/images/main/btn_more01.png"
-											alt="공지사항 더보기"></a>
-									</div>
-									<div class="jsTabCont" style="display: none;">
-										<ul class="ulNews">
-											<li><a
-												href="/content/common/customercenter/newsDetail?id=1669">[국제선]
-													칭다오-인천 노선 시간변경 안내 (1/27~3/25)</a><span class="iconNew"
-												title="New"></span><span class="date">2023-01-20</span></li>
-											<li><a
-												href="/content/common/customercenter/newsDetail?id=1667">[국내선]
-													국내선 비운항 안내 (2023.02.02~2023.02.10)</a><span class="iconNew"
-												title="New"></span><span class="date">2022-12-30</span></li>
-											<li><a
-												href="/content/common/customercenter/newsDetail?id=1664">[국내선]
-													제주공항 기상 악화로 인한 비운항 및 결항 안내</a><span class="iconNew" title="New"></span><span
-												class="date">2022-12-23</span></li>
-											<li><a
-												href="/content/common/customercenter/newsDetail?id=1662">[국내선]
-													제주 노선 시간변경 안내 (2023.01.06 ~ 2023.01.27)</a><span
-												class="iconNew" title="New"></span><span class="date">2022-12-19</span>
-											</li>
-										</ul>
-										<a href="/content/common/customercenter/newsList" class="more"><img
-											src="//story.airbusan.com/content/assets/images/main/btn_more01.png"
-											alt="변경운항공지 더보기"></a>
-									</div>
-								</div>
-
-							</div>
-						</div>
-					</div>
-				
-					<div class="benefitWrap">
-						<div class="benefitSlide">
-							<p class="tit">
-								<a href="/content/common/flynjoy/flyNFun/">FLY&amp;FUN</a>
-							</p>
-							<div class="benefitSlideBox benefitDomestic">
-								<div class="bx-wrapper" style="max-width: 100%;">
-									<div class="bx-viewport"
-										style="width: 100%; overflow: hidden; position: relative;">
-										<div class="bx-wrapper" style="max-width: 100%;">
-											<div class="bx-viewport"
-												style="width: 100%; overflow: hidden; position: relative; height: 320px;">
-												<ul class="domestic nativeFlyNFunDomestic"
-													style="width: auto; position: relative;">
-													<li
-														style="background-color: rgb(241, 241, 241); float: none; list-style: none; position: absolute; width: 1320px; z-index: 0; display: none;">
-														<div class="blackBg"></div>
-
-													</li>
-												</ul>
-											</div>
-
-
-
-
-
-											<div class="benefitMenuBox">
-												<div class="benefitMenu">
-													<a href="javascript:;" class="on" data-name="Domestic">국내여행</a>
-													<a href="javascript:;" data-name="International">해외여행</a>
-												</div>
-											</div>
-										</div>
-									</div>
-
-
-								</div>
-
-							</div>
-						</div>
-						<div id="footer">
-							<div class="footer_2019">
-								<div>
-
-									<div class="fotTel">
-										<div class="fotBox">
-											<ul class="telInfo">
-												<li>
-													<ul class="reser_tel">
-														<li>예약센터
-															<p>xxxx-xxxx</p>
-															<p class="smallTxt">&nbsp;09:00~19:00(연중무휴)</p>
-														</li>
-													</ul>
-												</li>
-												<li>단체문의<span class="smallTxt">(10명 이상)</span>
-													<p>xxxx-xxxx</p>
-													<p class="smallTxt">&nbsp;09:00~17:00(주말, 공휴일 제외)</p></li>
-												<li>마케팅/광고 문의
-													<p>choongang.atsoft.net</p>
-													<p class="smallTxt">&nbsp;제휴, 광고 등 다양한 제안을 기다립니다.</p>
-												</li>
-												<li>
-													<p class="smallTxt">
-														<strong class="mgb05 disblock">시스템 정기점검 안내</strong>아래 점검
-														시간 외에 이용해주시기 바랍니다.<br> <strong>수~월요일 </strong>
-														23:50~24:10<br> <strong>화요일 </strong> 23:00~24:00
-													</p>
-												</li>
-											</ul>
-											<div class="mobile">
-												<div class="mobile_app"></div>
-												<div class="mobile_app">
-
-													<a href="https://www.instagram.com/airbusan/"
-														target="_blank" rel="noopener noreferrer"> <img
-														src="//story.airbusan.com/content/assets/images/common/footer_sns_inst.png"
-														alt="에어부산 인스타그램">
-													</a> <a href="https://www.youtube.com/c/airbusan_official"
-														target="_blank" rel="noopener noreferrer"> <img
-														src="//story.airbusan.com/content/assets/images/common/footer_sns_youtube.png"
-														alt="에어부산 유튜브">
-													</a>
-
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-
-								<style>
-#footer .footer_2019 .fotTop .fotBox>a {
-	color: #000 !important;
-}
-</style>
-								<div class="fotTop">
-									<div class="fotBox">
-										<a href="#">회사소개</a> <a href="#">투자정보</a> <a href="#"
-											target="_new" title="새창">채용정보</a> <a href="#" target="_new">운송약관</a>
-										<a href="#" target="_new">이용약관</a> <a href="#" target="_new"><span
-											style="font-weight: 900 !important; padding-bottom: 2px;">개인정보처리방침</span></a>
-										<a href="#" target="_new">이메일무단수집거부</a> <a href="#"
-											onclick="popupHelpRemote();" title="새창">인터넷 도우미</a> <br>
-										<a
-											href="//story.airbusan.com/content/assets/download/pdf/flightTrafficServiceKo_01.pdf"
-											target="_blank" rel="noopener noreferrer" title="새창"
-											class="bgnull firstTag">항공교통이용자서비스계획</a> <a
-											href="//story.airbusan.com/content/assets/download/pdf/damageHelp_03.pdf"
-											target="_blank" rel="noopener noreferrer" title="새창">항공교통이용자피해구제신청서</a>
-										<a
-											href="//story.airbusan.com/content/assets/download/pdf/항공안전투자공시_표준서식__별지_제4호서식__에어부산.pdf"
-											target="_blank" rel="noopener noreferrer" title="새창">항공안전투자공시</a>
-									</div>
-
-								</div>
-								<div class="fotInfo">
-									<div class="fotBox">
-										<address class="address">
-											<b>에어중앙㈜</b> 대표이사 이동규 서울 마포구 신촌로 176<br> <a href="#"
-												class="btnMail">이메일 문의</a> 사업자등록번호 : 없음 <a href="#"
-												target="_blank" rel="noopener noreferrer" title="새창"><img
-												src="//story.airbusan.com/content/assets/images/common/btn_footer_address03.png"
-												alt="사업자정보확인"></a> 통신판매업 신고번호 : 있을리가..
-										</address>
-										<div class="copyright">Copyright 2023 BY AIR BUSAN CO.,
-											LTD. All Rights reserved</div>
-									</div>
-								</div>
-								<div class="fotLogo">
-									<ul class="logoBox">
-										<li><img
-											src="//story.airbusan.com/content/assets/images/common/f_logo06_1.png"
-											alt="2019년 국가고객만족도(NCSI) 저비용항공 서비스업 부문 1위"></li>
-										<li><img
-											src="//story.airbusan.com/content/assets/images/common/f_logo0103.png"
-											alt="KMAC 선정 7년 연속(2013~2019) 한국산업의 고객만족도 저비용항공 부문 1위"></li>
-										<li><img
-											src="//story.airbusan.com/content/assets/images/common/f_logo0202.png"
-											alt="2019년 한국표준협회 선정 서비스 품질 1위(4년연속)"></li>
-										<li><img
-											src="//story.airbusan.com/content/assets/images/common/f_logo0301.png"
-											alt="KMAC 선정 2019 한국에서 가장 존경받는 기업 LCC 부문 1위 (3년 연속)"></li>
-									</ul>
-
-									<div id="layerPopupMobile" class="lyPop typeB"
-										style="width: 715px;">
-										<div class="lyPophead">
-											<h4>에어중앙 모바일 접속방법</h4>
-											<a href="#none">닫기</a>
-										</div>
-										<div class="lyPopcont">
-											<div class="appdownloadBox">
-												<div class="appWrap">
-													<p>안드로이드 마켓/ 아이폰 앱 스토어에서 다운로드 또는 검색 창에서 "에어중앙"검색 후 다운로드
-														받으세요!</p>
-													<div class="storeDownload">
-														<strong>STORE 다운로드</strong>
-														<ul>
-															<li>
-																<div class="imgBox">
-																	<img
-																		src="//story.airbusan.com/content/assets/images/service/img_store_download01.png"
-																		alt="GET IN ON Google play">
-																</div> <span class="btn ssBtn"><a
-																	href="https://play.google.com/store/apps/details?id=com.airbusan.gcm"
-																	target="_blank" rel="noopener noreferrer" title="새창">에어부산
-																		어플리케이션 구글플레이 다운로드 바로가기</a></span>
-															</li>
-															<li>
-																<div class="imgBox">
-																	<img
-																		src="//story.airbusan.com/content/assets/images/service/img_store_download02.png"
-																		alt="AVAILABLE ON THE App Stroe">
-																</div> <span class="btn ssBtn"><a
-																	href="https://itunes.apple.com/kr/app/eeobusan/id603844013?mt=8"
-																	target="_blank" rel="noopener noreferrer" title="새창">에어부산
-																		어플리케이션 앱스토어 다운로드 바로가기</a></span>
-															</li>
-														</ul>
-													</div>
-													<div class="qrcode">
-														<strong>QR코드</strong>
-														<ul>
-															<li>
-																<div class="imgBox">
-																	<img
-																		src="//story.airbusan.com/content/assets/images/service/img_qrcode01_ko.png"
-																		alt="안드로이드(APP)">
-																</div>
-															</li>
-															<li>
-																<div class="imgBox">
-																	<img
-																		src="//story.airbusan.com/content/assets/images/service/img_qrcode02_ko.png"
-																		alt="아이폰(APP)">
-																</div>
-															</li>
-														</ul>
-													</div>
-													<div class="qrcodeScan">
-														<p>
-															스마트폰 및 태블릿 PC의 브라우저에서 <a href="http://m.airbusan.com"
-																class="anchorLine" target="_blank" title="새창">m.airbusan.com</a>
-															입력<br>스토어 검색 창에서 "에어부산" 검색 후 다운로드!
-														</p>
-														<strong>왼쪽 QR 코드 스캔 후 바로 접속!</strong>
-													</div>
-												</div>
-											</div>
-										</div>
-									</div>
-
-								</div>
-							</div>
-						</div>
-						<script>
-	// 고객사바로가기 - 외국문
-	 var $fotSelectBox = $('.fotSelectBox');
-	 $('.fotSelectBox .selectList a').on('click', function() {
-		$fotSelectBox.stop().animate({'height':'23px',});
-	});
-	$('.fotSelectBox .selectTit a').on('click', function() {
-		if ($fotSelectBox.hasClass('ko')) {
-			$fotSelectBox.stop().animate({'height':'310px',});
-		} else {
-			$fotSelectBox.stop().animate({'height':'351px',});
-		}
-		return false;
-	});
-	$fotSelectBox.on('mouseleave', function() {
-		$fotSelectBox.stop().animate({'height':'23px',});
-		return false;
-	});
-
-	// 고객사바로가기 - 국문
-	//웹접근성 개선 : 그룹사 바로가기 수정 S
-	$('.fotIconBox .fotSelectBoxKo .selectTitKo a').on('click', function() {
-		var $selectListKo = $('.selListKo .selectListKo');
-		$(this).parent().parent('.fotSelectBoxKo').addClass('on');
-		$selectListKo.addClass('on');
-		$selectListKo.stop(true, true).animate({'height':'299px'});
-		return false;
-	});
-	$('.fotIconBox .fotSelectBoxKo .selectTitKoOut a').on('click', function() {
-		var $selectListKo = $('.selListKo .selectListKo');
-		$selectListKo.stop(true, true).animate({'height':'0'});
-		$selectListKo.removeClass('on');
-		$(this).parent().parent('.fotSelectBoxKo').removeClass('on');
-	});
-	$('.fotIconBox .fotSelectBoxKo').on('mouseleave', function() {
-		var $selectListKo = $('.selListKo .selectListKo');
-		$selectListKo.stop(true, true).animate({'height':'0'});
-		$selectListKo.removeClass('on');
-		$(this).removeClass('on');
-	});
-	//웹접근성 개선 : 그룹사 바로가기 수정 E
-	$('.fotIconBox .selectListKo li').on('mouseenter', function(){
-		$(this).addClass('on');
-	});
-	$('.fotIconBox .selectListKo li').on('mouseleave', function(){
-		$(this).removeClass('on');
-	});
-
-	$('.fotIconBox .iconList li a').on('mouseenter focusin', function(){
-		var $targetImg = $(this).children('img');
-		var dataCode = $targetImg.attr("data-code");
-		var newSrc = "//story.airbusan.com/content/assets/images/main/icon" + dataCode + "Over.png";
-		$targetImg.attr('src',newSrc);
-	});
-
-	$('.fotIconBox .iconList li a').on('mouseleave focusout', function(){
-		var $targetImg = $(this).children('img');
-		var dataCode = $targetImg.attr("data-code");
-		var newSrc = "//story.airbusan.com/content/assets/images/main/icon" + dataCode + ".png";
-		$targetImg.attr('src',newSrc);
-	});
-
-	$('.fotIconBox .iconList li a').on('mouseenter focusin', function(){
-		var $targetImg = $(this).children('img');
-		var dataCode = $targetImg.attr("data-code");
-		var newSrc = "//story.airbusan.com/content/assets/images/main/icon" + dataCode + "Over.png";
-		$targetImg.attr('src',newSrc);
-	});
-
-	$('.fotIconBox .iconList li a').on('mouseleave focusout', function(){
-		var $targetImg = $(this).children('img');
-		var dataCode = $targetImg.attr("data-code");
-		var newSrc = "//story.airbusan.com/content/assets/images/main/icon" + dataCode + ".png";
-		$targetImg.attr('src',newSrc);
-	});
-</script>
-					</div>
-
-					<div class="layerPopupBase">
-						<div class="layerPopupBackground"></div>
-						<div class="layerPopupContent"></div>
-					</div>
-
-					<script>
-		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-		ga('create', 'UA-61679819-1', 'auto');
-		ga('send', 'pageview');
-		</script>
-
-
-
-
-
-					<div id="ttdUniversalPixelTagac4fc88f98f444c1a5083498c5810141"
-						style="display: none">
-						<script type="text/javascript">
-					(function(global) {
-						if (typeof TTDUniversalPixelApi === 'function') {
-							var universalPixelApi = new TTDUniversalPixelApi();
-							universalPixelApi.init("8ezoi4w", ["mxsb0gz"], "https://insight.adsrvr.org/track/up", "ttdUniversalPixelTagac4fc88f98f444c1a5083498c5810141");
-						}
-					})(this);
-				</script>
-					</div>
-
-					<script type="text/javascript" async="true">
-				var dspu = "TV8YWlyYnVzYW4";      // === (필수)광고주key (변경하지마세요) ===
-				var dspu,dspt,dspo,dspom;
-				function loadanalJS_dsp(b,c){var d=document.getElementsByTagName("head")[0],a=document.createElement("sc"+"ript");a.type="text/javasc"+"ript";null!=c&&(a.charset="UTF-8");
-				a.src=b;a.async="true";d.appendChild(a)}function loadanal_dsp(b){loadanalJS_dsp(("https:"==document.location.protocol?"https://":"http://")+b,"UTF-8");document.write("<span id=dsp_spn style=display:none;></span>");}
-				/* loadanal_dsp("tk.realclick.co.kr/tk_comm.js?dspu="+dspu+"&dspt="+dspt+"&dspo="+dspo+"&dspom="+dspom); */
-				</script>
-
-
-					<script type="text/javascript" async="true">
-				function dsp_loadrtgJS(b,c){var d=document.getElementsByTagName("head")[0],a=document.createElement("script");a.type="text/javascript";null!=c&&(a.charset="euc-kr");a.src=b;a.async="true";d.appendChild(a)}function dsp_load_rtg(b){dsp_loadrtgJS(("https:"==document.location.protocol?" https://":" http://")+b,"euc-kr")}dsp_load_rtg("realdmp.realclick.co.kr/rtarget/rtget.js?dsp_adid=airbusan");
-				</script>
-
-
-					<script type="text/javascript">
-					var __wsos_nvad_id = '467817';
-					var __wsos_nvad_sidx = '578295';
-					var __wsos_nvad_key = '75eabb0fda';
-					/* var __wsos_nvad_url = "//wcs.naver.net/wcslog.js"; */
-					document.writeln ( "<scr" + "ipt type='text/javascript' src='" /* + __wsos_nvad_url */ + "'></scr" + "ipt>" );
-				</script>
-					<script type="text/javascript" src=""></script>
-
-
-					<div id="wp_tg_cts" style="display: none;"></div>
-					<script type="text/javascript">
-				var wp_conf = 'ti=20254&v=1&device=web&r=1';
-				</script>
-
-
-					<script type="text/javascript">
-				var roosevelt_params = {
-					retargeting_id:'wxwN8z6pQXWoqX1er-fRAA00',
-					tag_label:'4GCfgxokQmiI1LvkPU9EkA'
-				};
-				</script>
-
-					<script type="text/javascript">
-					var _NGUL = "wcs.naver.net/wcslog.js";
-					var _NPR = location.protocol=="https:"?"https://"+_NGUL:"http://"+_NGUL;
-					document.writeln("<scr"+"ipt type='text/ja"+"vascript' src='"+ _NPR +"'></scr"+"ipt>");
-				</script>
-					<script type="text/javascript"
-						src="https://wcs.naver.net/wcslog.js"></script>
-
-					<script type="text/javascript">
-					if(!wcs_add) var wcs_add={};
-					wcs_add["wa"] = "s_11681f2fc3c3";
-					if(!_nasa) var _nasa={};
-					wcs.inflow("airbusan.com");
-					wcs_do(_nasa);
-				</script>
-
-					<script type="text/javascript">
-				/* <![CDATA[ */
-				var google_conversion_id = 1006491615;
-				var google_conversion_label = "951wCJGa-QMQ36_33wM";
-				var google_custom_params = window.google_tag_params;
-				var google_remarketing_only = true;
-				/* ]]> */
-				</script>
-
-					<noscript>
-						<div style="display: inline;">
-							<img height="1" width="1" style="border-style: none;" alt=""
-								src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/1006491615/?value=1.00&amp;currency_code=KRW&amp;label=951wCJGa-QMQ36_33wM&amp;guid=ON&amp;script=0" />
-						</div>
-					</noscript>
-
-					<script type="text/javascript">
-
-					(function (w, d, i) {
-						w[i]={
-							sc : (encodeURIComponent("")),
-							form : (encodeURIComponent(d.referrer)),
-							url : (encodeURIComponent(w.location.href))
-						};
-
-						if(w[i]) {
-							var _ar = _ar || [];
-							/* var _s = "log.dreamsearch.or.kr/servlet/rf"; */
-							for(x in w[i]) _ar.push(x + "=" + w[i][x]);
-							(new Image).src = d.location.protocol +"//"+ _s +"?"+ _ar.join("&");
-						}
-					})(window, document, /* "wp_rf" */);
-
-				</script>
-
-
-					<script async=""
-						src="https://www.googletagmanager.com/gtag/js?id=AW-822065883"></script>
-					<script>
-				  window.dataLayer = window.dataLayer || [];
-				  function gtag(){dataLayer.push(arguments);}
-				  gtag('js', new Date());
-				
-				  gtag('config', 'AW-822065883');
-				</script>
-
-
-
-					<noscript>
-						<iframe
-							src="https://www.googletagmanager.com/ns.html?id=GTM-TQNWXLQ"
-							height="0" width="0" style="display: none; visibility: hidden"></iframe>
-					</noscript>
-
-					<script defer=""
-						src="https://static.cloudflareinsights.com/beacon.min.js/vaafb692b2aea4879b33c060e79fe94621666317369993"
-						integrity="sha512-0ahDYl866UMhKuYcW078ScMalXqtFJggm7TmlUtp0UlD4eQk0Ixfnm5ykXKvGJNFjLMoortdseTfsRT8oCfgGA=="
-						data-cf-beacon="{&quot;rayId&quot;:&quot;79522e1268f93514&quot;,&quot;token&quot;:&quot;659c4de68fbb435a815814dd93e75e57&quot;,&quot;version&quot;:&quot;2022.11.3&quot;,&quot;si&quot;:100}"
-						crossorigin="anonymous"></script>
-
-
-					<div id="gnbBackround" style="display: none;"></div>
+<body>
+	<main>
+
+  <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active" id="slide">
+      <img src ="images/가오슝.jpg" alt="가오슝">
+        <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/></svg>
+
+        <div class="container">
+          <div class="carousel-caption text-start">
+            <h1>Example headline.</h1>
+            <p>Some representative placeholder content for the first slide of the carousel.</p>
+            <p><a class="btn btn-lg btn-primary" href="#">Sign up today</a></p>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/></svg>
+
+        <div class="container">
+          <div class="carousel-caption">
+            <h1>Another example headline.</h1>
+            <p>Some representative placeholder content for the second slide of the carousel.</p>
+            <p><a class="btn btn-lg btn-primary" href="#">Learn more</a></p>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/></svg>
+
+        <div class="container">
+          <div class="carousel-caption text-end">
+            <h1>One more for good measure.</h1>
+            <p>Some representative placeholder content for the third slide of this carousel.</p>
+            <p><a class="btn btn-lg btn-primary" href="#">Browse gallery</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+  
+  <!--옆으로 옮겨가는 슬라이드-->
+  <p></p>
+  <!-- 중간 표시  -->
+  <h2 style="text-align:center">에어중앙 고객들을 위한 다양한 여행상품</h2>
+  <br>
+  <div class="container marketing">
+
+    <!-- Three columns of text below the carousel -->
+    <div class="row">
+      <div class="col-lg-2">
+        <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
+
+        <h6>&nbsp;&nbsp;호텔</h6>
+       
+      </div><!-- /.col-lg-4 -->
+      <div class="col-lg-2">
+        <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
+
+        <h6>&nbsp;&nbsp;렌터카</h6>
+        
+      </div><!-- /.col-lg-4 -->
+      <div class="col-lg-2">
+        <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
+
+        <h6>&nbsp;기내면세</h6>
+       
+      </div><!-- /.col-lg-4 -->
+      <div class="col-lg-2">
+        <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
+
+        <h6>&nbsp;와이파이</h6>
+       
+      </div><!-- /.col-lg-4 -->
+      <div class="col-lg-2">
+        <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
+
+        <h6>&nbsp;여행자보험</h6>
+        
+      </div><!-- /.col-lg-4 -->
+      <div class="col-lg-2">
+        <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
+
+        <h6>&nbsp;제휴 카드</h6>
+        
+      </div><!-- /.col-lg-4 -->
+    </div><!-- /.row -->
+    
+    
+    
+    
+    <!-- START THE FEATURETTES -->
+	
+    <hr class="featurette-divider">
+
+    <div class="row featurette">
+      <div class="col-md-7">
+        <h2 class="featurette-heading fw-normal lh-1">First featurette heading. <span class="text-muted">It’ll blow your mind.</span></h2>
+        <p class="lead">Some great placeholder content for the first featurette here. Imagine some exciting prose here.</p>
+      </div>
+      <div class="col-md-5">
+        <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"/><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text></svg>
+
+      </div>
+    </div>
+
+    </div>
+
+    <hr class="featurette-divider">
+
+    <!-- /END THE FEATURETTES -->
+
+  </div><!-- /.container -->
+    
+	</main>
 </body>
 </html>
