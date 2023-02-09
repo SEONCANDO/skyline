@@ -9,9 +9,12 @@
 <meta charset="UTF-8" name="viewport"
 	content="width=device-width, initial-scale=1">
 <style>
+body {
+ box-sizing:border-box;
+}
 #slide {
 	width:100%;
-	height:700px;
+	height:680px;
 	
 }
 
@@ -60,6 +63,41 @@ color: #000 !important;
 list-style:none;
 display:flex;
 margin-top:70px;
+justify-content:space-between;
+padding-left: 0px;
+}
+
+.reser-tel1{
+ font-weight: 400;
+ font-size: 23px;
+ color: #0072bc;
+ margin-bottom: 10px;
+}
+
+.fotBox {
+ border-bottom: 1px solid #C0C0C0;
+}
+
+.smallTxt{
+ color: #333;
+ font-size: 15px;
+}
+
+.footername {
+ text-decoration: none;
+ font-size : 12px;
+ color: black;
+}
+
+.footername::before {
+ content:' ';
+ position:absoulute;
+ top:50%;
+ left:-10px;
+ width: 1px;
+ height: 11px;
+ margin-top: -5px;
+ background-color: #6c6c6c;
 }
 </style>
 <title>Insert title here</title>
@@ -118,7 +156,7 @@ margin-top:70px;
   
   <p></p>
   <!-- 중간 표시  -->
-  <h2 style="text-align:center">에어중앙 고객들을 위한 다양한 여행상품</h2>
+  <h2 style="text-align:center; margin-top:40px;">에어중앙 고객들을 위한 <b>다양한 여행상품</b></h2>
   <br>
   <div class="container marketing">
 
@@ -176,10 +214,10 @@ margin-top:70px;
    	 	   <a href="#" title="현재 선택됨" style="text-decoration:none; color:black;">공지사항</a>
    	 	  </li>
    	 	  <li class="tit on">
-   	 	   <a href="#" style="text-decoration:none; color:grey;">변경운항공지</a>
+   	 	   <a href="#" style="text-decoration:none; color:grey; margin-left:12px;">변경운항공지</a>
    	 	   </li>
    	 	    <a href="#" class="more">
-   	 	    <img src="images/버튼.png" alt="공지사항 더보기">
+   	 	    <img src="images/버튼.png" alt="공지사항 더보기" style="margin-left:770px;">
    	 	    
    	 	    </a>
    	 	 </ul>
@@ -250,25 +288,25 @@ margin-top:70px;
 <ul class="telInfo">
 <li>
 
-<ul class="reser_tel">
-<li>예약센터
-<p>xxxx-xxxx</p>
-<p class="smallTxt">&nbsp;09:00~19:00(연중무휴)</p>
+<ul class="reser_tel" style="list-style:none;">
+<li><b>예약센터</b>
+<p class="reser-tel1">xxxx-xxxx</p>
+<p class="smallTxt">09:00~19:00(연중무휴)</p>
 </li>
 </ul>
-</li>
 
-<li>단체문의<span class="smallTxt">(10명 이상)</span>
-<p>xxxx-xxxx</p>
-<p class="smallTxt">&nbsp;09:00~17:00(주말, 공휴일 제외)</p></li>
-<li>마케팅/광고 문의
-<p>choongang.atsoft.net</p>
-<p class="smallTxt">&nbsp;제휴, 광고 등 다양한 제안을 기다립니다.</p>
+
+<li><b>단체문의</b><span class="smallTxt">(10명 이상)</span>
+<p class="reser-tel1">xxxx-xxxx</p>
+<p class="smallTxt">09:00~17:00(주말, 공휴일 제외)</p></li>
+<li><b>마케팅/광고 문의</b>
+<p class="reser-tel1">choongang.atsoft.net</p>
+<p class="smallTxt">제휴, 광고 등 다양한 제안을 기다립니다.</p>
 </li>
 
 <li>
 <p class="smallTxt">
-<strong class="mgb05 disblock">시스템 정기점검 안내</strong>
+<strong class="mgb05 disblock"><b>시스템 정기점검 안내</b></strong>
 <br>아래 점검시간 외에 이용해주시기 바랍니다.<br> 
 <strong>수~월요일 </strong> 23:50~24:10<br> 
 <strong>화요일 </strong> 23:00~24:00
@@ -278,48 +316,58 @@ margin-top:70px;
 <div class="mobile">
 <div class="mobile_app"></div>
 <div class="mobile_app">
-<a href="https://www.instagram.com/airbusan/" target="_blank" rel="noopener noreferrer"> 
-<img src="//story.airbusan.com/content/assets/images/common/footer_sns_inst.png" alt="에어부산 인스타그램">
-</a> 
-<a href="https://www.youtube.com/c/airbusan_official" target="_blank" rel="noopener noreferrer"> 
-<img src="//story.airbusan.com/content/assets/images/common/footer_sns_youtube.png"
-alt="에어부산 유튜브">
-</a> 
 </div> </div> </div> </div> </div>
 
 <div class="fotTop">
 <div class="fotBox">
-<a href="#">회사소개</a> <a href="#">투자정보</a> 
-<a href="#" target="_new" title="새창">채용정보</a> 
-<a href="#" target="_new">운송약관</a>
-<a href="#" target="_new">이용약관</a> 
-<a href="#" target="_new">
+<div class="row">
+<div class="col-sm-8" style="margin-top:15px; display:flex; justify-content:space-around;">
+<a href="#" class="footername">회사소개</a> 
+<a href="#" class="footername">투자정보</a> 
+<a href="#" target="_new" title="새창" class="footername">채용정보</a> 
+<a href="#" target="_new" class="footername">운송약관</a>
+<a href="#" target="_new" class="footername">이용약관</a> 
+<a href="#" target="_new" class="footername">
 <span style="font-weight: 900 !important; padding-bottom: 2px;">개인정보처리방침</span></a>
-<a href="#" target="_new">이메일무단수집거부</a> 
-<a href="#" onclick="popupHelpRemote();" title="새창">인터넷 도우미</a> <br>
+<a href="#" target="_new" class="footername">이메일무단수집거부</a> 
+<a href="#" onclick="popupHelpRemote();" title="새창" class="footername">인터넷 도우미</a> <br>
+</div>
 
-<a href="//story.airbusan.com/content/assets/download/pdf/flightTrafficServiceKo_01.pdf" target="_blank" rel="noopener noreferrer" title="새창" class="bgnull firstTag">항공교통이용자서비스계획</a> 
-<a href="//story.airbusan.com/content/assets/download/pdf/damageHelp_03.pdf" target="_blank" rel="noopener noreferrer" title="새창">항공교통이용자피해구제신청서</a>
+<div class="col-sm-4" style="display:flex; justify-content: flex-end;">
+<a href="https://www.instagram.com/airbusan/" rel="noopener noreferrer"> 
+<img src="//story.airbusan.com/content/assets/images/common/footer_sns_inst.png" alt="에어부산 인스타그램">
+</a>
+<a href="https://www.youtube.com/c/airbusan_official" rel="noopener noreferrer"> 
+<img src="//story.airbusan.com/content/assets/images/common/footer_sns_youtube.png"
+alt="에어부산 유튜브">
+</a>
+</div> 
+</div>
+<div class="row">
+<div class="col-sm-12" style="padding-left:25px;">
+<a href="//story.airbusan.com/content/assets/download/pdf/flightTrafficServiceKo_01.pdf" target="_blank" rel="noopener noreferrer" title="새창" class="bgnull firstTag footername">항공교통이용자서비스계획</a> 
+<a href="//story.airbusan.com/content/assets/download/pdf/damageHelp_03.pdf" 
+target="_blank" rel="noopener noreferrer" title="새창" class="footername" style="margin-left:10px;">항공교통이용자피해구제신청서</a>
 <a href="//story.airbusan.com/content/assets/download/pdf/항공안전투자공시_표준서식__별지_제4호서식__에어부산.pdf"
-target="_blank" rel="noopener noreferrer" title="새창">항공안전투자공시</a>
+target="_blank" rel="noopener noreferrer" title="새창" class="footername" style="margin-left:10px;">항공안전투자공시</a>
+</div>
+</div>
 </div>
 </div>
 <div class="fotInfo">
 <div class="fotBox">
-<address class="address">
+<address class="address" style="margin-bottom: 0px; margin-top:15px;">
 <b>에어중앙㈜</b> 대표이사 이동규 서울 마포구 신촌로 176<br> 
-<a href="#" class="btnMail">이메일 문의</a> 사업자등록번호 : 없음 
+사업자등록번호 : 010-2114-1128
 <a href="#" target="_blank" rel="noopener noreferrer" title="새창"><img
 src="//story.airbusan.com/content/assets/images/common/btn_footer_address03.png"
 alt="사업자정보확인"></a> 
 통신판매업 신고번호 : 있을리가..
 </address>
-<div class="copyright">Copyright 2023 BY AIR BUSAN CO., LTD. All Rights reserved</div>
+<div class="copyright" style="margin-bottom:20px;">Copyright 2023 BY AIR BUSAN CO., LTD. All Rights reserved</div>
 </div>
 </div>
-<div class="fotLogo"> 
-<div id="layerPopupMobile" class="lyPop typeB" style="width: 715px;">
-</div></div></div></div></div>
+</div></div></div>
 </footer>
 
    </main>
