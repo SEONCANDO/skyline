@@ -7,7 +7,6 @@ import org.apache.ibatis.annotations.Select;
 import com.project.springboot.VO.FlightScheduleVO;
 
 @Mapper
-public interface FlightScheduleMapper {
-	@Select("select * from flightschedule")
+public interface FlightScheduleDAO {
 	List<FlightScheduleVO> selectAll();
 }

@@ -7,7 +7,6 @@ import org.apache.ibatis.annotations.Select;
 import com.project.springboot.VO.ReservationVO;
 
 @Mapper
-public interface ReservationMapper {
-	@Select("select * from reservation")
+public interface ReservationDAO {
 	List<ReservationVO> selectAll();
 }

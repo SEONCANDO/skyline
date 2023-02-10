@@ -9,9 +9,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.project.springboot.DAO.FlightScheduleMapper;
-import com.project.springboot.DAO.PlatformMapper;
-import com.project.springboot.DAO.ReservationMapper;
+import com.project.springboot.DAO.FlightScheduleDAO;
+import com.project.springboot.DAO.PlatformDAO;
+import com.project.springboot.DAO.ReservationDAO;
 import com.project.springboot.VO.PlatformVO;
 
 import lombok.extern.log4j.Log4j2;
@@ -21,12 +21,12 @@ import lombok.extern.log4j.Log4j2;
 public class MyController {
 	
 	
-	PlatformMapper pfMapper;
-	FlightScheduleMapper fsMapper;
-	ReservationMapper rsMapper;
+	PlatformDAO pfMapper;
+	FlightScheduleDAO fsMapper;
+	ReservationDAO rsMapper;
 	
 	@Autowired
-	public MyController(PlatformMapper pfMapper, FlightScheduleMapper fsMapper,ReservationMapper rsMapper) {
+	public MyController(PlatformDAO pfMapper, FlightScheduleDAO fsMapper,ReservationDAO rsMapper) {
 		super();
 		this.pfMapper = pfMapper;
 		this.fsMapper = fsMapper;
@@ -42,6 +42,10 @@ public class MyController {
 		List<PlatformVO> plst = pfMapper.selectName("i");
 		model.addAttribute("list",plst);
 		return "testlist";
+	}
+	
+	@GetMapping("/testlist2")
+	public void list2() {
 	}
 	
 
