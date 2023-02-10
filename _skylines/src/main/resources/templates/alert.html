@@ -5,6 +5,12 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+<script th:inline="javascript">
+	var aa = [[${alert}]]
+	var url = "/home"
+	
+	alert(aa);
+	location.href=url;
+</script>
 </body>
 </html>
