@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleag.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<table>
+test2
+<tr th:each="i : ${list}">
+<td th:text="${i.platformNum}"></td>
+<td th:text="${i.platformName}"></td>
+<td th:text="${i.platformCode}"></td>
+</tr>
+</table>
+</body>
+</html>
