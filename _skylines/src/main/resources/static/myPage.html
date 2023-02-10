@@ -4,8 +4,87 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+ <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css
+    " rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+<style>
+.twoblock{
+ height: 35px;
+ background-color: #015fa9;
+}
+
+.oneblock {
+ height: 83px;
+ border-bottom : 2px solid #015fa9;
+}
+
+.hShortcut a{
+ top: 6px;
+ right: 120px;
+ height: auto;
+ text-decoration: none;
+ color: white;
+ font-size: 13px;
+ padding: 0 9px 0 12px;
+}
+
+.gnb {
+ margin-top: 25px;
+}
+
+.depth01Lists a{
+ text-decoration: none;
+ color: black;
+ letter-spacing: -2px;
+ font-size: 20px;
+ margin-left: 50px;
+}
+</style>
 </head>
 <body>
+<!-- 헤더 -->
+<div class="container-fluid">
+   <div class="row twoblock">
+     <div class="col-sm-8"></div>
+     <div class="col-sm-4">
+      <div class="hShortcut">
+       <a href="#">로그인</a>
+       <a href="#">회원가입</a>
+       <a href="#">고객센터</a>
+      </div>
+     </div>
+   </div>
+   
+   <div class="row oneblock">     
+   <div class="col-sm-12" style="display: flex;">
+    <div class="container i2" style="max-width:900px; display: flex;">
+     <div class="caicon" style="margin-top:25px;">
+        <a href="#">
+         <img src="images/img_logo.png">
+        </a>
+     </div>
+      
+     <div class="gnb">
+      <div class="depth01">
+        <ul style="display: flex; list-style:none; margin-top: 6px;">
+        <li class="depth01Lists depth01List01">
+         <a href="#"><b>항공권 예약</b></a>
+        </li>
+        <li class="depth01Lists depth01List02">
+         <a href="#"><b>마이 페이지</b></a>
+        </li>
+        <li class="depth01Lists depth01List03">
+         <a href="#"><b>공지 사항</b></a>
+        </li>
+        </ul>
+        </div>
+      </div>
+     </div>
+   </div>
+   </div>
+ </div>
+
+<!-- 마이페이지 내역 -->
 	<div id="container" class="container01">
 		<div id="contents">
 			<div class="mypage">
@@ -31,7 +110,7 @@
 						<div class="posR">
 							<h4 class="ttit">나의 정보</h4>
 							<span class="btn ssBtn txtRT"><a href="#"
-								onclick="openCheckPasswordPopup(); return false;">개인정보 수정</a></span>
+								onclick="openCheckPasswordPopup();">개인정보 수정</a></span>
 						</div>
 						<div class="tblRowData01 mgt20">
 							<table>
