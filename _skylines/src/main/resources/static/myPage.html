@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<link rel="stylesheet" href="myPage.css">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<div id="container" class="container01">
+		<div id="contents">
+			<div class="mypage">
+				<div class="ctitArea">
+					<h3 class="ctit">마이페이지</h3>
+				</div>
+				<div class="mgt40">※ [개인정보 수정] 클릭 후, 선택정보에서 선호지역을 등록하시면 해당 지역
+					프로모션 정보를 손쉽게 받으실 수 있습니다.</div>
+
+				<div class="mgt40">
+					<div class="fl">
+						<h4 class="ttit">회원 타입</h4>
+						<div class="mypageUserInfoBox mgt20">
+							<div class="ribbonBox01">개인</div>
+							<div class="info">
+								<p class="txt">
+									이경선 님께서는<br>에어부산 <em class="point01">개인 회원</em>이십니다.
+								</p>
+							</div>
+						</div>
+					</div>
+					<div class="oh posr">
+						<div class="posR">
+							<h4 class="ttit">나의 정보</h4>
+							<span class="btn ssBtn txtRT"><a href="#"
+								onclick="openCheckPasswordPopup(); return false;">개인정보 수정</a></span>
+						</div>
+						<div class="tblRowData01 mgt20">
+							<table>
+								<colgroup>
+									<col style="width: 27%">
+									<col>
+								</colgroup>
+								<tbody>
+									<tr>
+										<th scope="row">회원번호</th>
+										<td><span class="txt">152196535</span></td>
+									</tr>
+									<tr>
+										<th scope="row">회원명</th>
+										<td>이경선</td>
+									</tr>
+									<tr>
+										<th scope="row">휴대폰번호</th>
+										<td>010-9695-2076</td>
+									</tr>
+									<tr>
+										<th scope="row">이메일</th>
+										<td>lgso0909@hanmail.net</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+				<div class="scheduleBox mgt50">
+					<h4 class="ttit">예약내역(탑승기간 1개월 이내, 최대 5건)</h4>
+					<div class="tblColData01 mgt20">
+						<table style="width: 1001px;">
+							<colgroup>
+								<col style="width: 13%">
+								<col style="width: 13%">
+								<col style="width: 13%">
+								<col style="width: 13%">
+								<col style="width: 13%">
+								<col style="width: 13%">
+								<col style="width: 13%">
+								<col style="width: 13%">
+								<col>
+							</colgroup>
+							<thead>
+								<tr>
+									<th scope="col">예약번호</th>
+									<th scope="col">승객명</th>
+									<th scope="col">일자</th>
+									<th scope="col">출발-도착지</th>
+									<th scope="col">출발-도착시간</th>
+									<th scope="col">편명</th>
+									<th scope="col">구매기한</th>
+									<th scope="col">상태</th>
+								</tr>
+							</thead>
+							<tbody class="tbodyListPnr"></tbody>
+						</table>
+					</div>
+					<<!-- a href="/web/individual/reserve/pnr" class="more"><img
+						src="//story.airbusan.com/content/assets/images/common/btn_more01.gif"
+						alt="항공권 예약조회 바로가기"></a> -->
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
