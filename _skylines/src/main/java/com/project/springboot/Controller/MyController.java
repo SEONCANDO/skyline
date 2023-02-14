@@ -14,6 +14,7 @@ import org.springframework.ui.Model;
 import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.client.RestTemplate;
 
@@ -56,8 +57,6 @@ public class MyController {
 		this.userMapper = userMapper;
 	}
 	
-	
-
 
 	@GetMapping("/test")
 	public String list(Model model) {
@@ -66,7 +65,6 @@ public class MyController {
 		return "testlist";
 	}
 	
-	
 
 	@GetMapping("/test2")
 	public void list2() {
@@ -74,6 +72,39 @@ public class MyController {
 
 	@GetMapping("/login")
 	public void login() {
+	}
+	
+	@PostMapping("/login")
+	public String callbackSkyline(UserVO user,Model mo, HttpSession session) {
+		UserVO userId_DB = userMapper.authentication(user);
+		
+		if(userId_DB != null) {
+			System.out.println(user);
+			if(userId_DB.getUserFirstName() != null) {
+				mo.addAttribute("alert",userId_DB.getUserFirstName()+"님 반갑습니다.");
+			}else{
+				mo.addAttribute("alert",userId_DB.getUserId()+"님 반갑습니다.");
+			}
+			session.setAttribute("user", userId_DB);
+			mo.addAttribute("url","/home");
+			return "/alert";
+		}else {
+			System.out.println(user);
+			mo.addAttribute("alert","아이디와 비밀번호를 확인해주세요.");
+			mo.addAttribute("url","/login");
+			session.setAttribute("user", null);
+			String sessionUser = (String)session.getAttribute("user");
+			mo.addAttribute("sessionUser", sessionUser);
+			return "/alert";
+		}
+	}
+	
+	@GetMapping("/logout")
+	public String logout(Model mo,HttpSession sess) {
+		mo.addAttribute("alert","로그아웃되었습니다.");
+		mo.addAttribute("url","/home");
+		sess.setAttribute("user", null);
+		return "/alert";
 	}
 	
 	@GetMapping("/home")
@@ -96,13 +127,15 @@ public class MyController {
 			}else{
 				mo.addAttribute("alert",userId_DB.getUserId()+"님 반갑습니다.");
 			}
-			session.setAttribute("userId", userId_DB.getUserId());
+			mo.addAttribute("url","/home");
+			session.setAttribute("user", userId_DB);
 			return "/alert";
 		}else {
 			System.out.println(user);
 			int i = userMapper.simpleSign(user);
 			mo.addAttribute("alert","회원가입이 완료되었습니다.");
-			session.setAttribute("userId", user);
+			mo.addAttribute("url","/home");
+			session.setAttribute("user", user);
 			return "/alert";
 		}
 		

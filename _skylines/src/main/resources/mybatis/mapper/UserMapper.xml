@@ -16,4 +16,9 @@
 		insert into user(userId,userEmail,signLocation) values(#{userId}, #{userEmail}, #{signLocation})
 	</insert>
 	
+	<select id="authentication" resultType="com.project.springboot.VO.UserVO">
+		select * from user where userId =#{userId} and userPw =#{userPw}
+			
+	</select>
+	
 </mapper>

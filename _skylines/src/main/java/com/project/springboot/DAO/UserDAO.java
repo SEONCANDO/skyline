@@ -8,4 +8,5 @@ import com.project.springboot.VO.UserVO;
 public interface UserDAO {
 	UserVO selectOneId(String userId);
 	int simpleSign(UserVO user);
+	UserVO authentication(UserVO user);
 }

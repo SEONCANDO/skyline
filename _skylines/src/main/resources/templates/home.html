@@ -273,6 +273,15 @@ body {
 	width: auto;
 	height: 35px;
 }
+.hShortcut{
+    text-decoration: none;
+    color: white;
+    font-size: 13px;
+    padding: 0 9px 0 12px;    
+    line-height: 35px;
+    display: flex;
+    justify-content: space-around;
+}
 </style>
 </head>
 <body>
@@ -283,7 +292,17 @@ body {
 			<div class="col-sm-8"></div>
 			<div class="col-sm-4">
 				<div class="hShortcut">
-					<a href="/login">로그인</a> <a href="#">회원가입</a> <a href="#">고객센터</a>
+					<div th:if="${session.user} == null">
+					<a id="logintxt" href="/login">로그인</a>
+					<a href="/signup">회원가입</a> 
+					<a href="#">고객센터</a>
+					</div>
+					<div th:if="${session.user} != null">
+					<span>[[${session.user.userFirstName}]]님</span>
+					<a id="logintxt" href="/logout">로그아웃</a> 
+					<a href="/signup">회원가입</a> 
+					<a href="#">고객센터</a>
+					</div>
 				</div>
 			</div>
 		</div>
