@@ -7,7 +7,7 @@
     " rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     Customer 스타일 추가
     <link rel="stylesheet" href="login.css?v=1234"> -->
- <!-- <style>
+<!-- <style>
       .twoblock{
  height: 35px;
  background-color: #015fa9;
@@ -40,31 +40,42 @@
  margin-left: 50px;
 }
     </style>
- -->  
-  <div layout:fragment="content">
-    <div id="container">
-      <!-- login Box -->
-      <div class="login-box">
-        <div id="loginBoxTitle">에 어 중 앙</div>
-        <div class="form-group">
-            <label>아이디</label>
-            <input type="text" name="uid" id="uid" class="form-control" value="" style="text-transform:uppercase;ime-mode:disabled">
-        </div>
-        <div class="form-group">
-            <label>비밀번호</label>
-            <input type="password" name="upw" id="upw" class="form-control" value="" autocomplete="off">
-        </div>
-        <div id="login-btn-box">
-            <div style=""><span> 아이디 저장</span> <input type="checkbox" id="workSite" name="worksite" style="margin-bottom: 5px"> </div>
-            <div style=""><input type="button" id="btnJoin" value="회원가입" class="btn btn-outline-primary"></div>
-            <div style=""><input type="button" id="btnLogin" value="로그인" class="btn btn-primary"></div>
-            <div class="socialBtn">
-            <a	href="https://kauth.kakao.com/oauth/authorize?response_type=code&client_id=1c7918ef0f9d48fe6f2b01f8b36cc64b&redirect_uri=http://localhost:7075/auth/kakao/callback"><img
-				src="/images/kakao_login_btn.png" /></a> 
-			<a	href="https://nid.naver.com/oauth2.0/authorize?response_type=code&client_id=OyuBZVnfbn0mOSkZl4lQ&redirect_uri=http://localhost:7075/auth/naver/callback&state=state_string"><img
-				src="/images/naver_login_btn.png" /></a>
-            </div>
-        </div>
-      </div><!-- login Box //-->
-    </div>
+ -->
+<div layout:fragment="content">
+	<div id="container">
+		<!-- login Box -->
+		<div class="login-box">
+			<div id="loginBoxTitle">에 어 중 앙</div>
+			<form action="/login" method="post">
+				<div class="form-group">
+
+					<label>아이디</label> <input type="text" name="uid" id="uid"
+						class="form-control" value=""
+						style="text-transform: uppercase; ime-mode: disabled">
+				</div>
+				<div class="form-group">
+					<label>비밀번호</label> <input type="password" name="upw" id="upw"
+						class="form-control" value="" autocomplete="off">
+				</div>
+				<div id="login-btn-box">
+					<div style="">
+						<input type="button" id="btnJoin" value="회원가입"
+							class="btn btn-outline-primary" onclick="location.href='/signup'">
+					</div>
+					<div style="">
+						<input type="submit" id="btnLogin" value="로그인"
+							class="btn btn-primary">
+					</div>
+					<div class="socialBtn">
+						<a
+							href="https://kauth.kakao.com/oauth/authorize?response_type=code&client_id=1c7918ef0f9d48fe6f2b01f8b36cc64b&redirect_uri=http://localhost:7075/auth/kakao/callback"><img
+							src="/images/kakao_login_btn.png" /></a> <a
+							href="https://nid.naver.com/oauth2.0/authorize?response_type=code&client_id=OyuBZVnfbn0mOSkZl4lQ&redirect_uri=http://localhost:7075/auth/naver/callback&state=state_string"><img
+							src="/images/naver_login_btn.png" /></a>
+					</div>
+				</div>
+			</form>
+		</div>
+		<!-- login Box //-->
+	</div>
 </div>
