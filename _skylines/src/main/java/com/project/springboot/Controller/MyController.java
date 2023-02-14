@@ -1,6 +1,9 @@
 package com.project.springboot.Controller;
 
 import java.util.List;
+
+import javax.tools.DocumentationTool.Location;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
@@ -78,7 +81,7 @@ public class MyController {
 	}
 	
 	@GetMapping("/auth/kakao/callback")
-	public String  callback(String code, Model mo,HttpSession session) {
+	public String  callbackKakao(String code, Model mo,HttpSession session) {
 		
 		UserVO user = userService.kakaoUser(code);
 		
@@ -104,5 +107,20 @@ public class MyController {
 		}
 		
 	}
+	
+	/*
+	 * @GetMapping("/auth/naver/callback") public @ResponseBody String
+	 * callbackNaver(String code) {
+	 * 
+	 * String grant_type = "authorization_code"; String client_id =
+	 * "OyuBZVnfbn0mOSkZl4lQ"; String client_secret = "unb1SMMQNT"; String state =
+	 * "state_string";
+	 * 
+	 * HttpMethod.GET
+	 * 
+	 * return
+	 * "https://nid.naver.com/oauth2.0/token?grant_type="+grant_type+"&client_id="+
+	 * client_id+"&client_secret="+client_secret+"&code="+code+"&state="+state; }
+	 */
 	
 }

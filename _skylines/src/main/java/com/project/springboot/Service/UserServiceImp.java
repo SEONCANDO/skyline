@@ -105,4 +105,27 @@ public class UserServiceImp implements UserService {
 		return user;
 	}
 
+	@Override
+	public UserVO naverUser(String code) {
+		
+		MultiValueMap<String, String> params = new LinkedMultiValueMap<>();
+		params.add("grant_type", "authorization_code");
+		params.add("client_id", "OyuBZVnfbn0mOSkZl4lQ");
+		params.add("client_secret", "unb1SMMQNT");
+		params.add("code", code);
+		params.add("state", "state_string");
+		
+		HttpEntity<MultiValueMap<String, String>> naverprofile = new HttpEntity<>(params);
+		
+		RestTemplate rt = new RestTemplate();
+				
+		ResponseEntity<String> response = rt.exchange(
+				"https://nid.naver.com/oauth2.0/token",
+				HttpMethod.POST,
+				naverprofile,
+				String.class
+				);
+		return null;
+	}
+
 }
