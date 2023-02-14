@@ -3,6 +3,7 @@ package com.project.springboot.Service;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.util.LinkedMultiValueMap;
@@ -12,6 +13,7 @@ import org.springframework.web.client.RestTemplate;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.project.springboot.VO.KakaoProfileVO;
+import com.project.springboot.VO.NaverprofileVO;
 import com.project.springboot.VO.OAuthTokenVO;
 import com.project.springboot.VO.UserVO;
 
@@ -33,7 +35,7 @@ public class UserServiceImp implements UserService {
 		MultiValueMap<String , String> params = new LinkedMultiValueMap<>();
 		params.add("grant_type", "authorization_code");
 		params.add("client_id", "0f40b989fc6cfe4ce8e373beaa38778d");
-		params.add("redirect_uri", "http://localhost:7075/auth/kakao/callback");
+		params.add("redirect_uri", "http://localhost:7075/auth/callback/kakao");
 		params.add("code", code);
 		params.add("client_secret", "Envu7oFxDfK6eBApOvGmSCuF70OynQt7");
 		
@@ -92,13 +94,13 @@ public class UserServiceImp implements UserService {
 		}
 
 		//카카오 유저 정보
-		System.out.println("카카오ID_seq>>"+ kakaoProfile.getId());
-		System.out.println("카카오email>>"+ kakaoProfile.getKakao_account().getEmail());
-		
+		/*
+		 * System.out.println("카카오ID_seq>>"+ kakaoProfile.getId());
+		 * System.out.println("카카오email>>"+ kakaoProfile.getKakao_account().getEmail());
+		 */
 		String kuserId = kakaoProfile.getKakao_account().getEmail() +"/"+ kakaoProfile.getId();
 		String kuserEmail = kakaoProfile.getKakao_account().getEmail();
 		
-
 		
 		UserVO user = UserVO.builder().userId(kuserId).userEmail(kuserEmail).signLocation("kakao").build();
 		
@@ -107,25 +109,62 @@ public class UserServiceImp implements UserService {
 
 	@Override
 	public UserVO naverUser(String code) {
-		
-		MultiValueMap<String, String> params = new LinkedMultiValueMap<>();
-		params.add("grant_type", "authorization_code");
-		params.add("client_id", "OyuBZVnfbn0mOSkZl4lQ");
-		params.add("client_secret", "unb1SMMQNT");
-		params.add("code", code);
-		params.add("state", "state_string");
-		
-		HttpEntity<MultiValueMap<String, String>> naverprofile = new HttpEntity<>(params);
-		
-		RestTemplate rt = new RestTemplate();
-				
-		ResponseEntity<String> response = rt.exchange(
-				"https://nid.naver.com/oauth2.0/token",
-				HttpMethod.POST,
-				naverprofile,
-				String.class
-				);
-		return null;
+
+		  HttpHeaders headers = new HttpHeaders();
+	        headers.setContentType(MediaType.APPLICATION_FORM_URLENCODED);
+	        
+		  MultiValueMap<String, String> params = new LinkedMultiValueMap<>();
+			params.set("grant_type", "authorization_code");
+			params.set("client_id", "OyuBZVnfbn0mOSkZl4lQ");
+			params.set("client_secret", "unb1SMMQNT");
+			params.set("code", code);
+			params.set("state", "state_string");
+			
+			HttpEntity<MultiValueMap<String, String>> naverTokenRequest = new HttpEntity<>(params,headers);
+			
+			RestTemplate rt = new RestTemplate();
+			ResponseEntity<String> response = rt.postForEntity("https://nid.naver.com/oauth2.0/token",
+					naverTokenRequest, String.class);
+					
+		  ObjectMapper obmapper = new ObjectMapper();
+		  OAuthTokenVO oAuthToken = null;
+		  
+		  try {
+			oAuthToken = obmapper.readValue(response.getBody(), OAuthTokenVO.class);
+		} catch (JsonProcessingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+			
+		  HttpHeaders headers2 = new HttpHeaders();
+		  headers2.set("Authorization", "Bearer "+oAuthToken.getAccess_token());
+		  System.out.println(oAuthToken.getAccess_token());
+		  
+		  HttpEntity<MultiValueMap<String, String>> naverprofileRequest = new HttpEntity<>(headers2);
+			
+			RestTemplate rt2 = new RestTemplate();
+			ResponseEntity<String> response2 = rt2.postForEntity("https://openapi.naver.com/v1/nid/me",
+					naverprofileRequest, String.class);
+		  
+			 ObjectMapper obmapper2 = new ObjectMapper();
+			 NaverprofileVO naverprofile = null;
+			  
+			 try {
+				 naverprofile = obmapper.readValue(response2.getBody(), NaverprofileVO.class);
+			} catch (JsonProcessingException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			 String NuserId = naverprofile.getResponse().getId();
+			 String NuserEmail = naverprofile.getResponse().getEmail();
+				/*
+				 * System.out.println("네이버ID>"+NuserId);
+				 * System.out.println("네이버Email>"+NuserEmail);
+				 */
+			 
+			 UserVO user = UserVO.builder().userId(NuserId).userEmail(NuserEmail).signLocation("naver").build();
+			 
+		  return user; 
 	}
 
 }
