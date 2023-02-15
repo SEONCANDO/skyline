@@ -1,181 +1,273 @@
 <!DOCTYPE html>
-<html>
-<link rel="stylesheet" href="myPage.css">
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{/templates/home.html}">
 <head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
- <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css
-    " rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+<meta charset="utf-8">
 <style>
-.twoblock{
- height: 35px;
- background-color: #015fa9;
+body {
+	font-size: 13px !important;
+	font-family: "Nanum Gothic", Arial, sans-serif;
+	vertical-align: middle;
+	line-height: 20px;
+	color: #666;
+		margin: 0;
+	padding: 0;
+	border: 0;
 }
 
-.oneblock {
- height: 83px;
- border-bottom : 2px solid #015fa9;
+#container #contents {
+	padding: 65px 0 100px 270px;
+	min-height: 926px;
 }
 
-.hShortcut a{
- top: 6px;
- right: 120px;
- height: auto;
- text-decoration: none;
- color: white;
- font-size: 13px;
- padding: 0 9px 0 12px;
+#container.noneSnb #contents {
+	padding: 0;
 }
 
-.gnb {
- margin-top: 25px;
+#container.noneSnb #contents .mypage {
+	padding: 65px 0 100px 0;
+	margin: 0 auto;
+	width: 1000px;
 }
 
-.depth01Lists a{
- text-decoration: none;
- color: black;
- letter-spacing: -2px;
- font-size: 20px;
- margin-left: 50px;
+.ctit {
+	font-weight: 700;
+	font-size: 38px;
+	line-height: 1em;
+	color: #333;
+}
+
+/* a, abbr, acronym, address, applet, article, aside, audio, b, big,
+	blockquote, body, canvas, caption, center, cite, code, dd, del, details,
+	dfn, div, dl, dt, em, embed, fieldset, figcaption, figure, footer, form,
+	h1, h2, h3, h4, h5, h6, header, hgroup, html, i, iframe, img, input,
+	ins, kbd, label, legend, li, mark, menu, nav, object, ol, output, p,
+	pre, q, ruby, s, samp, section, small, span, strike, strong, sub,
+	summary, sup, table, tbody, td, textarea, tfoot, th, thead, time, tr,
+	tt, u, ul, var, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+} */
+
+#wrap .mgt40, .mgt40 {
+	margin-top: 40px;
+}
+
+#wrap .mgt20, .mgt20 {
+	margin-top: 20px;
+}
+
+.ttit {
+	color: #005fa7;
+	font-size: 20px;
+}
+
+.fl {
+	float: left !important;
+}
+
+.mypage {
+	margin: 0 135px 0 135px;
+}
+
+.mypage .mypageUserInfoBox {
+	position: relative;
+	width: 344px;
+	height: 163px;
+	padding: 20px;
+	/*     margin-right: 50px; */
+	border: 1px solid #ddd;
+	float: left;
+	background: #f3f7f9
+		url(//story.airbusan.com/content/assets/images/member/bg_mypage_stamp01.png)
+		0 0 repeat;
+}
+
+.mypage .mypageUserInfoBox .ribbonBox01 {
+	position: absolute;
+	top: 0;
+	left: 20px;
+	width: 82px;
+	height: 52px;
+	padding: 25px 4px 0 0;
+	background:
+		url(//story.airbusan.com/content/assets/images/member/bg_ribbon01.png)
+		0 0 no-repeat;
+	color: #fff;
+	font-size: 12px;
+	line-height: 14px;
+	font-weight: 700;
+	text-align: center;
+}
+
+.mypage .mypageUserInfoBox .txt {
+	min-height: 50px;
+	margin-top: 55px;
+	font-size: 15px;
+	line-height: 24px;
+	text-align: center;
+	font-weight: 700;
+}
+
+.ssBtn * {
+	display: inline-block;
+	min-width: 38px;
+	height: 20px;
+	padding: 0 10px 1px 7px;
+	color: #666;
+	font-weight: 400;
+	font-size: 11px;
+	text-align: center;
+	background-position: 100% -532px;
+	line-height: 20px;
+	vertical-align: top;
+}
+
+.oh {
+	overflow: hidden !important;
+}
+
+.posr {
+	position: relative !important;
+}
+
+.tblRowData01 tr:first-child td, .tblRowData01 tr:first-child th {
+	border-top: none;
+}
+
+.tblRowData01 th {
+	padding: 15px 0 15px 20px;
+	text-align: left;
+	vertical-align: top;
+	background: #fafafc;
+	border-top: 1px solid #efefef;
+	color: #333;
+}
+
+.tblRowData01 td {
+	padding: 10px 0 10px 20px;
+	border-top: 1px solid #efefef;
+}
+
+#wrap .mgt50, .mgt50 {
+	margin-top: 50px;
+}
+
+.mypage .scheduleBox {
+	position: relative;
+}
+
+.tblColData01 {
+	overflow: hidden;
+	border-top: 2px solid #616e7b;
+	border-bottom: 1px solid #b0bbc4;
+}
+
+.tblColData01 thead th {
+	padding: 10px 0;
+	background-color: #fafafc;
+	color: #333;
+	border-bottom: 1px solid #b0bbc4;
 }
 </style>
 </head>
 <body>
-<!-- 헤더 -->
-<div class="container-fluid">
-   <div class="row twoblock">
-     <div class="col-sm-8"></div>
-     <div class="col-sm-4">
-      <div class="hShortcut">
-       <a href="#">로그인</a>
-       <a href="#">회원가입</a>
-       <a href="#">고객센터</a>
-      </div>
-     </div>
-   </div>
-   
-   <div class="row oneblock">     
-   <div class="col-sm-12" style="display: flex;">
-    <div class="container i2" style="max-width:900px; display: flex;">
-     <div class="caicon" style="margin-top:25px;">
-        <a href="#">
-         <img src="images/img_logo.png">
-        </a>
-     </div>
-      
-     <div class="gnb">
-      <div class="depth01">
-        <ul style="display: flex; list-style:none; margin-top: 6px;">
-        <li class="depth01Lists depth01List01">
-         <a href="#"><b>항공권 예약</b></a>
-        </li>
-        <li class="depth01Lists depth01List02">
-         <a href="#"><b>마이 페이지</b></a>
-        </li>
-        <li class="depth01Lists depth01List03">
-         <a href="#"><b>공지 사항</b></a>
-        </li>
-        </ul>
-        </div>
-      </div>
-     </div>
-   </div>
-   </div>
- </div>
+	<div layout:fragment="content">
+		<!-- 마이페이지 내역 -->
+		<div id="container" class="container01">
+			<div id="contents">
+				<div class="mypage">
+					<div class="ctitArea">
+						<h3 class="ctit">마이페이지</h3>
+					</div>
+					<div class="mgt40">※ [개인정보 수정] 클릭 후, 선택정보에서 선호지역을 등록하시면 해당 지역
+						프로모션 정보를 손쉽게 받으실 수 있습니다.</div>
 
-<!-- 마이페이지 내역 -->
-	<div id="container" class="container01">
-		<div id="contents">
-			<div class="mypage">
-				<div class="ctitArea">
-					<h3 class="ctit">마이페이지</h3>
-				</div>
-				<div class="mgt40">※ [개인정보 수정] 클릭 후, 선택정보에서 선호지역을 등록하시면 해당 지역
-					프로모션 정보를 손쉽게 받으실 수 있습니다.</div>
-
-				<div class="mgt40">
-					<div class="fl">
-						<h4 class="ttit">회원 타입</h4>
-						<div class="mypageUserInfoBox mgt20">
-							<div class="ribbonBox01">개인</div>
-							<div class="info">
-								<p class="txt">
-									이경선 님께서는<br>에어부산 <em class="point01">개인 회원</em>이십니다.
-								</p>
+					<div class="mgt40">
+						<div class="fl">
+							<h4 class="ttit">회원 타입</h4>
+							<div class="mypageUserInfoBox mgt20">
+								<div class="ribbonBox01">개인</div>
+								<div class="info">
+									<p class="txt">
+										이경선 님께서는<br>에어부산 <em class="point01">개인 회원</em>이십니다.
+									</p>
+								</div>
+							</div>
+						</div>
+						<div class="oh posr">
+							<div class="posR">
+								<h4 class="ttit">나의 정보</h4>
+								<span class="btn ssBtn txtRT"><a href="#"
+									onclick="openCheckPasswordPopup();">개인정보 수정</a></span>
+							</div>
+							<div class="tblRowData01 mgt20">
+								<table>
+									<colgroup>
+										<col style="width: 27%">
+										<col>
+									</colgroup>
+									<tbody>
+										<tr>
+											<th scope="row">회원번호</th>
+											<td><span class="txt">152196535</span></td>
+										</tr>
+										<tr>
+											<th scope="row">회원명</th>
+											<td>이경선</td>
+										</tr>
+										<tr>
+											<th scope="row">휴대폰번호</th>
+											<td>010-9695-2076</td>
+										</tr>
+										<tr>
+											<th scope="row">이메일</th>
+											<td>lgso0909@hanmail.net</td>
+										</tr>
+									</tbody>
+								</table>
 							</div>
 						</div>
 					</div>
-					<div class="oh posr">
-						<div class="posR">
-							<h4 class="ttit">나의 정보</h4>
-							<span class="btn ssBtn txtRT"><a href="#"
-								onclick="openCheckPasswordPopup();">개인정보 수정</a></span>
-						</div>
-						<div class="tblRowData01 mgt20">
-							<table>
+					<div class="scheduleBox mgt50">
+						<h4 class="ttit">예약내역(탑승기간 1개월 이내, 최대 5건)</h4>
+						<div class="tblColData01 mgt20">
+							<table style="width: 1001px;">
 								<colgroup>
-									<col style="width: 27%">
+									<col style="width: 13%">
+									<col style="width: 13%">
+									<col style="width: 13%">
+									<col style="width: 13%">
+									<col style="width: 13%">
+									<col style="width: 13%">
+									<col style="width: 13%">
+									<col style="width: 13%">
 									<col>
 								</colgroup>
-								<tbody>
+								<thead>
 									<tr>
-										<th scope="row">회원번호</th>
-										<td><span class="txt">152196535</span></td>
+										<th scope="col">예약번호</th>
+										<th scope="col">승객명</th>
+										<th scope="col">일자</th>
+										<th scope="col">출발-도착지</th>
+										<th scope="col">출발-도착시간</th>
+										<th scope="col">편명</th>
+										<th scope="col">구매기한</th>
+										<th scope="col">상태</th>
 									</tr>
-									<tr>
-										<th scope="row">회원명</th>
-										<td>이경선</td>
-									</tr>
-									<tr>
-										<th scope="row">휴대폰번호</th>
-										<td>010-9695-2076</td>
-									</tr>
-									<tr>
-										<th scope="row">이메일</th>
-										<td>lgso0909@hanmail.net</td>
-									</tr>
-								</tbody>
+								</thead>
+								<tbody class="tbodyListPnr"></tbody>
 							</table>
 						</div>
-					</div>
-				</div>
-				<div class="scheduleBox mgt50">
-					<h4 class="ttit">예약내역(탑승기간 1개월 이내, 최대 5건)</h4>
-					<div class="tblColData01 mgt20">
-						<table style="width: 1001px;">
-							<colgroup>
-								<col style="width: 13%">
-								<col style="width: 13%">
-								<col style="width: 13%">
-								<col style="width: 13%">
-								<col style="width: 13%">
-								<col style="width: 13%">
-								<col style="width: 13%">
-								<col style="width: 13%">
-								<col>
-							</colgroup>
-							<thead>
-								<tr>
-									<th scope="col">예약번호</th>
-									<th scope="col">승객명</th>
-									<th scope="col">일자</th>
-									<th scope="col">출발-도착지</th>
-									<th scope="col">출발-도착시간</th>
-									<th scope="col">편명</th>
-									<th scope="col">구매기한</th>
-									<th scope="col">상태</th>
-								</tr>
-							</thead>
-							<tbody class="tbodyListPnr"></tbody>
-						</table>
-					</div>
-					<<!-- a href="/web/individual/reserve/pnr" class="more"><img
+						
+						<!-- <a href="/web/individual/reserve/pnr" class="more"><img
 						src="//story.airbusan.com/content/assets/images/common/btn_more01.gif"
 						alt="항공권 예약조회 바로가기"></a> -->
+					</div>
 				</div>
 			</div>
 		</div>
 	</div>
 </body>
-</html>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org"
 	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-	layout:decorate="~{home.html}">
+	layout:decorate="~{/templates/home.html}">
 <head>
 <style>
 body {
@@ -63,8 +63,14 @@ input[type="button"] {
 	justify-content: space-between;
 	margin-top: 12px;
 }
+
+.socialBtn img {
+	width: auto;
+	height: 35px;
+}
 </style>
 </head>
+	<body>
 	<div layout:fragment="content">
 		<div id="container">
 			<!-- login Box -->
@@ -101,6 +107,5 @@ input[type="button"] {
 				</form>
 			</div>
 		</div>
-		<!-- login Box //-->
 	</div>
 </body>

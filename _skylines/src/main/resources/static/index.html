@@ -4,6 +4,10 @@
 <meta charset="UTF-8">
 <!-- 예약 달력 cdn -->
 
+<script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
 
 <!-- CSS only -->
 <link
@@ -513,7 +517,7 @@ body {
 									<li>대구</li>
 								</ul>
 							</div>
-						
+							<input type="text" name="datefilter" value="" />
 							
 
 					</form>
@@ -778,9 +782,6 @@ body {
 		</div>
 	</div>
 	</footer>
-
-	<script
-		src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 	<script type="text/javascript">
 		$('.select').on('click', '.placeholder', function() {
 			var parent = $(this).closest('.select');
@@ -799,9 +800,28 @@ body {
 					parent.removeClass('is-open').find('.placeholder').text(
 							$(this).text());
 				});
-
-		
 	</script>
+	<script type="text/javascript">
+$(function() {
+
+  $('input[name="datefilter"]').daterangepicker({
+      autoUpdateInput: false,
+      locale: {
+          cancelLabel: 'Clear'
+      }
+  });
+
+  $('input[name="datefilter"]').on('apply.daterangepicker', function(ev, picker) {
+      $(this).val(picker.startDate.format('MM/DD/YYYY') + ' - ' + picker.endDate.format('MM/DD/YYYY'));
+  });
+
+  $('input[name="datefilter"]').on('cancel.daterangepicker', function(ev, picker) {
+      $(this).val('');
+  });
+
+});
+</script>
+	
 
 </body>
 </html>
