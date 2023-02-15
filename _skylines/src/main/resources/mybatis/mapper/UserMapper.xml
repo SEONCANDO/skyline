@@ -8,17 +8,20 @@
 		select * from user
 	</select>
 	
-	<select id="selectOneId" resultType="com.project.springboot.VO.UserVO">
+	<select id="inspectionId" resultType="com.project.springboot.VO.UserVO">
 		select * from user where userId =#{userId}
+	</select>
+	
+	<select id="authentication" resultType="com.project.springboot.VO.UserVO">
+		select * from user where userId =#{userId} and userPw =#{userPw}
 	</select>
 	
 	<insert id="simpleSign">
 		insert into user(userId,userEmail,signLocation) values(#{userId}, #{userEmail}, #{signLocation})
 	</insert>
 	
-	<select id="authentication" resultType="com.project.springboot.VO.UserVO">
-		select * from user where userId =#{userId} and userPw =#{userPw}
-			
-	</select>
+	<insert id="fullSign">
+		insert into user values(#{userId},#{userPw},#{userFirstName},#{userLastName}, #{userEmail}, #{signLocation})
+	</insert>
 	
 </mapper>

@@ -313,14 +313,15 @@ body {
 			<div class="col-sm-4">
 				<div class="hShortcut">
 					<div th:if="${session.user} == null">
-					<a id="logintxt" href="/login">로그인</a>
+					<a href="/login">로그인</a>
 					<a href="/signup">회원가입</a> 
 					<a href="#">고객센터</a>
 					</div>
 					<div th:if="${session.user} != null">
 					<span th:if="${session.user.userFirstName} != null">[[${session.user.userFirstName}]]님</span>
 					<span th:if="${session.user.userFirstName} == null">[[${session.user.userId}]]님</span>
-					<a id="logintxt" href="/logout">로그아웃</a> 
+					<a href="/logout">로그아웃</a> 
+					<a href="/mypage">마이페이지</a> 
 					<a href="#">고객센터</a>
 					</div>
 				</div>
@@ -649,9 +650,9 @@ body {
 	</div>
 	</footer>
 
+	<script layout:fragment="script">
 
-	<script>
+	</script>
 
-</script>
 </body>
 </html>
