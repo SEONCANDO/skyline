@@ -2,121 +2,136 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<!-- 예약 달력 cdn -->
+
+
 <!-- CSS only -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+	crossorigin="anonymous">
 
 <!-- JavaScript Bundle with Popper -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
-<title>Insert title here</title>
+<script
+	src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+	integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+	crossorigin="anonymous"></script>
+
+
 <style>
 body {
- box-sizing:border-box;
+	box-sizing: border-box;
 }
 
-.centercenter{
- text-align:center;
+.centercenter {
+	text-align: center;
 }
 
-.jsTabList{
- list-style:none;
- font-size:28px;
- color:black;
- display:flex;
- border-bottom:1px solid #333;
- width: 100%;
+.jsTabList {
+	list-style: none;
+	font-size: 28px;
+	color: black;
+	display: flex;
+	border-bottom: 1px solid #333;
+	width: 100%;
 }
 
-.ulNotice1{
- display:flex;
- justify-content: space-around;
- text-decoration: none;
- list-style:none;
+.ulNotice1 {
+	display: flex;
+	justify-content: space-around;
+	text-decoration: none;
+	list-style: none;
 }
-.ulNotice2{
- display:flex;
- justify-content: space-around;
- text-decoration: none;
- list-style:none;
+
+.ulNotice2 {
+	display: flex;
+	justify-content: space-around;
+	text-decoration: none;
+	list-style: none;
 }
-.ulNotice3{
- display:flex;
- justify-content: space-around;
- text-decoration: none;
- list-style:none;
+
+.ulNotice3 {
+	display: flex;
+	justify-content: space-around;
+	text-decoration: none;
+	list-style: none;
 }
-.ulNotice4{
- display:flex;
- justify-content: space-around;
- text-decoration: none;
- list-style:none;
+
+.ulNotice4 {
+	display: flex;
+	justify-content: space-around;
+	text-decoration: none;
+	list-style: none;
 }
 
 #footer .footer_2019 .fotTop .fotBox>a {
-color: #000 !important;
+	color: #000 !important;
 }
 
-.telInfo{
-list-style:none;
-display:flex;
-margin-top:70px;
-justify-content:space-between;
-padding-left: 0px;
+.telInfo {
+	list-style: none;
+	display: flex;
+	margin-top: 70px;
+	justify-content: space-between;
+	padding-left: 0px;
 }
 
-.reser-tel1{
- font-weight: 400;
- font-size: 23px;
- color: #0072bc;
- margin-bottom: 10px;
+.reser-tel1 {
+	font-weight: 400;
+	font-size: 23px;
+	color: #0072bc;
+	margin-bottom: 10px;
 }
 
 .fotBox {
- border-bottom: 1px solid #C0C0C0;
+	border-bottom: 1px solid #C0C0C0;
 }
 
-.smallTxt{
- color: #333;
- font-size: 15px;
+.smallTxt {
+	color: #333;
+	font-size: 15px;
 }
 
 .footername {
- text-decoration: none;
- font-size : 12px;
- color: black;
+	text-decoration: none;
+	font-size: 12px;
+	color: black;
 }
 
 .footername::before {
- content:' ';
- position:absoulute;
- top:50%;
- left:-10px;
- width: 1px;
- height: 11px;
- margin-top: -5px;
- background-color: #6c6c6c;
+	content: ' ';
+	position: absoulute;
+	top: 50%;
+	left: -10px;
+	width: 1px;
+	height: 11px;
+	margin-top: -5px;
+	background-color: #6c6c6c;
 }
+
 .radio {
- list-style:none;
+	list-style: none;
 }
+
 .radioBox {
- width: 90px;
- padding : 11px 0;
- margin : 0;
- text-align: center;
- border-radius: 3px;
- background: rgba(30,64,154,7);
- min-width: 68px;
- font-weight: 600;
- font-size: 15px;
- color: #fff;
- display: inline-block;
- position: relative;
- min-height: 18px;
- line-height: 18px;
-
+	width: 90px;
+	padding: 11px 0;
+	margin: 1px;
+	text-align: center;
+	border-radius: 3px;
+	background: rgba(30, 64, 154, 7);
+	min-width: 68px;
+	font-weight: 600;
+	font-size: 15px;
+	color: #fff;
+	display: inline-block;
+	position: relative;
+	min-height: 18px;
+	line-height: 18px;
 }
 
-.searchForFlightsArea{
+.searchForFlightsArea {
 	width: 1100px;
 	height: 152px;
 	position: absoulute;
@@ -125,25 +140,23 @@ padding-left: 0px;
 	border-radius: 5px;
 	padding: 29px 45px;
 	box-sizing: border-box;
-	border : 2px solid black;
-	
-	margin-top:30px;
+	border: 2px solid black;
+	margin-top: 30px;
 }
 
-.departCity {
-  background: url(images/이륙.png) left center no-repeat;
-  background-size: 22px 11p;
-}
-
+/* .departCity { */
+/* 	background: url(images/이륙.png) left center no-repeat; */
+/* 	background-size: 22px 11p; */
+/* } */
 .arriveCity {
-  background: url(/images/착륙.png) left center no-repeat;
-  background-size: 22px 11px;
+	background: url(/images/착륙.png) left center no-repeat;
+	background-size: 22px 11px;
 }
 
 .designNumberBoxWrap {
- background: url(/images/사람.png) no-repeat;
- background-size: 10px 15px;
- background-position: 7px center;
+	background: url(/images/사람.png) no-repeat;
+	background-size: 10px 15px;
+	background-position: 7px center;
 }
 
 .designNumberBoxWrap .val {
@@ -157,413 +170,638 @@ padding-left: 0px;
 }
 
 .designNumberBtn {
-  width: 25px;
-  height: 38px;
-  position: absoulute;
-  top: -1px;
-  right: -1px;
+	width: 25px;
+	height: 38px;
+	position: absoulute;
+	top: -1px;
+	right: -1px;
 }
 
-.designNumberBtn .increase{
+.designNumberBtn .increase {
 	width: 25px;
 	height: 19px;
 	background: url(images/위로.png) no-repeat;
 	background-position: center 70%;
 }
 
-.designNumberBtn .reduction{
+.designNumberBtn .reduction {
 	width: 25px;
 	height: 19px;
 	background: url(images/아래로.png) no-repeat;
 	background-position: center 30%;
 }
 
-.irt{
-    position: absolute;
-    top: -1000px;
-    left: -5000px;
-    z-index: 0;
-    width: 1px;
-    height: 1px;
-    line-height: 0;
-    font-size: 0;
-    overflow: hidden;
+.irt {
+	position: absolute;
+	top: -1000px;
+	left: -5000px;
+	z-index: 0;
+	width: 1px;
+	height: 1px;
+	line-height: 0;
+	font-size: 0;
+	overflow: hidden;
 }
 
-#buttonTime{
+#buttonTime {
 	width: auto;
-    height: 30px;
-    background-color: #8da0cb;
-    font-size: 16px;
-    padding: 7px 9px 6px 25px;
-    border-radius: 2px;
-    color: #fff;
-    background-image: url(images/계산기.png);
-    background-size: 13px 17px;
-    background-position: 8px center;
-    background-repeat: no-repeat;
-    line-height: 20px;
-    box-sizing: border-box;
-    text-decoration: none;
+	height: 30px;
+	background-color: #8da0cb;
+	font-size: 16px;
+	padding: 7px 9px 6px 25px;
+	border-radius: 2px;
+	color: #fff;
+	background-image: url(images/계산기.png);
+	background-size: 13px 17px;
+	background-position: 8px center;
+	background-repeat: no-repeat;
+	line-height: 20px;
+	box-sizing: border-box;
+	text-decoration: none;
 }
 
 #buttonSearchAvail {
 	background-color: #1e409a;
-    border-radius: 4px;
-    padding: 0 25px 0 50px;
-    background-image: url(images/검색.png);
-    font-size: 22px;
-    background-position: 27px center;
-    background-repeat: no-repeat;
-    display: inline-block;
-    min-width: 128px;
-    height: 50px;
-    color: #fff;
-    font-weight: 700;
-    text-align: center;
-    line-height: 50px;
-    text-decoration: none;
+	border-radius: 4px;
+	padding: 0 25px 0 50px;
+	background-image: url(images/검색.png);
+	font-size: 22px;
+	background-position: 27px center;
+	background-repeat: no-repeat;
+	display: inline-block;
+	min-width: 128px;
+	height: 50px;
+	color: #fff;
+	font-weight: 700;
+	text-align: center;
+	line-height: 50px;
+	text-decoration: none;
 }
 
-.twoblock{
- height: 35px;
- background-color: #015fa9;
+.twoblock {
+	height: 35px;
+	background-color: #015fa9;
 }
 
 .oneblock {
- height: 83px;
- border-bottom : 2px solid #015fa9;
+	height: 83px;
+	border-bottom: 2px solid #015fa9;
 }
 
-.hShortcut a{
- top: 6px;
- right: 120px;
- height: auto;
- text-decoration: none;
- color: white;
- font-size: 13px;
- padding: 0 9px 0 12px;
+.hShortcut a {
+	top: 6px;
+	right: 120px;
+	height: auto;
+	text-decoration: none;
+	color: white;
+	font-size: 13px;
+	padding: 0 9px 0 12px;
 }
 
 .gnb {
- margin-top: 25px;
+	margin-top: 25px;
 }
 
-.depth01Lists a{
- text-decoration: none;
- color: black;
- letter-spacing: -2px;
- font-size: 20px;
- margin-left: 50px;
+.depth01Lists a {
+	text-decoration: none;
+	color: black;
+	letter-spacing: -2px;
+	font-size: 20px;
+	margin-left: 50px;
+}
+
+.importantArea {
+	display: flex;
+	list-style: none;
+	justify-content: space-around;
+	margin-top: 65px
+}
+
+.radio {
+	margin-left: -70px;
+}
+
+.nomalA {
+	margin-top: -120px;
+}
+
+.place {
+	display: inline-block;
+}
+
+@import
+	"https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"
+	;
+
+/* *, *:after, *:before { */
+/* 	box-sizing: border-box; */
+/* } */
+
+/* html { */
+/* 	box-sizing: inherit; */
+/* 	background: -webkit-linear-gradient(right, #8e9eab, #eef2f3); */
+/* 	background: linear-gradient(to left, #8e9eab, #eef2f3); */
+/* } */
+
+/* body { */
+/* 	margin: 10% auto; */
+/* 	text-align: center; */
+/* 	font-size: 12px; */
+/* } */
+.select {
+	position: relative;
+	display: inline-block;
+	margin: 0px;
+	width: 150px;
+	max-width: 325px;
+	color: #cccccc;
+	vertical-align: middle;
+	text-align: left;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	-webkit-touch-callout: none;
+}
+
+.select .placeholder {
+	position: relative;
+	display: block;
+	background-color: #393d41;
+	z-index: 1;
+	padding: 1em;
+	border-radius: 2px;
+	cursor: pointer;
+}
+
+.select .placeholder:hover {
+	background: #34383c;
+}
+
+.select .placeholder:after {
+	position: absolute;
+	right: 1em;
+	top: 50%;
+	-webkit-transform: translateY(-50%);
+	transform: translateY(-50%);
+	font-family: 'FontAwesome';
+	content: '\f078';
+	z-index: 10;
+}
+
+.select.is-open .placeholder:after {
+	content: '\f077';
+}
+
+.select.is-open ul {
+	display: block;
+}
+
+.select.select--white .placeholder {
+	background: #fff;
+	color: #999;
+}
+
+.select.select--white .placeholder:hover {
+	background: blue;
+}
+
+.select ul {
+	display: none;
+	position: absolute;
+	overflow: hidden;
+	width: 100%;
+	background: #fff;
+	border-radius: 2px;
+	top: 100%;
+	left: 0;
+	list-style: none;
+	margin: 5px 0 0 0;
+	padding: 0;
+	z-index: 100;
+}
+
+.select ul li {
+	display: block;
+	text-align: left;
+	padding: 0.8em 1em 0.8em 1em;
+	color: #999;
+	cursor: pointer;
+}
+
+.select ul li:hover {
+	background: #4ebbf0;
+	color: #fff;
 }
 </style>
+
 </head>
 <body>
-<!-- 헤더 -->
+	<!-- 헤더 -->
 
-<div class="container-fluid">
-   <div class="row twoblock">
-     <div class="col-sm-8"></div>
-     <div class="col-sm-4">
-      <div class="hShortcut">
-       <a href="/login">로그인</a>
-       <a href="#">회원가입</a>
-       <a href="#">고객센터</a>
-      </div>
-     </div>
-   </div>
-   
-   <div class="row oneblock">     
-   <div class="col-sm-12" style="display: flex;">
-    <div class="container i2" style="max-width:900px; display: flex;">
-     <div class="caicon" style="margin-top:25px;">
-        <a href="#">
-         <img src="images/img_logo.png">
-        </a>
-     </div>
-      
-     <div class="gnb">
-      <div class="depth01">
-        <ul style="display: flex; list-style:none; margin-top: 6px;">
-        <li class="depth01Lists depth01List01">
-         <a href="#"><b>항공권 예약</b></a>
-        </li>
-        <li class="depth01Lists depth01List02">
-         <a href="#"><b>마이 페이지</b></a>
-        </li>
-        <li class="depth01Lists depth01List03">
-         <a href="#"><b>공지 사항</b></a>
-        </li>
-        </ul>
-        </div>
-      </div>
-     </div>
-   </div>
-   </div>
- </div>
- 
- <!-- 본문 시작 -->
+	<div class="container-fluid">
+		<div class="row twoblock">
+			<div class="col-sm-8"></div>
+			<div class="col-sm-4">
+				<div class="hShortcut">
+					<a href="/login">로그인</a> <a href="#">회원가입</a> <a href="#">고객센터</a>
+				</div>
+			</div>
+		</div>
 
+		<div class="row oneblock">
+			<div class="col-sm-12" style="display: flex;">
+				<div class="container i2" style="max-width: 900px; display: flex;">
+					<div class="caicon" style="margin-top: 25px;">
+						<a href="#"> <img src="images/img_logo.png">
+						</a>
+					</div>
 
-<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
-  <div class="carousel-indicators">
-    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-  </div>
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img src="images/가오슝.jpg" class="d-block w-100" alt="가오슝">
-    </div>
-    <div class="carousel-item">
-      <img src="images/신세계.jpg" class="d-block w-100" alt="신세계">
-    </div>
-    <div class="carousel-item">
-      <img src="images/옌지.jpg" class="d-block w-100" alt="옌지">
-    </div>
-  </div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true" style="scale:3;"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true" style="scale:3;"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
-</div>
+					<div class="gnb">
+						<div class="depth01">
+							<ul style="display: flex; list-style: none; margin-top: 6px;">
+								<li class="depth01Lists depth01List01"><a href="#"><b>항공권
+											예약</b></a></li>
+								<li class="depth01Lists depth01List02"><a href="#"><b>마이
+											페이지</b></a></li>
+								<li class="depth01Lists depth01List03"><a href="#"><b>공지
+											사항</b></a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 
-<!-- 중간 비행기 예약 -->
+	<!-- 본문 시작 -->
 
-<!-- 중앙에어 수하물 -->
-<div class="container">
- <div class="lightning_banner lightning_banner_01">
-  <ul style="display:flex; list-style:none; justify-content: space-around; margin-top: 40px">
-    <li class="common_banner_img lightning_banner_img">
-    <a href="#"><img src="images/배너1.jpg">
-     </a>
-    </li>
-    <li class="common_banner_img addtionservice_banner_img mg130">
-     <a href="#"><img src="images/배너2.jpg"></a>
-    </li>
-  </ul>
- </div>
+	<div id="carouselExampleIndicators" class="carousel slide"
+		data-bs-ride="true">
+		<div class="carousel-indicators">
+			<button type="button" data-bs-target="#carouselExampleIndicators"
+				data-bs-slide-to="0" class="active" aria-current="true"
+				aria-label="Slide 1"></button>
+			<button type="button" data-bs-target="#carouselExampleIndicators"
+				data-bs-slide-to="1" aria-label="Slide 2"></button>
+			<button type="button" data-bs-target="#carouselExampleIndicators"
+				data-bs-slide-to="2" aria-label="Slide 3"></button>
+		</div>
+		<div class="carousel-inner">
+			<div class="carousel-item active">
+				<img src="images/가오슝.jpg" class="d-block w-100" alt="가오슝">
+			</div>
+			<div class="carousel-item">
+				<img src="images/신세계.jpg" class="d-block w-100" alt="신세계">
+			</div>
+			<div class="carousel-item">
+				<img src="images/옌지.jpg" class="d-block w-100" alt="옌지">
+			</div>
+		</div>
+		<button class="carousel-control-prev" type="button"
+			data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+			<span class="carousel-control-prev-icon" aria-hidden="true"
+				style="scale: 3;"></span> <span class="visually-hidden">Previous</span>
+		</button>
+		<button class="carousel-control-next" type="button"
+			data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+			<span class="carousel-control-next-icon" aria-hidden="true"
+				style="scale: 3;"></span> <span class="visually-hidden">Next</span>
+		</button>
+	</div>
 
-</div>
-
-  <!-- 6개의 여행 상품 -->
-  
-  <h2 style="text-align:center; margin-top:40px;">에어중앙 고객들을 위한 <b>다양한 여행상품</b></h2>
-  <br>
-  <div class="container marketing">
-
-    <!-- Three columns of text below the carousel -->
-    <div class="row">
-      <div class="col-lg-2 centercenter">
-        <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
-		<p></p>	
-        <h6>호텔</h6>
-       
-      </div><!-- /.col-lg-4 -->
-      <div class="col-lg-2 centercenter">
-        <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
-		<p></p>
-        <h6>렌터카</h6>
-        
-      </div><!-- /.col-lg-4 -->
-      <div class="col-lg-2 centercenter">
-        <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
-		<p></p>
-        <h6>기내면세</h6>
-       
-      </div><!-- /.col-lg-4 -->
-      <div class="col-lg-2 centercenter">
-        <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
-		<p></p>	
-        <h6>와이파이</h6>
-       
-      </div><!-- /.col-lg-4 -->
-      <div class="col-lg-2 centercenter">
-        <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
-		<p></p>
-        <h6>여행자보험</h6>
-        
-      </div><!-- /.col-lg-4 -->
-      <div class="col-lg-2 centercenter">
-        <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
-		<p></p>
-        <h6>제휴 카드</h6>
-        
-      </div>
-    </div>
-    
-    <!-- 공지사항 -->
-    
-     <div class="eventWrap">
-   	<div class="eventArea">
-   	 <div class="box02">
-   	 	<div class="noticeArea jsTab" style="margin-top:70px;">
-   	 	 <ul class="jsTabList">
-   	 	  <li class="tit on">
-   	 	   <a href="#" title="현재 선택됨" style="text-decoration:none; color:black;">공지사항</a>
-   	 	  </li>
-   	 	  <li class="tit on">
-   	 	   <a href="#" style="text-decoration:none; color:grey; margin-left:12px;">변경운항공지</a>
-   	 	   </li>
-   	 	    <a href="#" class="more">
-   	 	    <img src="images/버튼.png" alt="공지사항 더보기" style="margin-left:770px;">
-   	 	    
-   	 	    </a>
-   	 	 </ul>
-   	 	 <div class="jsTabCont" style="display: block">
-   	 	  <ul class=ulNotice1>
-   	 	  	<li>
-   	 	    <a href="#">1</a>
-   	 	    <span class="iconNew" title="New"></span>
-   	 	    <span class="date">2023-02-07</span>
-   	 	    </li>
-   	 	    <li>
-   	 	    <a href="#">1</a>
-   	 	    <span class="iconNew" title="New"></span>
-   	 	    <span class="date">2023-02-07</span>
-   	 	    </li>
-   	 	    </ul>
-   	 	   <ul class=ulNotice2>
-   	 	    <li>
-   	 	    <a href="#">1</a>
-   	 	    <span class="iconNew" title="New"></span>
-   	 	    <span class="date">2023-02-07</span>
-   	 	    </li>
-   	 	    <li>
-   	 	    <a href="#">1</a>
-   	 	    <span class="iconNew" title="New"></span>
-   	 	    <span class="date">2023-02-07</span>
-   	 	    </li>
-   	 	    </ul>
-   	 	   <ul class="ulNotice3">
-   	 	    <li>
-   	 	    <a href="#">1</a>
-   	 	    <span class="iconNew" title="New"></span>
-   	 	    <span class="date">2023-02-07</span>
-   	 	    </li>
-   	 	    <li>
-   	 	    <a href="#">1</a>
-   	 	    <span class="iconNew" title="New"></span>
-   	 	    <span class="date">2023-02-07</span>
-   	 	    </li>
-   	 	    </ul>
-   	 	    <ul class=ulNotice4>
-   	 	    <li>
-   	 	    <a href="#">1</a>
-   	 	    <span class="iconNew" title="New"></span>
-   	 	    <span class="date">2023-02-07</span>
-   	 	    </li>
-   	 	    <li>
-   	 	    <a href="#">1</a>
-   	 	    <span class="iconNew" title="New"></span>
-   	 	    <span class="date">2023-02-07</span>
-   	 	    </li>
-   	 	    </ul>
-   	 	   
-   	 	</div>
-   	 </div>
-   	</div>
-   </div>
-   <!-- footer -->
-   
-   <footer id="footer">
-
-<div class="footer_2019">
-<div>
-<div class="fotTel" style="list-style:none;">
-<div class="fotBox">
-<ul class="telInfo">
-<li>
-
-<ul class="reser_tel" style="list-style:none;">
-<li><b>예약센터</b>
-<p class="reser-tel1">xxxx-xxxx</p>
-<p class="smallTxt">09:00~19:00(연중무휴)</p>
-</li>
-</ul>
+	<!-- 중간 비행기 예약 -->
 
 
-<li><b>단체문의</b><span class="smallTxt">(10명 이상)</span>
-<p class="reser-tel1">xxxx-xxxx</p>
-<p class="smallTxt">09:00~17:00(주말, 공휴일 제외)</p></li>
-<li><b>마케팅/광고 문의</b>
-<p class="reser-tel1">choongang.atsoft.net</p>
-<p class="smallTxt">제휴, 광고 등 다양한 제안을 기다립니다.</p>
-</li>
+	<div class="importantArea">
+		<div class="searchForFlightsArea jsTab" style="margin-left: 0px;">
 
-<li>
-<p class="smallTxt">
-<strong class="mgb05 disblock"><b>시스템 정기점검 안내</b></strong>
-<br>아래 점검시간 외에 이용해주시기 바랍니다.<br> 
-<strong>수~월요일 </strong> 23:50~24:10<br> 
-<strong>화요일 </strong> 23:00~24:00
-</p>
-</li>
-</ul>
-<div class="mobile">
-<div class="mobile_app"></div>
-<div class="mobile_app">
-</div> </div> </div> </div> </div>
-
-<div class="fotTop">
-<div class="fotBox">
-<div class="row">
-<div class="col-sm-8" style="margin-top:15px; display:flex; justify-content:space-around;">
-<a href="#" class="footername">회사소개</a> 
-<a href="#" class="footername">투자정보</a> 
-<a href="#" target="_new" title="새창" class="footername">채용정보</a> 
-<a href="#" target="_new" class="footername">운송약관</a>
-<a href="#" target="_new" class="footername">이용약관</a> 
-<a href="#" target="_new" class="footername">
-<span style="font-weight: 900 !important; padding-bottom: 2px;">개인정보처리방침</span></a>
-<a href="#" target="_new" class="footername">이메일무단수집거부</a> 
-<a href="#" onclick="popupHelpRemote();" title="새창" class="footername">인터넷 도우미</a> <br>
-</div>
-
-<div class="col-sm-4" style="display:flex; justify-content: flex-end;">
-<a href="https://www.instagram.com/airbusan/" rel="noopener noreferrer"> 
-<img src="//story.airbusan.com/content/assets/images/common/footer_sns_inst.png" alt="에어부산 인스타그램">
-</a>
-<a href="https://www.youtube.com/c/airbusan_official" rel="noopener noreferrer"> 
-<img src="//story.airbusan.com/content/assets/images/common/footer_sns_youtube.png"
-alt="에어부산 유튜브">
-</a>
-</div> 
-</div>
-<div class="row">
-<div class="col-sm-12" style="padding-left:25px;">
-<a href="//story.airbusan.com/content/assets/download/pdf/flightTrafficServiceKo_01.pdf" target="_blank" rel="noopener noreferrer" title="새창" class="bgnull firstTag footername">항공교통이용자서비스계획</a> 
-<a href="//story.airbusan.com/content/assets/download/pdf/damageHelp_03.pdf" 
-target="_blank" rel="noopener noreferrer" title="새창" class="footername" style="margin-left:10px;">항공교통이용자피해구제신청서</a>
-<a href="//story.airbusan.com/content/assets/download/pdf/항공안전투자공시_표준서식__별지_제4호서식__에어부산.pdf"
-target="_blank" rel="noopener noreferrer" title="새창" class="footername" style="margin-left:10px;">항공안전투자공시</a>
-</div>
-</div>
-</div>
-</div>
-<div class="fotInfo">
-<div class="fotBox">
-<address class="address" style="margin-bottom: 0px; margin-top:15px; margin-left:10px;">
-<b>에어중앙㈜</b> 대표이사 이동규 서울 마포구 신촌로 176<br> 
-사업자등록번호 : 010-2114-1128
-<a href="#" target="_blank" rel="noopener noreferrer" title="새창"><img
-src="//story.airbusan.com/content/assets/images/common/btn_footer_address03.png"
-alt="사업자정보확인"></a> 
-통신판매업 신고번호 : 있을리가..
-</address>
-<div class="copyright" style="margin-bottom:20px; margin-left:10px;">Copyright 2023 BY AIR BUSAN CO., LTD. All Rights reserved</div>
-</div>
-</div>
-</div></div></div>
-</footer>
+			<div class="box01 jsTabCont" style="">
+				<div class="tblmainRowData01">
+					<form name="formDomesticAvail"
+						action="/web/individual/booking/flightsAvail" method="POST">
 
 
-<script>
+						<ol>
+							<li class="radio radioType nomalA"><label
+								class="radioBox on">일반예약</label>
+							<li class="radio"><label class="radioBox on"> <input
+									type="radio" name="domesticTripType" value="RT"
+									checked="checked"> 왕복
+							</label> <label class="radioBox"> <input type="radio"
+									name="domesticTripType" value="OW"> 편도
+							</label></li>
+						</ol>
+						<ol>
+						</ol>
+							<div class="select">
+								<span class="placeholder">출발지</span>
+								<ul>
+									<li>김포</li>
+									<li>인천</li>
+									<li>부산</li>
+									<li>대구</li>
+									<li>대구</li>
+								</ul>
+							</div>
+							<div class="select select--white">
+								<span class="placeholder">도착지</span>
+								<ul>
+									<li>김포</li>
+									<li>인천</li>
+									<li>부산</li>
+									<li>대구</li>
+								</ul>
+							</div>
+						
+							
 
-</script>
+					</form>
+				</div>
+
+			</div>
+		</div>
+	</div>
+	<!-- 중앙에어 수하물 -->
+	<div class="container">
+		<div class="lightning_banner lightning_banner_01">
+			<ul
+				style="display: flex; list-style: none; justify-content: space-around; margin-top: 40px">
+				<li class="common_banner_img lightning_banner_img"><a href="#"><img
+						src="images/배너1.jpg"> </a></li>
+				<li class="common_banner_img addtionservice_banner_img mg130">
+					<a href="#"><img src="images/배너2.jpg"></a>
+				</li>
+			</ul>
+		</div>
+
+	</div>
+
+	<!-- 6개의 여행 상품 -->
+
+	<h2 style="text-align: center; margin-top: 40px;">
+		에어중앙 고객들을 위한 <b>다양한 여행상품</b>
+	</h2>
+	<br>
+	<div class="container marketing">
+
+		<!-- Three columns of text below the carousel -->
+		<div class="row">
+			<div class="col-lg-2 centercenter">
+				<svg class="bd-placeholder-img rounded-circle" width="140"
+					height="140" xmlns="http://www.w3.org/2000/svg" role="img"
+					aria-label="Placeholder: 140x140"
+					preserveAspectRatio="xMidYMid slice" focusable="false">
+					<title>Placeholder</title><rect width="100%" height="100%"
+						fill="#777" />
+					<text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
+				<p></p>
+				<h6>호텔</h6>
+
+			</div>
+			<!-- /.col-lg-4 -->
+			<div class="col-lg-2 centercenter">
+				<svg class="bd-placeholder-img rounded-circle" width="140"
+					height="140" xmlns="http://www.w3.org/2000/svg" role="img"
+					aria-label="Placeholder: 140x140"
+					preserveAspectRatio="xMidYMid slice" focusable="false">
+					<title>Placeholder</title><rect width="100%" height="100%"
+						fill="#777" />
+					<text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
+				<p></p>
+				<h6>렌터카</h6>
+
+			</div>
+			<!-- /.col-lg-4 -->
+			<div class="col-lg-2 centercenter">
+				<svg class="bd-placeholder-img rounded-circle" width="140"
+					height="140" xmlns="http://www.w3.org/2000/svg" role="img"
+					aria-label="Placeholder: 140x140"
+					preserveAspectRatio="xMidYMid slice" focusable="false">
+					<title>Placeholder</title><rect width="100%" height="100%"
+						fill="#777" />
+					<text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
+				<p></p>
+				<h6>기내면세</h6>
+
+			</div>
+			<!-- /.col-lg-4 -->
+			<div class="col-lg-2 centercenter">
+				<svg class="bd-placeholder-img rounded-circle" width="140"
+					height="140" xmlns="http://www.w3.org/2000/svg" role="img"
+					aria-label="Placeholder: 140x140"
+					preserveAspectRatio="xMidYMid slice" focusable="false">
+					<title>Placeholder</title><rect width="100%" height="100%"
+						fill="#777" />
+					<text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
+				<p></p>
+				<h6>와이파이</h6>
+
+			</div>
+			<!-- /.col-lg-4 -->
+			<div class="col-lg-2 centercenter">
+				<svg class="bd-placeholder-img rounded-circle" width="140"
+					height="140" xmlns="http://www.w3.org/2000/svg" role="img"
+					aria-label="Placeholder: 140x140"
+					preserveAspectRatio="xMidYMid slice" focusable="false">
+					<title>Placeholder</title><rect width="100%" height="100%"
+						fill="#777" />
+					<text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
+				<p></p>
+				<h6>여행자보험</h6>
+
+			</div>
+			<!-- /.col-lg-4 -->
+			<div class="col-lg-2 centercenter">
+				<svg class="bd-placeholder-img rounded-circle" width="140"
+					height="140" xmlns="http://www.w3.org/2000/svg" role="img"
+					aria-label="Placeholder: 140x140"
+					preserveAspectRatio="xMidYMid slice" focusable="false">
+					<title>Placeholder</title><rect width="100%" height="100%"
+						fill="#777" />
+					<text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
+				<p></p>
+				<h6>제휴 카드</h6>
+
+			</div>
+		</div>
+
+		<!-- 공지사항 -->
+
+		<div class="eventWrap">
+			<div class="eventArea">
+				<div class="box02">
+					<div class="noticeArea jsTab" style="margin-top: 70px;">
+						<ul class="jsTabList">
+							<li class="tit on"><a href="#" title="현재 선택됨"
+								style="text-decoration: none; color: black;">공지사항</a></li>
+							<li class="tit on"><a href="#"
+								style="text-decoration: none; color: grey; margin-left: 12px;">변경운항공지</a>
+							</li>
+							<a href="#" class="more"> <img src="images/버튼.png"
+								alt="공지사항 더보기" style="margin-left: 770px;">
+
+							</a>
+						</ul>
+						<div class="jsTabCont" style="display: block">
+							<ul class=ulNotice1>
+								<li><a href="#">1</a> <span class="iconNew" title="New"></span>
+									<span class="date">2023-02-07</span></li>
+								<li><a href="#">1</a> <span class="iconNew" title="New"></span>
+									<span class="date">2023-02-07</span></li>
+							</ul>
+							<ul class=ulNotice2>
+								<li><a href="#">1</a> <span class="iconNew" title="New"></span>
+									<span class="date">2023-02-07</span></li>
+								<li><a href="#">1</a> <span class="iconNew" title="New"></span>
+									<span class="date">2023-02-07</span></li>
+							</ul>
+							<ul class="ulNotice3">
+								<li><a href="#">1</a> <span class="iconNew" title="New"></span>
+									<span class="date">2023-02-07</span></li>
+								<li><a href="#">1</a> <span class="iconNew" title="New"></span>
+									<span class="date">2023-02-07</span></li>
+							</ul>
+							<ul class=ulNotice4>
+								<li><a href="#">1</a> <span class="iconNew" title="New"></span>
+									<span class="date">2023-02-07</span></li>
+								<li><a href="#">1</a> <span class="iconNew" title="New"></span>
+									<span class="date">2023-02-07</span></li>
+							</ul>
+
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- footer -->
+
+			<footer id="footer">
+
+				<div class="footer_2019">
+					<div>
+						<div class="fotTel" style="list-style: none;">
+							<div class="fotBox">
+								<ul class="telInfo">
+									<li>
+
+										<ul class="reser_tel" style="list-style: none;">
+											<li><b>예약센터</b>
+												<p class="reser-tel1">xxxx-xxxx</p>
+												<p class="smallTxt">09:00~19:00(연중무휴)</p></li>
+										</ul>
+									<li><b>단체문의</b><span class="smallTxt">(10명 이상)</span>
+										<p class="reser-tel1">xxxx-xxxx</p>
+										<p class="smallTxt">09:00~17:00(주말, 공휴일 제외)</p></li>
+									<li><b>마케팅/광고 문의</b>
+										<p class="reser-tel1">choongang.atsoft.net</p>
+										<p class="smallTxt">제휴, 광고 등 다양한 제안을 기다립니다.</p></li>
+
+									<li>
+										<p class="smallTxt">
+											<strong class="mgb05 disblock"><b>시스템 정기점검 안내</b></strong> <br>아래
+											점검시간 외에 이용해주시기 바랍니다.<br> <strong>수~월요일 </strong>
+											23:50~24:10<br> <strong>화요일 </strong> 23:00~24:00
+										</p>
+									</li>
+								</ul>
+								<div class="mobile">
+									<div class="mobile_app"></div>
+									<div class="mobile_app"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="fotTop">
+						<div class="fotBox">
+							<div class="row">
+								<div class="col-sm-8"
+									style="margin-top: 15px; display: flex; justify-content: space-around;">
+									<a href="#" class="footername">회사소개</a> <a href="#"
+										class="footername">투자정보</a> <a href="#" target="_new"
+										title="새창" class="footername">채용정보</a> <a href="#"
+										target="_new" class="footername">운송약관</a> <a href="#"
+										target="_new" class="footername">이용약관</a> <a href="#"
+										target="_new" class="footername"> <span
+										style="font-weight: 900 !important; padding-bottom: 2px;">개인정보처리방침</span></a>
+									<a href="#" target="_new" class="footername">이메일무단수집거부</a> <a
+										href="#" onclick="popupHelpRemote();" title="새창"
+										class="footername">인터넷 도우미</a> <br>
+								</div>
+
+								<div class="col-sm-4"
+									style="display: flex; justify-content: flex-end;">
+									<a href="https://www.instagram.com/airbusan/"
+										rel="noopener noreferrer"> <img
+										src="//story.airbusan.com/content/assets/images/common/footer_sns_inst.png"
+										alt="에어부산 인스타그램">
+									</a> <a href="https://www.youtube.com/c/airbusan_official"
+										rel="noopener noreferrer"> <img
+										src="//story.airbusan.com/content/assets/images/common/footer_sns_youtube.png"
+										alt="에어부산 유튜브">
+									</a>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-sm-12" style="padding-left: 25px;">
+									<a
+										href="//story.airbusan.com/content/assets/download/pdf/flightTrafficServiceKo_01.pdf"
+										target="_blank" rel="noopener noreferrer" title="새창"
+										class="bgnull firstTag footername">항공교통이용자서비스계획</a> <a
+										href="//story.airbusan.com/content/assets/download/pdf/damageHelp_03.pdf"
+										target="_blank" rel="noopener noreferrer" title="새창"
+										class="footername" style="margin-left: 10px;">항공교통이용자피해구제신청서</a>
+									<a
+										href="//story.airbusan.com/content/assets/download/pdf/항공안전투자공시_표준서식__별지_제4호서식__에어부산.pdf"
+										target="_blank" rel="noopener noreferrer" title="새창"
+										class="footername" style="margin-left: 10px;">항공안전투자공시</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="fotInfo">
+						<div class="fotBox">
+							<address class="address"
+								style="margin-bottom: 0px; margin-top: 15px; margin-left: 10px;">
+								<b>에어중앙㈜</b> 대표이사 이동규 서울 마포구 신촌로 176<br> 사업자등록번호 :
+								010-2114-1128 <a href="#" target="_blank"
+									rel="noopener noreferrer" title="새창"><img
+									src="//story.airbusan.com/content/assets/images/common/btn_footer_address03.png"
+									alt="사업자정보확인"></a> 통신판매업 신고번호 : 있을리가..
+							</address>
+							<div class="copyright"
+								style="margin-bottom: 20px; margin-left: 10px;">Copyright
+								2023 BY AIR BUSAN CO., LTD. All Rights reserved</div>
+						</div>
+					</div>
+				</div>
+		</div>
+	</div>
+	</footer>
+
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script type="text/javascript">
+		$('.select').on('click', '.placeholder', function() {
+			var parent = $(this).closest('.select');
+
+			if (!parent.hasClass('is-open')) {
+				parent.addClass('is-open');
+				$('.select.is-open').not(parent).removeClass('is-open');
+			} else {
+				parent.removeClass('is-open');
+			}
+		}).on(
+				'click',
+				'ul>li',
+				function() {
+					var parent = $(this).closest('.select');
+					parent.removeClass('is-open').find('.placeholder').text(
+							$(this).text());
+				});
+
+		
+	</script>
+
 </body>
 </html>
