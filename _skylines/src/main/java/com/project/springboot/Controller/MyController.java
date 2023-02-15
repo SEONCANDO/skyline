@@ -43,13 +43,15 @@ public class MyController {
 		this.rsMapper = rsMapper;
 		this.userMapper = userMapper;
 	}
-
+	
+	@GetMapping("/")
+	public String index() {
+		return "/home";
+	}
 
 	@GetMapping("/login")
 	public void login() {
 	}
-	
-	
 	
 	
 	@PostMapping("/login")
