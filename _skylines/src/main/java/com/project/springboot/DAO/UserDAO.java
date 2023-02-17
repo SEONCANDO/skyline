@@ -13,4 +13,5 @@ public interface UserDAO {
 	UserVO authentication(UserVO user);
 	int simpleSign(UserVO user);
 	int fullSign(UserVO user);
+	int userInformationEdit(UserVO user);
 }

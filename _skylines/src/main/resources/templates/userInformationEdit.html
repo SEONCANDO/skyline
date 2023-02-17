@@ -11,7 +11,7 @@ body {
 	font-size: 0.75rem;
 }
 
-#signupBoxTitle {
+#userEditBoxTitle {
 	color: #000000;
 	font-weight: bold;
 	font-size: 1.9rem;
@@ -35,7 +35,7 @@ input[type="button"] {
 	margin-left: 4px;
 }
 
-.signup-box {
+.userEdit-box {
 	margin: 150px auto;
 	background-color: rgba(255, 255, 255, 1);
 	border-radius: 10px;
@@ -50,7 +50,7 @@ input[type="button"] {
 	margin: 5px 0;
 }
 
-#signup-btn-box {
+#userEdit-btn-box {
 	display: flex;
 	align-items: center;
 	justify-content: flex-end;
@@ -77,15 +77,15 @@ height: 25px;
 </head>
 	<div layout:fragment="content">
 		<div id="container">
-			<!-- signup Box -->
-			<div class="signup-box">
-				<div id="signupBoxTitle">회원가입</div>
-				<form action="/signup" method="post">
+			<!-- userEdit Box -->
+			<div class="userEdit-box">
+				<div id="userEditBoxTitle">회원 정보 수정</div>
+				<form action="/userInformationEdit" method="post">
 				<hr/>
 					<div class="form-group">
-						<label>아이디</label><label id="idcheck">ID가 중복됩니다.</label> 
+						<label>아이디</label>
 						<input type="text" name="userId" id="uid"
-							class="form-control" value="" style="ime-mode: disabled">
+							class="form-control" th:value="${session.user.userId}" style="ime-mode: disabled" readonly>
 					</div>
 					<hr/>
 					<div class="form-group">
@@ -102,63 +102,38 @@ height: 25px;
 					<div class="form-group">
 						<label>영문 이름</label> 
 						<input type="text" name="userFirstName" id="ufn"
-							class="form-control" value="" style="text-transform:uppercase; ime-mode: disabled">
+							class="form-control" th:value="${session.user.userFirstName}" style="text-transform:uppercase; ime-mode: disabled">
 					</div>
 					<div class="form-group">
 						<label>영문 성</label>
 						<input type="text" name="userLastName" id="uln"
-							class="form-control" value="" style="text-transform:uppercase; 	ime-mode: disabled">
+							class="form-control" th:value="${session.user.userLastName}" style="text-transform:uppercase; 	ime-mode: disabled">
 					</div>
 					<hr/>
 					<div class="form-group">
 						<label>Email</label>
 						<input type="email" name="userEmail" id="uemail"
-							class="form-control" value="" style="ime-mode: disabled">
-						<input type="hidden" name="signLocation" value="skyline">
+							class="form-control" th:value="${session.user.userEmail}" style="ime-mode: disabled">
+						<input type="hidden" name="signLocation" th:value="${session.user.signLocation}">
 					</div>
 					<hr/>
-					<div id="signup-btn-box">
+					<div id="userEdit-btn-box">
 						<div style="">
-							<input type="submit" id="btnsignup" value="회원가입"
+							<input type="submit" id="btnuserEdit" value="회원 정보 수정"
 								class="btn btn-primary">
 						</div>
 					</div>
 				</form>
 			</div>
 		</div>
-		<!-- signup Box //-->
+		<!-- userEdit Box //-->
 	</div>
 	
 <script layout:fragment="script">
+
 $(document).ready(function(){
-	$(".form-control").on("focusout",function(){
-		var userId = $("#uid").val();
 		
-		if(userId == "" || userId.length ==0){
-			$("#idcheck").text("아이디를 입력해주세요");
-			$("#idcheck").css("display","block");
-			$("#btnsignup").attr("disabled",true);
-		}else{
-			$.ajax({
-				url : "/inspection",
-				type : "post",
-				datatype : "JSON",
-				data : {"userId":userId},
-			}).done(function(data){
-				
-				if(data == true){
-					$("#idcheck").text("사용 가능한 ID입니다.");
-					$("#idcheck").css("display","block");
-					$("#idcheck").css("color","green");
-				}else{
-					$("#idcheck").text("ID가 중복됩니다.");
-					$("#idcheck").css("display","block");
-					$("#idcheck").css("color","red");
-					$("#btnsignup").attr("disabled",true);
-				}
-			})
-		}
-	
+	$("#upw2").on("focusout",function(){
 		var userpw1 = $("#upw").val();
 		var userpw2 = $("#upw2").val();
 		if(userpw1.length <= 4){
@@ -172,17 +147,9 @@ $(document).ready(function(){
 				$("#btnsignup").attr("disabled",true);
 			}else{
 				$("#pwcheck").css("display","none");
+				$("#btnsignup").attr("disabled",false);
 			}
 		}
-	
-	
-	if($("#uid").val() == "" || $("#upw").val() == "" || $("#upw").val() == "" 
-			|| $("#ufn").val() == "" || $("#uln").val() == "" || $("#uemail").val() == ""){
-		$("#btnsignup").attr("disabled",true);
-	}else{
-		$("#btnsignup").attr("disabled",false);
-	}
 	})
-	
 })
 </script>
