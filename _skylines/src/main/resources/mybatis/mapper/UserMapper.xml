@@ -24,4 +24,7 @@
 		insert into user values(#{userId},#{userPw},#{userFirstName},#{userLastName}, #{userEmail}, #{signLocation})
 	</insert>
 	
+	<update id="userInformationEdit">
+		update user set userPw =#{userPw},userFirstName =#{userFirstName},userLastName=#{userLastName}, userEmail=#{userEmail}, signLocation=#{signLocation} where userId=#{userId}
+	</update>
 </mapper>

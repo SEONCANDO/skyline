@@ -59,7 +59,7 @@ public class MyController {
 		UserVO userId_DB = userMapper.authentication(user);
 		
 		if(userId_DB != null) {
-			System.out.println(user);
+			System.out.println(userId_DB);
 			if(userId_DB.getUserFirstName() != null) {
 				mo.addAttribute("alert",userId_DB.getUserFirstName()+"님 반갑습니다.");
 			}else{
@@ -105,11 +105,33 @@ public class MyController {
 	
 	@PostMapping("/signup")
 	public String signupSkyline(UserVO user,Model mo,HttpSession session) {
-		int i = userMapper.fullSign(user);
+		if(user.getUserId() == null || user.getUserId().equals("")) {
+			mo.addAttribute("alert","아이디를 입력해주세요");
+			mo.addAttribute("url","document.referrer");
+			return "/alert";
+		}else if(user.getUserPw() == null||user.getUserPw().equals("")) {
+			mo.addAttribute("alert","비밀번호를 입력해주세요");
+			mo.addAttribute("url","document.referrer");
+			return "/alert";
+		}else if(user.getUserFirstName() == null|| user.getUserFirstName().equals("")) {
+			mo.addAttribute("alert","영문 이름을 입력해주세요");
+			mo.addAttribute("url","document.referrer");
+			return "/alert";
+		}else if(user.getUserLastName() == null|| user.getUserLastName().equals("")) {
+			mo.addAttribute("alert","영문 성을 입력해주세요");
+			mo.addAttribute("url","document.referrer");
+			return "/alert";
+		}else if(user.getUserEmail() == null|| user.getUserEmail().equals("")) {
+			mo.addAttribute("alert","이메일을 입력해주세요");
+			mo.addAttribute("url","document.referrer");
+			return "/alert";
+		}else {
+		/* int i = userMapper.fullSign(user); */
 		mo.addAttribute("alert","회원가입이 완료되었습니다.");
 		mo.addAttribute("url","/home");
 		session.setAttribute("user", user);
 		return "/alert";
+		}
 	}
 	
 	
@@ -118,7 +140,14 @@ public class MyController {
 	}
 	
 	@GetMapping("/mypage")
-	public void mypage() {
+	public String mypage(HttpSession session) {
+		String userSession = String.valueOf(session.getAttribute("user"));
+		if(userSession != null) {
+			System.out.println(userSession);
+			return "/mypage";
+		}else {
+			return "/login";
+		}
 	}
 	
 	@GetMapping("/auth/callback/{type}")
@@ -161,5 +190,24 @@ public class MyController {
 		
 	}
 	
+	@GetMapping("/userInformationEdit")
+	public String userEdit(HttpSession session) {
+		String userSession = String.valueOf(session.getAttribute("user"));
+		if(userSession != null) {
+			System.out.println(userSession);
+			return "/userInformationEdit";
+		}else {
+			return "/login";
+		}
+	}
+	
+	@PostMapping("/userInformationEdit")
+	public String userEdit2(UserVO user, Model mo, HttpSession session) {
+		int i = userMapper.userInformationEdit(user);
+		mo.addAttribute("alert","회원정보수정이 완료되었습니다.");
+		mo.addAttribute("url","/home");
+		session.setAttribute("user", user);
+		return "/alert";
+	}
 	
 }

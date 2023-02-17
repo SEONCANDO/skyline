@@ -31,16 +31,84 @@ $(function() {
 body {
     min-width: 1000px;
     font-size: 13px;
-    /* font-family: "Nanum Gothic",dutom,gulim,Arial,sans-serif; */
+    font-family: "Nanum Gothic",dutom,Arial,sans-serif;
     vertical-align: middle;
     line-height: 20px;
     color: #666;
 }
 
-h3, ul, a, label, th, td {
+h3, ul, a, label, th, td, img, span {
 	margin: 0;
     padding: 0;
     border: 0;
+}
+
+a {
+    color: #666;
+    text-decoration: none;
+}
+
+#container.noneSnb #contents .reservation {
+    padding: 65px 0 100px 0;
+    margin: 0 auto;
+    width: 1000px;
+}
+
+/* .path {
+    position: absolute;
+    top: -40px;
+    right: 0;
+    height: 11px;
+} */
+
+.path .icon {
+    padding-right: 3px;
+    margin-top: 1px;
+    vertical-align: top;
+}
+
+.icon {
+    overflow: hidden;
+    display: inline-block;
+    background: url(//story.airbusan.com/content/assets/images/common/ico_total.png) 0 0 no-repeat;
+}
+
+.icon a {
+    overflow: hidden;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    text-indent: -200px;
+}
+
+.iconPathHome {
+    width: 9px;
+    height: 9px;
+    background-position: -150px 0;
+}
+
+.path .pathLists {
+    display: inline-block;
+    margin-left: 6px;
+    padding-left: 12px;
+    background: url(//story.airbusan.com/content/assets/images/common/icon_path_arrow01.gif) no-repeat 0 2px;
+    font-size: 11px;
+    line-height: 11px;
+    vertical-align: top;
+}
+
+.path .pathLists.on * {
+    font-weight: 700;
+    color: #33479e;
+}
+
+.path .pathLists * {
+    font-size: 11px;
+    vertical-align: top;
+}
+
+#wrap .mgl40, .mgl40 {
+    margin-left: 40px;
 }
 
 #wrap .mgt60, .mgt60 {
@@ -62,6 +130,22 @@ ul {
     margin-inline-start: 0px;
     margin-inline-end: 0px;
     padding-inline-start: 40px;
+}
+
+/* .reservation .reservationSearch .box01 .searchTbl .fakeTbl>span {
+    display: table;
+    table-layout: fixed;
+} */
+
+table {
+    width: 100%;
+    min-width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+.reservation .reservationSearch .tabSearch {
+    background: url(//story.airbusan.com/content/assets/images/reservation/bg_search_top.png) repeat-x 0 100%;
 }
 
 .reservation .reservationSearch .box01 {
@@ -106,6 +190,11 @@ ul {
     background-image: url(//story.airbusan.com/content/assets/images/common/btn_total.png);
 }
 
+#wrap .mgt20, .mgt20 {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
 .radioBox.on {
     background: url(//story.airbusan.com/content/assets/images/common/btn_radio_on.png) no-repeat 0 0;
 }
@@ -144,6 +233,21 @@ input[type=submit], input[type=button], label {
     line-height: 15px;
 }
 
+img {
+    vertical-align: top;
+}
+
+.reservation .designNumberBoxWrap .val {
+    height: 28px;
+    text-align: center;
+    font-weight: 700;
+    color: #333;
+}
+
+#wrap .mgt15, .mgt15 {
+    margin-top: 15px;
+}
+
 </style>
 <meta charset="UTF-8">
 <title>Insert title here</title>
@@ -177,7 +281,7 @@ input[type=submit], input[type=button], label {
 						<div class="tripTypeOWRT" style="position: relative;">
 							<form name="formSearchOWRT" action="">
 								<table>
-									<caption>노선, 구간, 탑승객 정보으로 구성된 국제선 일반예약 검색입니다.</caption>
+									<!-- <caption>노선, 구간, 탑승객 정보으로 구성된 국제선 일반예약 검색입니다.</caption> -->
 									<colgroup>
 										<col style="width: 70px;">
 										<col style="width: 170px;">
@@ -190,7 +294,7 @@ input[type=submit], input[type=button], label {
 											<th class="tl">출발지</th>
 											<td><span class="selectbox" style="width: 150px;">
 												<span class="selectform">
-												<span class="txt"id="txtCareer">---- 한국 ----</span>
+												<!-- <span class="txt"id="txtCareer">---- 한국 ----</span> -->
 												<span class="arrow"></span>
 												</span>
 												<select name="depCity" title="여정 출발지" style="width: 150px;">
@@ -273,31 +377,6 @@ input[type=submit], input[type=button], label {
 													</span>
 													</span>
 												</div>
-												<div class="fakeTbl mgt15">
-													<span>
-														<div class="ageInfo nativeSpanNotUseFoc">
-															<div class="txtTooltip">
-																<a href="#none" class="warningTxt">소아유아증빙</a>
-																<div class="tipCont" style="display: none;">
-																	<p class="fs15">
-																		<strong>소아/유아 나이 기준</strong>
-																	</p>
-																	<p>
-																		소아/유아의 나이구분은 여행일(탑승일) 기준이며<br>나이를 확인할 수 있는
-																		서류(의료보험증, 주민등록등본,<br>여권 중 택일)을 반드시 지참하시기 바랍니다.<br>(국제선은
-																		여권만 인정)
-																	</p>
-																	<p class="fs15">
-																		<strong>소아/유아 예약 시</strong>
-																	</p>
-																	<p>성인 1명에 유아 1명만 예약가능합니다.</p>
-																</div>
-															</div>
-															<span class="btn ssBtn"><a href="#"
-																onclick="showAgeCalculator(this); return false;">나이계산기</a></span>
-														</div>
-													</span>
-												</div>
 											</td>
 										</tr>
 										<tr>
@@ -335,7 +414,7 @@ input[type=submit], input[type=button], label {
 						<div class="tripTypeFREE">
 							<form name="formSearchFREE" action="">
 								<table>
-									<caption>노선, 구간, 탑승객 정보로 구성된 국제선 일반예약 검색입니다.</caption>
+									<!-- <caption>노선, 구간, 탑승객 정보로 구성된 국제선 일반예약 검색입니다.</caption> -->
 									<colgroup>
 										<col style="width: 80px;">
 										<col style="width: 60px;">
@@ -345,219 +424,6 @@ input[type=submit], input[type=button], label {
 										<col style="width: 60px;">
 										<col>
 									</colgroup>
-									<tbody class="free">
-										<tr>
-											<th class="tl">여정1</th>
-											<td><span class="txt"><label for="acbdepCity">출발지</label></span>
-											</td>
-											<td class="../../../public"><span class="selectbox"
-												style="width: 150px;"> <span class="selectform">
-														<span class="txt" id="txtCareer">---- 한국 ----</span> <span
-														class="arrow"></span>
-												</span> <select name="depCity1" id="acbdepCity" title="여정 출발지"
-													style="width: 150px;"><option value=""
-															data-ctlval1="KR1">---- 한국 ----</option>
-														<option value="PUS">부산</option>
-														<option value="ICN">서울(인천)</option>
-														<option value="GMP">서울(김포)</option>
-														<option value="CJU">제주</option>
-														<option value="USN">울산</option>
-														<option value=""></option>
-														<option value="" data-ctlval1="JP1">---- 동북아 ----</option>
-														<option value="NRT">도쿄(나리타)</option>
-														<option value="KIX">오사카(간사이)</option>
-														<option value="FUK">후쿠오카</option>
-														<option value="CTS">삿포로(신치토세)</option>
-														<option value="TAO">칭다오</option>
-														<option value="YNJ">옌지</option>
-														<option value="TPE">타이베이(타오위안)</option>
-														<option value="KHH">가오슝</option>
-														<option value=""></option>
-														<option value="" data-ctlval1="MN1">---- 중앙아시아
-															----</option>
-														<option value="UBN">울란바토르</option>
-														<option value=""></option>
-														<option value="" data-ctlval1="PH1">---- 동남아 ----</option>
-														<option value="CEB">세부</option>
-														<option value="DAD">다낭</option>
-														<option value="BKI">코타키나발루</option>
-														<option value="CXR">냐짱(나트랑)</option>
-														<option value="BKK">방콕</option>
-														<option value="CRK">클락</option></select>
-											</span></td>
-											<td><span class="txt"><label for="acbarrCity">도착지</label></span>
-											</td>
-											<td><span class="selectbox" style="width: 150px;">
-													<span class="selectform"> <span class="txt"
-														id="txtCareer"></span> <span class="arrow"></span>
-												</span> <select name="arrCity1" id="acbarrCity" title="여정 도착지"
-													style="width: 150px;"></select>
-											</span></td>
-											<td><span class="txt">출발일</span></td>
-											<td><label> <span class="jqueryDatePickerSpan"><input
-														type="text" class="inpPicker" name="depDate1"
-														style="width: 106px" title="출발일 입력"
-														data-buttontitle="출발일 달력 레이어 팝업 열기"
-														data-selectedtitle="출발일 선택됨"><a
-														class="calendarIcon" href="#" title="출발일 달력 레이어 팝업 열기"
-														style="width: 30px; height: 30px;"></a></span>
-											</label></td>
-										</tr>
-										<tr>
-											<th class="tl">여정2</th>
-											<td><span class="txt"><label for="acbdepCity">출발지</label></span>
-											</td>
-											<td class="freeLine"><span class="selectbox"
-												style="width: 150px;"> <span class="selectform">
-														<span class="txt" id="txtCareer"></span> <span
-														class="arrow"></span>
-												</span> <select name="depCity2" id="acbdepCity" title="여정 출발지"
-													style="width: 150px;"></select>
-											</span></td>
-											<td><span class="txt"><label for="acbarrCity">도착지</label></span>
-											</td>
-											<td><span class="selectbox" style="width: 150px;">
-													<span class="selectform"> <span class="txt"
-														id="txtCareer"></span> <span class="arrow"></span>
-												</span> <select name="arrCity2" id="acbarrCity" title="여정 도착지"
-													style="width: 150px;"></select>
-											</span></td>
-											<td><span class="txt">출발일</span></td>
-											<td><label> <span class="jqueryDatePickerSpan"><input
-														type="text" class="inpPicker" name="depDate2"
-														style="width: 106px" title="출발일 입력"
-														data-buttontitle="출발일 달력 레이어 팝업 열기"
-														data-selectedtitle="출발일 선택됨"><a
-														class="calendarIcon" href="#" title="출발일 달력 레이어 팝업 열기"
-														style="width: 30px; height: 30px;"></a></span>
-											</label></td>
-										</tr>
-										<tr>
-											<th class="tl">여정3</th>
-											<td><span class="txt"><label for="acbdepCity">출발지</label></span>
-											</td>
-											<td class="freeLine"><span class="selectbox"
-												style="width: 150px;"> <span class="selectform">
-														<span class="txt" id="txtCareer"></span> <span
-														class="arrow"></span>
-												</span> <select name="depCity3" id="acbdepCity" title="여정 출발지"
-													style="width: 150px;"></select>
-											</span></td>
-											<td><span class="txt"><label for="acbarrCity">도착지</label></span>
-											</td>
-											<td><span class="selectbox" style="width: 150px;">
-													<span class="selectform"> <span class="txt"
-														id="txtCareer"></span> <span class="arrow"></span>
-												</span> <select name="arrCity3" id="acbarrCity" title="여정 도착지"
-													style="width: 150px;"></select>
-											</span></td>
-											<td><span class="txt">출발일</span></td>
-											<td><label> <span class="jqueryDatePickerSpan"><input
-														type="text" class="inpPicker" name="depDate3"
-														style="width: 106px" title="출발일 입력"
-														data-buttontitle="출발일 달력 레이어 팝업 열기"
-														data-selectedtitle="출발일 선택됨" disabled=""><a
-														class="calendarIcon" href="#" title="출발일 달력 레이어 팝업 열기"
-														style="width: 30px; height: 30px;"></a></span>
-											</label> <a href="#none" class="btnDel" data-itinno="3"><img
-													src="//story.airbusan.com/content/assets/images/common/btn_close02.png"
-													alt="여정3 삭제"></a></td>
-										</tr>
-										<tr>
-											<th class="tl">여정4</th>
-											<td><span class="txt"><label for="acbdepCity">출발지</label></span>
-											</td>
-											<td class="freeLine"><span class="selectbox"
-												style="width: 150px;"> <span class="selectform">
-														<span class="txt" id="txtCareer"></span> <span
-														class="arrow"></span>
-												</span> <select name="depCity4" id="acbdepCity" title="여정 출발지"
-													style="width: 150px;"></select>
-											</span></td>
-											<td><span class="txt"><label for="acbarrCity">도착지</label></span>
-											</td>
-											<td><span class="selectbox" style="width: 150px;">
-													<span class="selectform"> <span class="txt"
-														id="txtCareer"></span> <span class="arrow"></span>
-												</span> <select name="arrCity4" id="acbarrCity" title="여정 도착지"
-													style="width: 150px;"></select>
-											</span></td>
-											<td><span class="txt">출발일</span></td>
-											<td><label> <span class="jqueryDatePickerSpan"><input
-														type="text" class="inpPicker" name="depDate4"
-														style="width: 106px" title="출발일 입력"
-														data-buttontitle="출발일 달력 레이어 팝업 열기"
-														data-selectedtitle="출발일 선택됨" disabled=""><a
-														class="calendarIcon" href="#" title="출발일 달력 레이어 팝업 열기"
-														style="width: 30px; height: 30px;"></a></span>
-											</label> <a href="#none" class="btnDel" data-itinno="4"><img
-													src="//story.airbusan.com/content/assets/images/common/btn_close02.png"
-													alt="여정4 삭제"></a></td>
-										</tr>
-										<tr>
-											<td colspan="7">
-												<div class="fakeTbl mgt15">
-													<span> <span class="dib mgl17 nativeSpanNotUseFoc">
-															<span class="designNumberBoxWrap" data-minvalue="0"
-															data-maxvalue="9"> <span class="txt">성인</span> <input
-																type="text" name="paxCountAd" value="1" class="val"
-																style="width: 24px" title="성인 인원수">
-																<div class="designNumberBtn">
-																	<a class="increase" href="#"><span class="irT">성인
-																			1명 증가</span></a> <a class="reduction" href="#"><span
-																		class="irT">성인 1명 감소</span></a>
-																</div>
-														</span>
-													</span> <span class="dib mgl17 nativeSpanNotUseFoc"> <span
-															class="designNumberBoxWrap" data-minvalue="0"
-															data-maxvalue="9"> <span class="txt">소아</span> <input
-																type="text" name="paxCountCh" value="0" class="val"
-																style="width: 24px" title="소아 인원수">
-																<div class="designNumberBtn">
-																	<a class="increase" href="#"><span class="irT">소아
-																			1명 증가</span></a> <a class="reduction" href="#"><span
-																		class="irT">소아 1명 감소</span></a>
-																</div>
-																<p class="info">만 12세 미만</p>
-														</span>
-													</span> <span class="dib mgl17 nativeSpanNotUseFoc"> <span
-															class="designNumberBoxWrap" data-minvalue="0"
-															data-maxvalue="9"> <span class="txt">유아</span> <input
-																type="text" name="paxCountIn" value="0" class="val"
-																style="width: 24px" title="유아 인원수">
-																<div class="designNumberBtn">
-																	<a class="increase" href="#"><span class="irT">유아
-																			1명 증가</span></a> <a class="reduction" href="#"><span
-																		class="irT">유아 1명 감소</span></a>
-																</div>
-																<p class="info">만 2세 미만</p>
-														</span>
-													</span> <span class="ageInfo02 nativeSpanNotUseFoc">
-															<div class="txtTooltip">
-																<a href="#none" class="warningTxt">소아유아증빙</a>
-																<div class="tipCont">
-																	<p class="fs15">
-																		<strong>소아/유아공통</strong>
-																	</p>
-																	<p>
-																		소아/유아의 나이구분은 여행일(탑승일) 기준이며<br>나이를 확인할 수 있는
-																		서류(의료보험증, 주민등록등본,<br>여권 중 택일)을 반드시 지참하시기 바랍니다.
-																	</p>
-																	<p class="fs15">
-																		<strong>소아/유아공통</strong>
-																	</p>
-																	<p>
-																		성인 1명에 유아 1명만 예약가능하며<br>나머지 유아는 소아로 예약하셔야 합니다.
-																	</p>
-																</div>
-															</div>
-													</span>
-													</span>
-												</div>
-											</td>
-										</tr>
-										<input type="hidden" name="viewCurrencyFREE" value="KRW">
-									</tbody>
 								</table>
 							</form>
 						</div>
@@ -567,6 +433,18 @@ input[type=submit], input[type=button], label {
 					<span class="btn bBtn01"><a href="#" id="buttonSearchAvail"
 						onclick="return false;">검색</a></span>
 				</div>
+			</div>
+			<div class="step memberStep mgt40 nativeSearchAfterShowing"
+				style="display: block;">
+				<img
+					src="//story.airbusan.com/content/assets/images/reservation/img_reservation_step0101_ko.png"
+					alt="">
+<!-- 				<ol>
+					<li>STEP1. 여정선택 (현재 단계)</li>
+					<li>STEP2. 탑승고객정보</li>
+					<li>STEP3. 부가서비스 선택</li>
+					<li>STEP4. 항공권결제</li>
+				</ol> -->
 			</div>
 		</div>
 	</div>

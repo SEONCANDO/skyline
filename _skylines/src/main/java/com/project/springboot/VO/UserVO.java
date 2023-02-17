@@ -16,5 +16,4 @@ public class UserVO {
 	String userFirstName;
 	String userLastName;
 	String signLocation;
-	
 }
