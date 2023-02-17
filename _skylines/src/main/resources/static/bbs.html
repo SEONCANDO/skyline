@@ -79,6 +79,79 @@ depth02Lists{
 	text-align: center;
 	
 }
+
+.mgt60 {
+ min-height: 519px;
+ margin-top: 30px;
+}
+
+.ctit {
+ margin-top: 30px;
+ font-weight: 700;
+ font-size: 38px;
+ line-height: 1em;
+ color: #333;
+}
+
+.boardList {
+ border-top: 2px solid #000;
+ border-bottom: 1px solid #ccc;
+}
+
+.table {
+ width: 100%;
+ min-width: 100%;
+ border-collapse: collapse;
+ border-spacing: 0;
+ 
+}
+
+.colgroup {
+ display: table-column-group;
+}
+
+.col {
+ display: table-column;
+}
+
+.boardList thead th {
+ padding: 13px 0;
+ border-bottom: 1px solid #000;
+ text-align: center;
+ background-color: #fafafc;
+ font-size: 14px;
+ color: #333;
+}
+
+.boardList tbody td:first-child{
+ border-left: none;
+}
+
+.boardList tbody td {
+ padding: 13px 0;
+ border-top: 1px solid #efefef;
+ text-align:center;
+ color: #666;
+}
+
+.thead{
+ display: table-header-group;
+ vertical-align: middle;
+}
+
+#table3 {
+ display: table;
+ box-sizing: border-box;
+ text-indent: initial;
+ width: 100%;
+ border-collapse: collapse;
+ border-spacing: 0;
+}
+
+.pagination{
+ margin-top: 30px;
+ justify-content: center;
+}
 </style>
 </head>
 <body>
@@ -153,6 +226,51 @@ depth02Lists{
    		 	  <div class="customerCenter">
    		 	    <div class="ctitArea">
    		 	    	<h3 class="ctit">공지사항</h3>
+   		 	    </div>
+   		 	    <div class="boardList mgt60" style="min-height: 519px;">
+   		 	      <table id="table3">
+   		 	        <colgroup>
+   		 	         <col style="width:10%">
+   		 	         <col>
+   		 	         <col style="width:12%">
+   		 	         <col style="width:15%">
+   		 	        </colgroup>
+   		 	        <thead>
+   		 	         <tr>
+   		 	          <th scope="col">번호</th>
+   		 	          <th scope="col">제목</th>
+   		 	          <th scope="col">조회수</th>
+   		 	          <th scope="col">등록일</th>
+   		 	         </tr>
+   		 	        </thead>
+   		 	        <tbody class="tbodyList">
+   		 	         <tr>
+   		 	          <td class="num">dd</td>
+   		 	          <td class="subject">dd</td>
+   		 	          <td class="count">ddd</td>
+   		 	          <td class="date">ddd</td>
+   		 	         </tr>
+   		 	        </tbody>
+   		 	      </table>
+   		 	    </div>
+   		 	    <div class="boardListPaging mgt30" data-pagecurrent="1" data-pagemax="26">
+   		 	    	<nav aria-label="Page navigation example">
+					  <ul class="pagination">
+					    <li class="page-item">
+					      <a class="page-link" href="#" aria-label="Previous">
+					        <span aria-hidden="true">&laquo;</span>
+					      </a>
+					    </li>
+					    <li class="page-item"><a class="page-link" href="#">1</a></li>
+					    <li class="page-item"><a class="page-link" href="#">2</a></li>
+					    <li class="page-item"><a class="page-link" href="#">3</a></li>
+					    <li class="page-item">
+					      <a class="page-link" href="#" aria-label="Next">
+					        <span aria-hidden="true">&raquo;</span>
+					      </a>
+					    </li>
+					  </ul>
+					</nav>
    		 	    </div>
    		 	  </div>
    		 	</div>
