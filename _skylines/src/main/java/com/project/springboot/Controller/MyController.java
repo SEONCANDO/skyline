@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.project.springboot.DAO.BbsDAO;
 import com.project.springboot.DAO.FlightScheduleDAO;
 import com.project.springboot.DAO.PlatformDAO;
 import com.project.springboot.DAO.ReservationDAO;
@@ -34,14 +35,16 @@ public class MyController {
 	FlightScheduleDAO fsMapper;
 	ReservationDAO rsMapper;
 	UserDAO userMapper;
+	BbsDAO bbsDao;
 	
 	@Autowired
-	public MyController(PlatformDAO pfMapper, FlightScheduleDAO fsMapper, ReservationDAO rsMapper, UserDAO userMapper) {
+	public MyController(PlatformDAO pfMapper, FlightScheduleDAO fsMapper, ReservationDAO rsMapper, UserDAO userMapper, BbsDAO bbsDao) {
 		super();
 		this.pfMapper = pfMapper;
 		this.fsMapper = fsMapper;
 		this.rsMapper = rsMapper;
 		this.userMapper = userMapper;
+		this.bbsDao = bbsDao;
 	}
 	
 	@GetMapping("/")
@@ -210,4 +213,23 @@ public class MyController {
 		return "/alert";
 	}
 	
+	@GetMapping("/bbs")
+	public void bbs() {
+		
+	}
+	
+	@GetMapping("/view")
+	public void view() {
+		
+	}
+	
+	@GetMapping("/write")
+	public void write() {
+		
+	}
+	@PostMapping("/write")
+	public String write2() {
+		return "/view";
+		
+	}
 }
