@@ -320,7 +320,7 @@ img {
 											</span></td>
 											<th class="tl">도착지</th>
 											<td><span class="selectbox" style="width: 150px;">
-													<a href="#" onclick="checkDepEmpty(this); return false;">
+													<a href="#" onclick="checkDepEmpty(this);">
 														<span class="selectform"> <span class="txt"
 															id="txtCareer"></span> <span class="arrow"></span>
 													</span> <select name="arrCity" title="여정 도착지"
@@ -370,7 +370,7 @@ img {
 							</form>
 						</div>
 						<div class="tripTypeFREE">
-							<form name="formSearchFREE" action=" /booking.go" method="post">
+							<form name="formSearchFREE" action="/booking.go" method="post">
 								<table>
 									<!-- <caption>노선, 구간, 탑승객 정보로 구성된 국제선 일반예약 검색입니다.</caption> -->
 									<colgroup>
@@ -383,15 +383,15 @@ img {
 										<col>
 									</colgroup>
 								</table>
-						
+						   </form>
 						</div>
 					</div>
 				</div>
 				<div class="mgt20 tc">
 					<span class="btn bBtn01"><a href="#" id="buttonSearchAvail"
-						onclick="return false;"><input type="sumbmit" value="검색"></a></span>
+						onclick="">검색</a></span>
 				</div>
-				</form>
+				
 			</div>
 			<div class="step memberStep mgt40 nativeSearchAfterShowing"
 				style="display: block;">
