@@ -124,7 +124,6 @@ body {
 .radioBox {
 	width: 90px;
 	padding: 11px 0;
-	margin: 0;
 	text-align: center;
 	border-radius: 3px;
 	background: rgba(30, 64, 154, 7);
@@ -141,14 +140,14 @@ body {
 .searchForFlightsArea {
 	width: 1100px;
 	height: 152px;
-	position: absoulute;
 	left: 0;
-	top: 467px;
+/* 	top: 467px; */
 	border-radius: 5px;
-	padding: 29px 45px;
+	padding: 20px 20px 20px 90px;
 	box-sizing: border-box;
 	border: 2px solid black;
 	margin-top: 30px;
+	text-align: center;
 }
 
 /* .departCity {
@@ -309,7 +308,6 @@ body {
 	display: flex;
 	list-style: none;
 	justify-content: space-around;
-	margin-top: 65px
 }
 
 .radio {
@@ -364,9 +362,11 @@ body {
 	display: block;
 	background-color: #393d41;
 	z-index: 1;
-	padding: 1em;
-	border-radius: 2px;
+	padding: 5px;
+	border-radius: 4px;
 	cursor: pointer;
+	height: 40px;
+	line-height: 30px;
 }
 
 .select .placeholder:hover {
@@ -428,6 +428,25 @@ body {
 	background: #4ebbf0;
 	color: #fff;
 }
+
+#bookingBtn {
+	min-width: 128px;
+	height: 50px;
+	background-color: #1e409a;
+	background-image:
+		url(https://story.airbusan.com/content/assets/images/main/book_icon_search.png);
+	border-radius: 4px;
+	border: none;
+	padding: 0 25px 0 50px;
+	font-size: 22px;
+	color: #FFF;
+	background-position: 27px center;
+	background-repeat: no-repeat;
+	font-weight: 700;
+	text-align: center;
+	margin-left: 20px;
+}
+
 </style>
 </head>
 <body>
@@ -514,58 +533,48 @@ body {
 		<!-- 중간 비행기 예약 -->
 		<div class="importantArea">
 			<div class="searchForFlightsArea jsTab" style="margin-left: 0px;">
-
 				<div class="box01 jsTabCont" style="">
-					<div class="tblmainRowData01">
-						<form name="formDomesticAvail" action="/" method="POST">
-							<ol>
-								<li class="radio radioType nomalA"><label
-									class="radioBox on">일반예약</label>
-								<li class="radio"><label class="radioBox on"> <input
-										type="radio" name="domesticTripType" value="RT"
-										checked="checked"> 왕복
-								</label></li>
-							</ol>
-							<ol>
-							</ol>
-							<div class="select">
-								<span class="placeholder">출발지</span>
-								<ul>
-									<li>김포(GMP)</li>
-									<li>울산(USN)</li>
-									<li>제주(CJU)</li>
-									<li>사천(HIN)</li>
-									<li>무안(MWX)</li>
-								</ul>
-							</div>
-							<div class="select select--white">
-								<span class="placeholder">도착지</span>
-								<ul>
-									<li>김포(GMP)</li>
-									<li>울산(USN)</li>
-									<li>제주(CJU)</li>
-									<li>사천(HIN)</li>
-									<li>무안(MWX)</li>
-								</ul>
-							</div>
-							<input type="text" name="datefilter" value=""
-								style="display: inline-block" />
-							<div style="display: inline-block">
-								<p>성인</p>
-								<div id='resultA' name="adult">0</div>
-								<input type='button' onclick='count("plus")' value='+' /> <input
-									type='button' onclick='count("minus")' value='-' />
-							</div>
-							<div style="display: inline-block">
-								<p>유아</p>
-								<div id='resultC'>0</div>
-								<input type='button' onclick='count2("plus")' value='+' /> <input
-									type='button' onclick='count2("minus")' value='-' />
-							</div>
-							<button type='submit'>예약</button>
-						</form>
-					</div>
-
+					<li class="radio" style="display: inline-block;"><label class="radioBox on"> <input
+							type="radio" name="domesticTripType" value="RT" checked="checked">
+							왕복
+					</label></li>
+					<form name="formDomesticAvail"  action="/" method="POST" style="display: inline-block;">
+						<div class="select">
+							<span class="placeholder">출발지</span>
+							<ul>
+								<li>김포(GMP)</li>
+								<li>울산(USN)</li>
+								<li>제주(CJU)</li>
+								<li>사천(HIN)</li>
+								<li>무안(MWX)</li>
+							</ul>
+						</div>
+						<div class="select select--white">
+							<span class="placeholder">도착지</span>
+							<ul>
+								<li>김포(GMP)</li>
+								<li>울산(USN)</li>
+								<li>제주(CJU)</li>
+								<li>사천(HIN)</li>
+								<li>무안(MWX)</li>
+							</ul>
+						</div>
+						<input type="text" name="datefilter" value=""
+							style="display: inline-block" />
+						<div style="display: inline-block">
+							<p style="font-weight: 600;">성인</p>
+							<div id='resultA' name="adult">0</div>
+							<input type='button' onclick='count("plus")' value='+' /> <input
+								type='button' onclick='count("minus")' value='-' />
+						</div>
+						<div style="display: inline-block">
+							<p style="font-weight: 600;">유아</p>
+							<div id='resultC'>0</div>
+							<input type='button' onclick='count2("plus")' value='+' /> <input
+								type='button' onclick='count2("minus")' value='-' />
+						</div>
+						<button id="bookingBtn" type='submit'>항공권 검색</button>
+					</form>
 				</div>
 			</div>
 		</div>
