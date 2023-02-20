@@ -17,6 +17,7 @@ import com.project.springboot.DAO.PlatformDAO;
 import com.project.springboot.DAO.ReservationDAO;
 import com.project.springboot.DAO.UserDAO;
 import com.project.springboot.Service.UserServiceImp;
+import com.project.springboot.VO.BbsVO;
 import com.project.springboot.VO.UserVO;
 
 import jakarta.servlet.http.HttpSession;
@@ -35,16 +36,16 @@ public class MyController {
 	FlightScheduleDAO fsMapper;
 	ReservationDAO rsMapper;
 	UserDAO userMapper;
-	BbsDAO bbsDao;
+	BbsDAO bbsMapper;
 	
 	@Autowired
-	public MyController(PlatformDAO pfMapper, FlightScheduleDAO fsMapper, ReservationDAO rsMapper, UserDAO userMapper, BbsDAO bbsDao) {
+	public MyController(PlatformDAO pfMapper, FlightScheduleDAO fsMapper, ReservationDAO rsMapper, UserDAO userMapper,BbsDAO bbsMapper) {
 		super();
 		this.pfMapper = pfMapper;
 		this.fsMapper = fsMapper;
 		this.rsMapper = rsMapper;
 		this.userMapper = userMapper;
-		this.bbsDao = bbsDao;
+		this.bbsMapper = bbsMapper;
 	}
 	
 	@GetMapping("/")
@@ -214,22 +215,66 @@ public class MyController {
 	}
 	
 	@GetMapping("/bbs")
-	public void bbs() {
-		
-	}
+	public void bbs(BbsVO bbsVO, Model model, HttpSession session) {
+		List<BbsVO> list = bbsMapper.selectBbs();
+		model.addAttribute("list", list);
+		session.getAttribute("user");
+		System.out.println(list);
+	}		
+	
+	
 	
 	@GetMapping("/view")
-	public void view() {
-		
+	public String view(BbsVO bbsVO, Model model, HttpSession session) {
+		int bbsId = bbsVO.getBbsId();
+		BbsVO list2 = bbsMapper.selectOne(bbsId);
+		model.addAttribute("list2", list2);
+		session.getAttribute("user");
+		return "view";
 	}
+	
+	
+	
 	
 	@GetMapping("/write")
 	public void write() {
 		
 	}
 	@PostMapping("/write")
-	public String write2() {
-		return "/view";
+	public String write2(BbsVO bbsVO ,Model model, HttpSession session) {
+		bbsMapper.write2(bbsVO);
+		session.getAttribute("user");
 		
+		return "/bbs";
+		
+	}
+	
+	@GetMapping("/update")
+	public void update(BbsVO bbsVO, Model model, HttpSession session) {
+		int bbsId = bbsVO.getBbsId();
+		BbsVO list3 = bbsMapper.selectOne(bbsId);
+		System.out.println(bbsId);
+		model.addAttribute("list3", list3);
+		session.getAttribute("user");
+	}
+	
+	@PostMapping("/update")
+	public String update2(BbsVO bbsVO ,Model model, HttpSession session) {
+		bbsMapper.update(bbsVO);
+		
+		int bbsId = bbsVO.getBbsId();
+		BbsVO list2 = bbsMapper.selectOne(bbsId);
+		System.out.println(list2);
+		model.addAttribute("list2", list2);
+		session.getAttribute("user");
+		return "view";
+		
+	}
+	
+	@GetMapping("/delete")
+	public String delete(BbsVO bbsVO, HttpSession session) {
+		int bbsId = bbsVO.getBbsId();
+		bbsMapper.delete(bbsId);
+		return "redirect:/bbs";
 	}
 }

@@ -1,15 +1,12 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head>
-<meta charset="UTF-8">
 <!-- CSS only -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 
 <!-- JavaScript Bundle with Popper -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
-<title>Insert title here</title>
 <style>
-.twoblock {
+ .twoblock {
 	height: 35px;
 	background-color: #015fa9;
 }
@@ -114,7 +111,7 @@ depth02Lists{
  display: table-column;
 }
 
-.boardList thead th {
+.thead {
  padding: 13px 0;
  border-bottom: 1px solid #000;
  text-align: center;
@@ -153,16 +150,28 @@ depth02Lists{
  justify-content: center;
 }
 
-tbody tr td a{
- text-decoration :none;
- color: black;
+.subject {
+ padding-left: 30px;
+ text-align: left;
 }
+ 
+ .ctit {
+ margin-top: 30px;
+ font-weight: 700;
+ font-size: 38px;
+ line-height: 1em;
+ color: #333;
+}
+
 </style>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
 </head>
 <body>
-
 <!-- 헤더 -->
-<div class="container-fluid">
+
+	<div class="container-fluid">
 		<div class="row twoblock">
 			<div class="col-sm-8"></div>
 			<div class="col-sm-4">
@@ -173,7 +182,7 @@ tbody tr td a{
 					<a href="#">고객센터</a>
 					</div>
 					<div th:if="${session.user} != null">
-					<span th:if="${session.user.userFirstName} != null" style="color:white;">[[${session.user.userFirstName}]]님</span>
+					<span th:if="${session.user.userFirstName} != null">[[${session.user.userFirstName}]]님</span>
 					<span th:if="${session.user.userFirstName} == null">[[${session.user.userId}]]님</span>
 					<a href="/logout">로그아웃</a> 
 					<a href="/mypage">마이페이지</a> 
@@ -208,9 +217,7 @@ tbody tr td a{
 		</div>
 	</div>
 
-	<!-- 본문 시작 -->
-
-    <!-- 게시판 -->
+<!-- 게시판 -->
    <div class="container">
    		<div class="row">
    		
@@ -237,64 +244,31 @@ tbody tr td a{
    		 		</div>
    		 	</div>
    		 	
-   		 	
-   		 	<div class="col-sm-8">
-   		 	  <div class="customerCenter">
+   		 	 <div class="col-sm-8">
+   		 	  <form method="post" action="/update">
+   		 	    <div class="customerCenter">
    		 	    <div class="ctitArea">
-   		 	    	<h3 class="ctit">공지사항</h3>
-   		 	    </div>
-   		 	    <div class="boardList mgt60" style="min-height: 519px;">
-   		 	      <table id="table3">
-   		 	        <colgroup>
-   		 	         <col style="width:10%">
-   		 	         <col>
-   		 	         <col style="width:12%">
-   		 	         <col style="width:15%">
-   		 	        </colgroup>
-   		 	        <thead>
-   		 	         <tr>
-   		 	          <th scope="col">번호</th>
-   		 	          <th scope="col">제목</th>
-   		 	          <th scope="col">등록일</th>
-   		 	         </tr>
-   		 	        </thead>
-   		 	        <tbody class="tbodyList">
-   		 	         <tr th:each="bbs : ${list}">
-   		 	          <td th:text="${bbs?.bbsId}"></td>
-   		 	          <td><a th:href="@{/view(bbsId=${bbs?.bbsId})}" th:text="${bbs?.bbsHead}"></a></td>
-   		 	          <td th:text="${bbs?.writeTime}"></td>
-   		 	         </tr>
-   		 	        </tbody>
-   		 	        
-   		 	      </table>
-   		 	      
-   		 	    </div>
-   		 	    <div class="boardListPaging mgt30" data-pagecurrent="1" data-pagemax="26">
-   		 	    	<nav aria-label="Page navigation example">
-					  <ul class="pagination">
-					    <li class="page-item">
-					      <a class="page-link" href="#" aria-label="Previous">
-					        <span aria-hidden="true">&laquo;</span>
-					      </a>
-					    </li>
-					    <li class="page-item"><a class="page-link" href="#">1</a></li>
-					    <li class="page-item"><a class="page-link" href="#">2</a></li>
-					    <li class="page-item"><a class="page-link" href="#">3</a></li>
-					    <li class="page-item">
-					      <a class="page-link" href="#" aria-label="Next">
-					        <span aria-hidden="true">&raquo;</span>
-					      </a>
-					    </li>
-					  </ul>
-					</nav>
-   		 	    </div>
-   		 	    <div th:if="${session.user} != null">
-   		 	      <div th:if="${#strings.equals(session.user.userId, 'test3')}">
-   		 	        <a href="/write" class="btn btn-primary" style="width: 75px;margin-left: 380px;">글쓰기</a>
-   		 	  </div>
+   		 	    	<h3 class="ctit">수정</h3>
+   		 	   </div>
+   		 	   </div>
+   		 		
+   		 		<div th:object="${list3}">
+   		 		 <input type="hidden" name="bbsId" th:value="*{bbsId}"> 
+   		 		 <input type="text" class="form-control" placeholder="글 제목" name="bbsHead" 
+   		 		 maxlength="50" style="margin-top: 30px;" th:value="*{bbsHead}">
+   		 		</div>
+   		 		<div th:object="${list3}">
+   		 	 <textarea
+				class="form-control" placeholder="글 내용" name="bbsContent"
+				maxlength="2048" style="height: 350px; margin-top: 30px;" th:value="*{bbsContent}"></textarea>
+   		 	 </div>
+   		 	 <input type="submit" value="수정" onclick="clickBtn()"
+							class="btn btn-success" style="width: 75px; margin-left: 380px; margin-top: 30px;">
+			 </form>
+			</div>
    		 	</div>
-   		</div>
-   </div>
-   
+   		 	</div>
+   		 	
+   		 	
 </body>
 </html>

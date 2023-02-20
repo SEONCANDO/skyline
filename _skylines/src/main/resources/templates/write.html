@@ -162,6 +162,7 @@ depth02Lists{
  line-height: 1em;
  color: #333;
 }
+
 </style>
 <head>
 <meta charset="UTF-8">
@@ -244,7 +245,7 @@ depth02Lists{
    		 	</div>
    		 	
    		 	 <div class="col-sm-8">
-   		 	  <form method="post">
+   		 	  <form method="post" action="/write">
    		 	    <div class="customerCenter">
    		 	    <div class="ctitArea">
    		 	    	<h3 class="ctit">글쓰기</h3>
@@ -252,16 +253,16 @@ depth02Lists{
    		 	   </div>
    		 		
    		 		<div>
-   		 		
-   		 		 <input type="text" class="form-control" placeholder="글 제목" name="bbsHead" maxlength="50">
+   		 		 
+   		 		 <input type="text" class="form-control" placeholder="글 제목" name="bbsHead" maxlength="50" style="margin-top: 30px;">
    		 		</div>
    		 		<div>
    		 	 <textarea
-	class="form-control" placeholder="글 내용" name="bbsContent"
-	maxlength="2048" style="height: 350px;"></textarea>
+				class="form-control" placeholder="글 내용" name="bbsContent"
+				maxlength="2048" style="height: 350px; margin-top: 30px;"></textarea>
    		 	 </div>
    		 	 <input type="submit" value="글쓰기" onclick="clickBtn()"
-							class="btn btn-success offset-10" style="width: 75px;">
+							class="btn btn-success" style="width: 75px; margin-left: 380px; margin-top: 30px;">
 			 </form>
 			</div>
    		 	</div>

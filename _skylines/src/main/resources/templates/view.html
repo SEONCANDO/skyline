@@ -254,42 +254,27 @@ depth02Lists{
    		 	     
    		 	        <tbody>
    		 	         <tr class="thead">
-   		 	          <td class="col-sm-10" id="subject"> 내용 </td>
-   		 	          <td class="col-sm-1"> 작성 날짜 </td>
-   		 	          <td class="col-sm-1"> 2023</td>
+   		 	          <td id="subject" style="width:780px;"> 내용 </td>
+   		 	         
    		 	         </tr>
-   		 	         <tr>
+   		 	         <tr th:object=${list2}>
    		 	          <td colspan="1.8">
    		 	          <div class="content">
-   		 	          
+   		 	           <div th:value=*{bbsContent} th:text=*{bbsContent}>
+   		 	           </div>
    		 	          </div>
    		 	          </td>
    		 	         </tr>
    		 	        </tbody>
    		 	      </table>
    		 	    </div>
-   		 	    <div class="boardListPaging mgt30" data-pagecurrent="1" data-pagemax="26">
-   		 	    	<nav aria-label="Page navigation example">
-					  <ul class="pagination">
-					    <li class="page-item">
-					      <a class="page-link" href="#" aria-label="Previous">
-					        <span aria-hidden="true">&laquo;</span>
-					      </a>
-					    </li>
-					    <li class="page-item"><a class="page-link" href="#">1</a></li>
-					    <li class="page-item"><a class="page-link" href="#">2</a></li>
-					    <li class="page-item"><a class="page-link" href="#">3</a></li>
-					    <li class="page-item">
-					      <a class="page-link" href="#" aria-label="Next">
-					        <span aria-hidden="true">&raquo;</span>
-					      </a>
-					    </li>
-					  </ul>
-					</nav>
-   		 	    </div>
-   		 	    <div th:if="${session.user} != null">
+   		 	    <a href="/bbs" class="btn btn-success" style="width: 75px; margin: 15px;">목록</a>
+   		 	    <div th:if="${session.user} != null" th:object=${list2}>
    		 	      <div th:if="${#strings.equals(session.user.userId, 'test3')}">
-   		 	        <a href="/write" class="btn btn-primary" style="width: 75px;margin-left: 390px;">글쓰기</a>
+   		 	        <a th:href="@{/update(bbsId=*{bbsId})}" class="btn btn-primary" style="width: 75px;margin-left: 390px;">수정</a>
+   		 	        <a onclick="return confirm('정말로 삭제하시겠습니까?')"
+				th:href="@{/delete(bbsId=*{BbsId})}" class="btn btn-primary"
+				style="width: 75px; margin-left: 15px;">삭제</a>
    		 	      </div>
    		 	    </div>
    		 	  </div>

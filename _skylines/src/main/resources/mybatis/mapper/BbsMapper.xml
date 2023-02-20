@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    
+<mapper namespace="com.project.springboot.DAO.BbsDAO">
+<select id="selectBbs" resultType="com.project.springboot.VO.BbsVO">
+select bbsId,userId,DATE_FORMAT(writeTime,'%Y%m%d'), bbsHead,bbsContent from bbs order by bbsId desc
+</select>
+
+<select id="selectOne" resultType="com.project.springboot.VO.BbsVO">
+select bbsId, bbsContent, DATE_FORMAT(writeTime,'%Y%m%d') from bbs where bbsId = ${bbsId}
+</select>
+
+<insert id="write2">
+  insert into bbs(userId ,bbsHead, bbsContent)
+  values ('test3', #{bbsHead}, #{bbsContent})
+</insert>
+
+<update id="update">
+  update bbs set bbsHead =#{bbsHead}, bbsContent=#{bbsContent} where bbsId =#{bbsId}
+</update>
+
+<delete id="delete">
+  delete from bbs where bbsId = ${bbsId}
+</delete>
+</mapper>
