@@ -286,7 +286,8 @@ img {
 							</label>
 						</div>
 						<div class="tripTypeOWRT" style="position: relative;">
-							<form name="formSearchOWRT" action="">
+						
+							<form name="formSearchOWRT" action="/booking.gogo" method="post">
 								<table>
 									<!-- <caption>노선, 구간, 탑승객 정보으로 구성된 국제선 일반예약 검색입니다.</caption> -->
 									<colgroup>
@@ -369,7 +370,7 @@ img {
 							</form>
 						</div>
 						<div class="tripTypeFREE">
-							<form name="formSearchFREE" action="">
+							<form name="formSearchFREE" action=" /booking.go" method="post">
 								<table>
 									<!-- <caption>노선, 구간, 탑승객 정보로 구성된 국제선 일반예약 검색입니다.</caption> -->
 									<colgroup>
@@ -382,14 +383,15 @@ img {
 										<col>
 									</colgroup>
 								</table>
-							</form>
+						
 						</div>
 					</div>
 				</div>
 				<div class="mgt20 tc">
 					<span class="btn bBtn01"><a href="#" id="buttonSearchAvail"
-						onclick="return false;">검색</a></span>
+						onclick="return false;"><input type="sumbmit" value="검색"></a></span>
 				</div>
+				</form>
 			</div>
 			<div class="step memberStep mgt40 nativeSearchAfterShowing"
 				style="display: block;">
