@@ -3,10 +3,14 @@
 	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
 	layout:decorate="~{/templates/home.html}">
 <head>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
-<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+<script type="text/javascript"
+	src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+<script type="text/javascript"
+	src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+<script type="text/javascript"
+	src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+<link rel="stylesheet" type="text/css"
+	href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
 <script type="text/javascript">
 $(function() {
 
@@ -29,29 +33,29 @@ $(function() {
 </script>
 <style>
 body {
-    min-width: 1000px;
-    font-size: 13px;
-    font-family: "Nanum Gothic",dutom,Arial,sans-serif;
-    vertical-align: middle;
-    line-height: 20px;
-    color: #666;
+	min-width: 1000px;
+	font-size: 13px;
+	font-family: "Nanum Gothic", dutom, Arial, sans-serif;
+	vertical-align: middle;
+	line-height: 20px;
+	color: #666;
 }
 
 h3, ul, a, label, th, td, img, span {
 	margin: 0;
-    padding: 0;
-    border: 0;
+	padding: 0;
+	border: 0;
 }
 
 a {
-    color: #666;
-    text-decoration: none;
+	color: #666;
+	text-decoration: none;
 }
 
 #container.noneSnb #contents .reservation {
-    padding: 65px 0 100px 0;
-    margin: 0 auto;
-    width: 1000px;
+	padding: 65px 0 100px 0;
+	margin: 0 auto;
+	width: 1000px;
 }
 
 /* .path {
@@ -60,194 +64,204 @@ a {
     right: 0;
     height: 11px;
 } */
-
 .path .icon {
-    padding-right: 3px;
-    margin-top: 1px;
-    vertical-align: top;
+	padding-right: 3px;
+	margin-top: 1px;
+	vertical-align: top;
 }
 
 .icon {
-    overflow: hidden;
-    display: inline-block;
-    background: url(//story.airbusan.com/content/assets/images/common/ico_total.png) 0 0 no-repeat;
+	overflow: hidden;
+	display: inline-block;
+	background:
+		url(//story.airbusan.com/content/assets/images/common/ico_total.png) 0
+		0 no-repeat;
 }
 
 .icon a {
-    overflow: hidden;
-    display: inline-block;
-    width: 100%;
-    height: 100%;
-    text-indent: -200px;
+	overflow: hidden;
+	display: inline-block;
+	width: 100%;
+	height: 100%;
+	text-indent: -200px;
 }
 
 .iconPathHome {
-    width: 9px;
-    height: 9px;
-    background-position: -150px 0;
+	width: 9px;
+	height: 9px;
+	background-position: -150px 0;
 }
 
 .path .pathLists {
-    display: inline-block;
-    margin-left: 6px;
-    padding-left: 12px;
-    background: url(//story.airbusan.com/content/assets/images/common/icon_path_arrow01.gif) no-repeat 0 2px;
-    font-size: 11px;
-    line-height: 11px;
-    vertical-align: top;
+	display: inline-block;
+	margin-left: 6px;
+	padding-left: 12px;
+	background:
+		url(//story.airbusan.com/content/assets/images/common/icon_path_arrow01.gif)
+		no-repeat 0 2px;
+	font-size: 11px;
+	line-height: 11px;
+	vertical-align: top;
 }
 
 .path .pathLists.on * {
-    font-weight: 700;
-    color: #33479e;
+	font-weight: 700;
+	color: #33479e;
 }
 
 .path .pathLists * {
-    font-size: 11px;
-    vertical-align: top;
+	font-size: 11px;
+	vertical-align: top;
 }
 
 #wrap .mgl40, .mgl40 {
-    margin-left: 40px;
+	margin-left: 40px;
 }
 
 #wrap .mgt60, .mgt60 {
-    margin-top: 60px;
+	margin-top: 60px;
 }
 
 div {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    display: block;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	display: block;
 }
 
 ul {
-    display: block;
-    list-style-type: disc;
-    margin-block-start: 1em;
-    margin-block-end: 1em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
-    padding-inline-start: 40px;
+	display: block;
+	list-style-type: disc;
+	margin-block-start: 1em;
+	margin-block-end: 1em;
+	margin-inline-start: 0px;
+	margin-inline-end: 0px;
+	padding-inline-start: 40px;
 }
 
 /* .reservation .reservationSearch .box01 .searchTbl .fakeTbl>span {
     display: table;
     table-layout: fixed;
 } */
-
 table {
-    width: 100%;
-    min-width: 100%;
-    border-collapse: collapse;
-    border-spacing: 0;
+	width: 100%;
+	min-width: 100%;
+	border-collapse: collapse;
+	border-spacing: 0;
 }
 
 .reservation .reservationSearch .tabSearch {
-    background: url(//story.airbusan.com/content/assets/images/reservation/bg_search_top.png) repeat-x 0 100%;
+	background:
+		url(//story.airbusan.com/content/assets/images/reservation/bg_search_top.png)
+		repeat-x 0 100%;
 }
 
 .reservation .reservationSearch .box01 {
-    position: relative;
-    padding: 25px 31px 25px;
-    background: url(//story.airbusan.com/content/assets/images/reservation/bg_search_bot.png) no-repeat 0 100%;
+	position: relative;
+	padding: 25px 31px 25px;
+	background:
+		url(//story.airbusan.com/content/assets/images/reservation/bg_search_bot.png)
+		no-repeat 0 100%;
 }
 
 .reservation .reservationSearch .tabSearch li.on a {
-    color: #333;
-    border-bottom: 1px solid #FFF;
+	color: #333;
+	border-bottom: 1px solid #FFF;
 }
 
 .ctit {
-    font-weight: 700;
-    font-size: 38px;
-    line-height: 1em;
-    color: #333;
+	font-weight: 700;
+	font-size: 38px;
+	line-height: 1em;
+	color: #333;
 }
 
 .reservation .reservationSearch .tabSearch:after {
-    content: "";
-    display: block;
-    clear: both;
+	content: "";
+	display: block;
+	clear: both;
 }
 
 .bBtn01 * {
-    display: inline-block;
-    min-width: 128px;
-    height: 50px;
-    padding: 0 30px 0 25px;
-    color: #FFF;
-    font-size: 18px;
-    font-weight: 700;
-    text-align: center;
-    background-position: 100% -100px;
-    line-height: 50px;
+	display: inline-block;
+	min-width: 128px;
+	height: 50px;
+	padding: 0 30px 0 25px;
+	color: #FFF;
+	font-size: 18px;
+	font-weight: 700;
+	text-align: center;
+	background-position: 100% -100px;
+	line-height: 50px;
 }
 
 .btn * {
-    display: inline-block;
-    background-image: url(//story.airbusan.com/content/assets/images/common/btn_total.png);
+	display: inline-block;
+	background-image:
+		url(//story.airbusan.com/content/assets/images/common/btn_total.png);
 }
 
 #wrap .mgt20, .mgt20 {
-    margin-top: 20px;
-    margin-bottom: 20px;
+	margin-top: 20px;
+	margin-bottom: 20px;
 }
 
 .radioBox.on {
-    background: url(//story.airbusan.com/content/assets/images/common/btn_radio_on.png) no-repeat 0 0;
+	background:
+		url(//story.airbusan.com/content/assets/images/common/btn_radio_on.png)
+		no-repeat 0 0;
 }
 
 .radioBox {
-    display: inline-block;
-    position: relative;
-    min-height: 18px;
-    padding-left: 24px;
-    font-size: 13px;
-    background: url(//story.airbusan.com/content/assets/images/common/btn_radio_off.png) no-repeat 0 0;
-    line-height: 18px;
+	display: inline-block;
+	position: relative;
+	min-height: 18px;
+	padding-left: 24px;
+	font-size: 13px;
+	background:
+		url(//story.airbusan.com/content/assets/images/common/btn_radio_off.png)
+		no-repeat 0 0;
+	line-height: 18px;
 }
 
 input[type=submit], input[type=button], label {
-    cursor: pointer;
+	cursor: pointer;
 }
 
 .reservation .reservationSearch .box01 .searchTbl th {
-    padding: 8px 0;
-    vertical-align: middle;
-    line-height: 15px;
+	padding: 8px 0;
+	vertical-align: middle;
+	line-height: 15px;
 }
 
 .tl {
-    text-align: left!important;
+	text-align: left !important;
 }
 
 .reservation .reservationSearch .box01 .searchTbl .fakeTbl {
-    height: 30px;
+	height: 30px;
 }
 
 .reservation .reservationSearch .box01 .searchTbl td {
-    padding: 8px 3px;
-    vertical-align: top;
-    line-height: 15px;
+	padding: 8px 3px;
+	vertical-align: top;
+	line-height: 15px;
 }
 
 img {
-    vertical-align: top;
+	vertical-align: top;
 }
 
 .reservation .designNumberBoxWrap .val {
-    height: 28px;
-    text-align: center;
-    font-weight: 700;
-    color: #333;
+	height: 28px;
+	text-align: center;
+	font-weight: 700;
+	color: #333;
 }
 
 #wrap .mgt15, .mgt15 {
-    margin-top: 15px;
+	margin-top: 15px;
 }
-
 </style>
 <meta charset="UTF-8">
 <title>Insert title here</title>
@@ -259,24 +273,17 @@ img {
 	<div id="contents">
 		<div class="reservation">
 			<div class="ctitArea">
-				<div id="path" class="path">
-					<span class="icon iconPathHome"><a href="#">홈으로</a></span> 
-					<span class="pathLists depth01"><a href="#">항공권 예약</a></span> 
-					<span class="pathLists depth02 on"><strong><a href="#">항공권 예매</a></strong></span>
-				</div>
 				<h3 class="ctit">항공권 예매</h3>
 			</div>
-			<div class="reservationSearch jsTab mgt60 nativeAvailSearchForm modeRT">
-				<ul class="tabSearch jsTabList">
-					<li class="list01 nativeFoc on" data-foc="N"><a href="#" title="현재 선택 됨">일반예약</a></li>
-				</ul>
-				<div class="box01 jsTabCont1">
+			<div
+				class="reservationSearch jsTab mgt60 nativeAvailSearchForm modeRT">
+				<div class="box01 jsTabCont1" style="BORDER: 1PX SOLID BLACK;">
 					<div class="searchTbl">
 						<div class="rdoTab">
-							<label class="radioBox nativeTripTypeRT on">
-								<input type="radio" name="tripType" class="radioTripType" value="RT" checked="checked">왕복</label>
-							<label class="radioBox mgl40 nativeTripTypeOW">
-								<input type="radio" name="tripType" class="radioTripType" value="OW">편도</label> 
+							<label class="radioBox nativeTripTypeRT on"> <input
+								type="radio" name="tripType" class="radioTripType" value="RT"
+								checked="checked">왕복
+							</label>
 						</div>
 						<div class="tripTypeOWRT" style="position: relative;">
 							<form name="formSearchOWRT" action="">
@@ -293,98 +300,60 @@ img {
 										<tr>
 											<th class="tl">출발지</th>
 											<td><span class="selectbox" style="width: 150px;">
-												<span class="selectform">
-												<!-- <span class="txt"id="txtCareer">---- 한국 ----</span> -->
-												<span class="arrow"></span>
-												</span>
-												<select name="depCity" title="여정 출발지" style="width: 150px;">
-												<option value="" data-ctlval1="KR1">---- 한국 ----</option>
-													<option value="PUS">부산</option>
-													<option value="ICN">서울(인천)</option>
-													<option value="GMP">서울(김포)</option>
-													<option value="CJU">제주</option>
-													<option value="USN">울산</option>
-													<option value=""></option>
-													<option value="" data-ctlval1="JP1">---- 동북아 ----</option>
-													<option value="NRT">도쿄(나리타)</option>
-													<option value="KIX">오사카(간사이)</option>
-													<option value="FUK">후쿠오카</option>
-													<option value="CTS">삿포로(신치토세)</option>
-													<option value="TAO">칭다오</option>
-													<option value="YNJ">옌지</option>
-													<option value="TPE">타이베이(타오위안)</option>
-													<option value="KHH">가오슝</option>
-													<option value=""></option>
-													<option value="" data-ctlval1="MN1">---- 중앙아시아----</option>
-													<option value="UBN">울란바토르</option>
-													<option value=""></option>
-													<option value="" data-ctlval1="PH1">---- 동남아 ----</option>
-													<option value="CEB">세부</option>
-													<option value="DAD">다낭</option>
-													<option value="BKI">코타키나발루</option>
-													<option value="CXR">냐짱(나트랑)</option>
-													<option value="BKK">방콕</option>
-													<option value="CRK">클락</option></select>
+													<span class="selectform"> <!-- <span class="txt"id="txtCareer">---- 한국 ----</span> -->
+														<span class="arrow"></span>
+												</span> <select name="depCity" title="여정 출발지" style="width: 150px;">
+														<option value="" data-ctlval1="KR1">---- 한국 ----</option>
+														<option value="GMP">김포(GMP)</option>
+														<option value="USN">울산(USN))</option>
+														<option value="CJU">제주(CJU)</option>
+														<option value="HIN">사천(HIN)</option>
+														<option value="MWX">무안(MWX)</option>
+												</select>
 											</span></td>
 											<th class="tl">도착지</th>
-											<td>
-												<span class="selectbox" style="width: 150px;">
+											<td><span class="selectbox" style="width: 150px;">
 													<a href="#" onclick="checkDepEmpty(this); return false;">
-													<span class="selectform"> <span class="txt" id="txtCareer"></span>
-													<span class="arrow"></span>
-												</span>
-													<select name="arrCity" title="여정 도착지" style="width: 150px;"></select>
-												</a> 
-												</span>
-											</td>
+														<span class="selectform"> <span class="txt"
+															id="txtCareer"></span> <span class="arrow"></span>
+													</span> <select name="arrCity" title="여정 도착지"
+														style="width: 150px;">
+															<option value="" data-ctlval1="KR1">---- 한국 ----</option>
+															<option value="GMP">김포(GMP)</option>
+															<option value="USN">울산(USN))</option>
+															<option value="CJU">제주(CJU)</option>
+															<option value="HIN">사천(HIN)</option>
+															<option value="MWX">무안(MWX)</option>
+													</select>
+												</a>
+											</span></td>
 											<td rowspan="2">
 												<div class="fakeTbl">
-													<span> <span class="dib mgl07 nativeSpanNotUseFoc">
-															<span class="designNumberBoxWrap" data-minvalue="0"
-															data-maxvalue="9"> <span class="txt">성인</span> <input
-																type="text" name="paxCountAd" value="0" class="val"
-																style="width: 24px" title="성인 인원수">
-																<div class="designNumberBtn">
-																	<a class="increase" href="#"><span class="irT">성인
-																			1명 증가</span></a> <a class="reduction" href="#"><span
-																		class="irT">성인 1명 감소</span></a>
-																</div>
-														</span>
-													</span> <span class="dib mgl07 nativeSpanNotUseFoc"> <span
-															class="designNumberBoxWrap" data-minvalue="0"
-															data-maxvalue="9"> <span class="txt">소아</span> <input
-																type="text" name="paxCountCh" value="0" class="val"
-																style="width: 24px" title="소아 인원수">
-																<div class="designNumberBtn">
-																	<a class="increase" href="#"><span class="irT">소아
-																			1명 증가</span></a> <a class="reduction" href="#"><span
-																		class="irT">소아 1명 감소</span></a>
-																</div>
-																<p class="info nativeChildAge">만 12세 미만</p>
-														</span>
-													</span> <span class="dib mgl07 nativeSpanNotUseFoc"> <span
-															class="designNumberBoxWrap" data-minvalue="0"
-															data-maxvalue="9"> <span class="txt">유아</span> <input
-																type="text" name="paxCountIn" value="0" class="val"
-																style="width: 24px" title="유아 인원수">
-																<div class="designNumberBtn">
-																	<a class="increase" href="#"><span class="irT">유아
-																			1명 증가</span></a> <a class="reduction" href="#"><span
-																		class="irT">유아 1명 감소</span></a>
-																</div>
-																<p class="info">만 2세 미만</p>
-														</span>
-													</span>
-													</span>
+													<div style="display: inline-block">
+											<p>성인</p>
+											<div id='resultA'>0</div>
+											<input type='button' onclick='count("plus")' value='+' /> 
+											<input type='button' onclick='count("minus")' value='-' />
+											</div>
+											<div style="display: inline-block">
+											<p>아동</p>
+											<div id='resultB'>0</div>
+											<input type='button' onclick='count1("plus")' value='+' /> <input
+												type='button' onclick='count1("minus")' value='-' />
+											</div>
+											<div style="display: inline-block">
+											<p>유아</p>
+											<div id='resultC'>0</div>
+											<input type='button' onclick='count2("plus")' value='+' /> <input
+												type='button' onclick='count2("minus")' value='-' />
+										</div>
 												</div>
 											</td>
 										</tr>
 										<tr>
-											<th class="tl">가는날</th>
-											<td>
-											<input type="text" name="datefilter" value="" />
-											</td>
-<!-- 											<td><label> <span class="jqueryDatePickerSpan"><span
+											<th class="tl">일정</th>
+											<td><input type="text" name="datefilter" value="" /></td>
+											<!-- 											<td><label> <span class="jqueryDatePickerSpan"><span
 														class="jqueryDatePickerSpan"><input
 															id="datePickerDeparture" type="text" class="inpPicker"
 															name="depDate1" style="width: 106px" title="가는날 입력"
@@ -393,19 +362,7 @@ img {
 															class="calendarIcon" href="#" title="가는날 달력 레이어 팝업 열기"
 															style="width: 30px; height: 30px;"></a></span></span>
 											</label></td> -->
-											<th class="tl"><span class="tripTypeForRT">오는날</span></th>
-											<td><span class="tripTypeForRT"> <label>
-														<span class="jqueryDatePickerSpan"><span
-															class="jqueryDatePickerSpan"><input
-																id="datePickerArrival" type="text" class="inpPicker"
-																name="depDate2" style="width: 106px" title="오는날 입력"
-																data-buttontitle="오는날 달력 레이어 팝업 열기"
-																data-selectedtitle="오는날 선택됨"><a
-																class="calendarIcon" href="#" title="오는날 달력 레이어 팝업 열기"
-																style="width: 30px; height: 30px;"></a></span></span>
-												</label>
-
-											</span></td>
+											
 										</tr>
 									</tbody>
 								</table>
@@ -439,7 +396,7 @@ img {
 				<img
 					src="//story.airbusan.com/content/assets/images/reservation/img_reservation_step0101_ko.png"
 					alt="">
-<!-- 				<ol>
+				<!-- 				<ol>
 					<li>STEP1. 여정선택 (현재 단계)</li>
 					<li>STEP2. 탑승고객정보</li>
 					<li>STEP3. 부가서비스 선택</li>

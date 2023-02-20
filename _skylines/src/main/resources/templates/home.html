@@ -373,46 +373,61 @@ body {
 <div class="importantArea">
 		<div class="searchForFlightsArea jsTab" style="margin-left: 0px;">
 
-			<div class="box01 jsTabCont" style="">
+			<div class="box01 jsTabCont">
 				<div class="tblmainRowData01">
 					<form name="formDomesticAvail"
-						action="/web/individual/booking/flightsAvail" method="POST">
+						action="/booking" method="POST">
 
 
 						<ol>
-							<li class="radio radioType nomalA"><label
-								class="radioBox on">일반예약</label>
+							
 							<li class="radio"><label class="radioBox on"> <input
 									type="radio" name="domesticTripType" value="RT"
 									checked="checked"> 왕복
-							</label> <label class="radioBox"> <input type="radio"
-									name="domesticTripType" value="OW"> 편도
-							</label></li>
+							</label>
 						</ol>
 						<ol>
 						</ol>
 						<div class="select">
 							<span class="placeholder">출발지</span>
 							<ul>
-								<li>김포</li>
-								<li>인천</li>
-								<li>부산</li>
-								<li>대구</li>
-								<li>대구</li>
+								<li>김포(GMP)</li>
+								<li>울산(USN)</li>
+								<li>제주(CJU)</li>
+								<li>사천(HIN)</li>
+								<li>무안(MWX)</li>
 							</ul>
 						</div>
 						<div class="select select--white">
 							<span class="placeholder">도착지</span>
 							<ul>
-								<li>김포</li>
-								<li>인천</li>
-								<li>부산</li>
-								<li>대구</li>
+								<li>김포(GMP)</li>
+								<li>울산(USN)</li>
+								<li>제주(CJU)</li>
+								<li>사천(HIN)</li>
+								<li>무안(MWX)</li>
 							</ul>
 						</div>
-						<input type="text" name="datefilter" value="" />
-
-
+						<input type="text" name="datefilter" value=""  style="display: inline-block"/>
+						<div style="display: inline-block">
+							<p>성인</p>
+							<div id='resultA'>0</div>
+							<input type='button' onclick='count("plus")' value='+' /> 
+							<input type='button' onclick='count("minus")' value='-' />
+						</div>
+						<div style="display: inline-block">
+							<p>아동</p>
+							<div id='resultB'>0</div>
+							<input type='button' onclick='count1("plus")' value='+' /> <input
+								type='button' onclick='count1("minus")' value='-' />
+						</div>
+						<div style="display: inline-block">
+							<p>유아</p>
+							<div id='resultC'>0</div>
+							<input type='button' onclick='count2("plus")' value='+' /> <input
+								type='button' onclick='count2("minus")' value='-' />
+						</div>
+						<a href="/booking"><input type = 'submit' value='예약'/></a>
 					</form>
 				</div>
 
