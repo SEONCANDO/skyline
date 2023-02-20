@@ -484,9 +484,7 @@ body {
 			<div class="box01 jsTabCont" style="">
 				<div class="tblmainRowData01">
 					<form name="formDomesticAvail"
-						action="/web/individual/booking/flightsAvail" method="POST">
-
-
+						action="/" method="POST">
 						<ol>
 							<li class="radio radioType nomalA"><label
 								class="radioBox on">일반예약</label>
@@ -522,7 +520,7 @@ body {
 						<input type="text" name="datefilter" value=""  style="display: inline-block"/>
 						<div style="display: inline-block">
 							<p>성인</p>
-							<div id='resultA'>0</div>
+							<div id='resultA' name="adult">0</div>
 							<input type='button' onclick='count("plus")' value='+' /> 
 							<input type='button' onclick='count("minus")' value='-' />
 						</div>
@@ -538,7 +536,7 @@ body {
 							<input type='button' onclick='count2("plus")' value='+' /> <input
 								type='button' onclick='count2("minus")' value='-' />
 						</div>
-						<input type = 'button' value='예약' onClick="location.href='/booking.html'"/>
+						<button type = 'submit'>예약</button>
 					</form>
 				</div>
 

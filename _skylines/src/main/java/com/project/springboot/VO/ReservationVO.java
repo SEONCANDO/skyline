@@ -14,5 +14,7 @@ public class ReservationVO {
 	private int flightScheduleNum;
 	private int fromPlatformNum;
 	private int toPlatformNum;
+	private int adult;
+	private int children;
 	private String userId;
 }

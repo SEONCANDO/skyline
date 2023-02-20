@@ -3,6 +3,16 @@
 	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 <head>
 <meta charset="UTF-8">
+<!-- 예약 달력 cdn -->
+
+<script type="text/javascript"
+	src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+<script type="text/javascript"
+	src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+<script type="text/javascript"
+	src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+<link rel="stylesheet" type="text/css"
+	href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
 <!-- CSS only -->
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
@@ -141,11 +151,10 @@ body {
 	margin-top: 30px;
 }
 
-.departCity {
+/* .departCity {
 	background: url(images/이륙.png) left center no-repeat;
 	background-size: 22px 11p;
-}
-
+} */
 .arriveCity {
 	background: url(/images/착륙.png) left center no-repeat;
 	background-size: 22px 11px;
@@ -273,14 +282,151 @@ body {
 	width: auto;
 	height: 35px;
 }
-.hShortcut{
-    text-decoration: none;
-    color: white;
-    font-size: 13px;
-    padding: 0 9px 0 12px;    
-    line-height: 35px;
-    display: flex;
-    justify-content: space-around;
+
+.hShortcut {
+	text-decoration: none;
+	color: white;
+	font-size: 13px;
+	padding: 0 9px 0 12px;
+	line-height: 35px;
+	display: flex;
+	justify-content: space-around;
+}
+
+.gnb {
+	margin-top: 25px;
+}
+
+.depth01Lists a {
+	text-decoration: none;
+	color: black;
+	letter-spacing: -2px;
+	font-size: 20px;
+	margin-left: 50px;
+}
+
+.importantArea {
+	display: flex;
+	list-style: none;
+	justify-content: space-around;
+	margin-top: 65px
+}
+
+.radio {
+	margin-left: -70px;
+}
+
+.nomalA {
+	margin-top: -120px;
+}
+
+.place {
+	display: inline-block;
+}
+
+@import
+	"https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"
+	;
+
+/* *, *:after, *:before { */
+/* 	box-sizing: border-box; */
+/* } */
+
+/* html { */
+/* 	box-sizing: inherit; */
+/* 	background: -webkit-linear-gradient(right, #8e9eab, #eef2f3); */
+/* 	background: linear-gradient(to left, #8e9eab, #eef2f3); */
+/* } */
+
+/* body { */
+/* 	margin: 10% auto; */
+/* 	text-align: center; */
+/* 	font-size: 12px; */
+/* } */
+.select {
+	position: relative;
+	display: inline-block;
+	margin: 0px;
+	width: 150px;
+	max-width: 325px;
+	color: #cccccc;
+	vertical-align: middle;
+	text-align: left;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	-webkit-touch-callout: none;
+}
+
+.select .placeholder {
+	position: relative;
+	display: block;
+	background-color: #393d41;
+	z-index: 1;
+	padding: 1em;
+	border-radius: 2px;
+	cursor: pointer;
+}
+
+.select .placeholder:hover {
+	background: #34383c;
+}
+
+.select .placeholder:after {
+	position: absolute;
+	right: 1em;
+	top: 50%;
+	-webkit-transform: translateY(-50%);
+	transform: translateY(-50%);
+	font-family: 'FontAwesome';
+	content: '\f078';
+	z-index: 10;
+}
+
+.select.is-open .placeholder:after {
+	content: '\f077';
+}
+
+.select.is-open ul {
+	display: block;
+}
+
+.select.select--white .placeholder {
+	background: #fff;
+	color: #999;
+}
+
+.select.select--white .placeholder:hover {
+	background: blue;
+}
+
+.select ul {
+	display: none;
+	position: absolute;
+	overflow: hidden;
+	width: 100%;
+	background: #fff;
+	border-radius: 2px;
+	top: 100%;
+	left: 0;
+	list-style: none;
+	margin: 5px 0 0 0;
+	padding: 0;
+	z-index: 100;
+}
+
+.select ul li {
+	display: block;
+	text-align: left;
+	padding: 0.8em 1em 0.8em 1em;
+	color: #999;
+	cursor: pointer;
+}
+
+.select ul li:hover {
+	background: #4ebbf0;
+	color: #fff;
 }
 </style>
 </head>
@@ -293,16 +439,12 @@ body {
 			<div class="col-sm-4">
 				<div class="hShortcut">
 					<div th:if="${session.user} == null">
-					<a href="/login">로그인</a>
-					<a href="/signup">회원가입</a> 
-					<a href="#">고객센터</a>
+						<a href="/login">로그인</a> <a href="/signup">회원가입</a> <a href="#">고객센터</a>
 					</div>
 					<div th:if="${session.user} != null">
-					<span th:if="${session.user.userFirstName} != null">[[${session.user.userFirstName}]]님</span>
-					<span th:if="${session.user.userFirstName} == null">[[${session.user.userId}]]님</span>
-					<a href="/logout">로그아웃</a> 
-					<a href="/mypage">마이페이지</a> 
-					<a href="#">고객센터</a>
+						<span th:if="${session.user.userFirstName} != null">[[${session.user.userFirstName}]]님</span>
+						<span th:if="${session.user.userFirstName} == null">[[${session.user.userId}]]님</span>
+						<a href="/logout">로그아웃</a> <a href="/mypage">마이페이지</a> <a href="#">고객센터</a>
 					</div>
 				</div>
 			</div>
@@ -370,71 +512,63 @@ body {
 		</div>
 
 		<!-- 중간 비행기 예약 -->
-<div class="importantArea">
-		<div class="searchForFlightsArea jsTab" style="margin-left: 0px;">
+		<div class="importantArea">
+			<div class="searchForFlightsArea jsTab" style="margin-left: 0px;">
 
-			<div class="box01 jsTabCont">
-				<div class="tblmainRowData01">
-					<form name="formDomesticAvail"
-						action="/booking" method="POST">
+				<div class="box01 jsTabCont" style="">
+					<div class="tblmainRowData01">
+						<form name="formDomesticAvail" action="/" method="POST">
+							<ol>
+								<li class="radio radioType nomalA"><label
+									class="radioBox on">일반예약</label>
+								<li class="radio"><label class="radioBox on"> <input
+										type="radio" name="domesticTripType" value="RT"
+										checked="checked"> 왕복
+								</label></li>
+							</ol>
+							<ol>
+							</ol>
+							<div class="select">
+								<span class="placeholder">출발지</span>
+								<ul>
+									<li>김포(GMP)</li>
+									<li>울산(USN)</li>
+									<li>제주(CJU)</li>
+									<li>사천(HIN)</li>
+									<li>무안(MWX)</li>
+								</ul>
+							</div>
+							<div class="select select--white">
+								<span class="placeholder">도착지</span>
+								<ul>
+									<li>김포(GMP)</li>
+									<li>울산(USN)</li>
+									<li>제주(CJU)</li>
+									<li>사천(HIN)</li>
+									<li>무안(MWX)</li>
+								</ul>
+							</div>
+							<input type="text" name="datefilter" value=""
+								style="display: inline-block" />
+							<div style="display: inline-block">
+								<p>성인</p>
+								<div id='resultA' name="adult">0</div>
+								<input type='button' onclick='count("plus")' value='+' /> <input
+									type='button' onclick='count("minus")' value='-' />
+							</div>
+							<div style="display: inline-block">
+								<p>유아</p>
+								<div id='resultC'>0</div>
+								<input type='button' onclick='count2("plus")' value='+' /> <input
+									type='button' onclick='count2("minus")' value='-' />
+							</div>
+							<button type='submit'>예약</button>
+						</form>
+					</div>
 
-
-						<ol>
-							
-							<li class="radio"><label class="radioBox on"> <input
-									type="radio" name="domesticTripType" value="RT"
-									checked="checked"> 왕복
-							</label>
-						</ol>
-						<ol>
-						</ol>
-						<div class="select">
-							<span class="placeholder">출발지</span>
-							<ul>
-								<li>김포(GMP)</li>
-								<li>울산(USN)</li>
-								<li>제주(CJU)</li>
-								<li>사천(HIN)</li>
-								<li>무안(MWX)</li>
-							</ul>
-						</div>
-						<div class="select select--white">
-							<span class="placeholder">도착지</span>
-							<ul>
-								<li>김포(GMP)</li>
-								<li>울산(USN)</li>
-								<li>제주(CJU)</li>
-								<li>사천(HIN)</li>
-								<li>무안(MWX)</li>
-							</ul>
-						</div>
-						<input type="text" name="datefilter" value=""  style="display: inline-block"/>
-						<div style="display: inline-block">
-							<p>성인</p>
-							<div id='resultA'>0</div>
-							<input type='button' onclick='count("plus")' value='+' /> 
-							<input type='button' onclick='count("minus")' value='-' />
-						</div>
-						<div style="display: inline-block">
-							<p>아동</p>
-							<div id='resultB'>0</div>
-							<input type='button' onclick='count1("plus")' value='+' /> <input
-								type='button' onclick='count1("minus")' value='-' />
-						</div>
-						<div style="display: inline-block">
-							<p>유아</p>
-							<div id='resultC'>0</div>
-							<input type='button' onclick='count2("plus")' value='+' /> <input
-								type='button' onclick='count2("minus")' value='-' />
-						</div>
-						<a href="/booking"><input type = 'submit' value='예약'/></a>
-					</form>
 				</div>
-
 			</div>
 		</div>
-	</div>
-		
 		<!-- 중앙에어 수하물 -->
 		<div class="container">
 			<div class="lightning_banner lightning_banner_01">
@@ -453,55 +587,55 @@ body {
 		<!-- 6개의 여행 상품 -->
 
 		<h2 style="text-align: center; margin-top: 40px;">
-		에어중앙 고객들을 위한 <b>다양한 여행상품</b>
-	</h2>
-	<br>
-	<div class="container marketing">
+			에어중앙 고객들을 위한 <b>다양한 여행상품</b>
+		</h2>
+		<br>
+		<div class="container marketing">
 
-		<!-- Three columns of text below the carousel -->
-		<div class="row">
-			<div class="col-lg-2 centercenter">
-				<a href="#"><img src="images/중앙배너1.png"></a>
-				<p></p>
-				<h6>호텔</h6>
+			<!-- Three columns of text below the carousel -->
+			<div class="row">
+				<div class="col-lg-2 centercenter">
+					<a href="#"><img src="images/중앙배너1.png"></a>
+					<p></p>
+					<h6>호텔</h6>
 
+				</div>
+				<!-- /.col-lg-4 -->
+				<div class="col-lg-2 centercenter">
+					<a href="#"><img src="images/중앙배너2.png"></a>
+					<p></p>
+					<h6>렌터카</h6>
+
+				</div>
+				<!-- /.col-lg-4 -->
+				<div class="col-lg-2 centercenter">
+					<a href="#"><img src="images/중앙배너3.png"></a>
+					<p></p>
+					<h6>기내면세</h6>
+
+				</div>
+				<!-- /.col-lg-4 -->
+				<div class="col-lg-2 centercenter">
+					<a href="#"><img src="images/중앙배너4.png"></a>
+					<p></p>
+					<h6>와이파이</h6>
+
+				</div>
+				<!-- /.col-lg-4 -->
+				<div class="col-lg-2 centercenter">
+					<a href="#"><img src="images/중앙배너5.png"></a>
+					<p></p>
+					<h6>여행자보험</h6>
+
+				</div>
+				<!-- /.col-lg-4 -->
+				<div class="col-lg-2 centercenter">
+					<a href="#"><img src="images/중앙배너6.png"></a>
+					<p></p>
+					<h6>제휴 카드</h6>
+
+				</div>
 			</div>
-			<!-- /.col-lg-4 -->
-			<div class="col-lg-2 centercenter">
-				<a href="#"><img src="images/중앙배너2.png"></a>
-				<p></p>
-				<h6>렌터카</h6>
-
-			</div>
-			<!-- /.col-lg-4 -->
-			<div class="col-lg-2 centercenter">
-				<a href="#"><img src="images/중앙배너3.png"></a>
-				<p></p>
-				<h6>기내면세</h6>
-
-			</div>
-			<!-- /.col-lg-4 -->
-			<div class="col-lg-2 centercenter">
-				<a href="#"><img src="images/중앙배너4.png"></a>
-				<p></p>
-				<h6>와이파이</h6>
-
-			</div>
-			<!-- /.col-lg-4 -->
-			<div class="col-lg-2 centercenter">
-				<a href="#"><img src="images/중앙배너5.png"></a>
-				<p></p>
-				<h6>여행자보험</h6>
-
-			</div>
-			<!-- /.col-lg-4 -->
-			<div class="col-lg-2 centercenter">
-				<a href="#"><img src="images/중앙배너6.png"></a>
-				<p></p>
-				<h6>제휴 카드</h6>
-
-			</div>
-		</div>
 
 			<!-- 공지사항 -->
 
@@ -654,11 +788,104 @@ body {
 					</div>
 				</div>
 		</div>
+
 	</div>
 	</footer>
 
-	<script layout:fragment="script">
+	<script type="text/javascript">
+		$('.select').on('click', '.placeholder', function() {
+			var parent = $(this).closest('.select');
 
+			if (!parent.hasClass('is-open')) {
+				parent.addClass('is-open');
+				$('.select.is-open').not(parent).removeClass('is-open');
+			} else {
+				parent.removeClass('is-open');
+			}
+		}).on(
+				'click',
+				'ul>li',
+				function() {
+					var parent = $(this).closest('.select');
+					parent.removeClass('is-open').find('.placeholder').text(
+							$(this).text());
+				});
+	</script>
+	<script type="text/javascript">
+		$(function() {
+
+			$('input[name="datefilter"]').daterangepicker({
+				autoUpdateInput : false,
+				locale : {
+					cancelLabel : 'Clear'
+				}
+			});
+
+			$('input[name="datefilter"]').on(
+					'apply.daterangepicker',
+					function(ev, picker) {
+						$(this).val(
+								picker.startDate.format('MM/DD/YYYY') + ' - '
+										+ picker.endDate.format('MM/DD/YYYY'));
+					});
+
+			$('input[name="datefilter"]').on('cancel.daterangepicker',
+					function(ev, picker) {
+						$(this).val('');
+					});
+
+		});
+		function count(type) {
+			// 결과를 표시할 element
+			const resultElement = document.getElementById('resultA');
+
+			// 현재 화면에 표시된 값
+			let number = resultElement.innerText;
+
+			// 더하기/빼기
+			if (type === 'plus') {
+				number = parseInt(number) + 1;
+			} else if (type === 'minus') {
+				number = parseInt(number) - 1;
+			}
+
+			// 결과 출력
+			resultElement.innerText = number;
+		}
+		function count1(type) {
+			// 결과를 표시할 element
+			const resultElement = document.getElementById('resultB');
+
+			// 현재 화면에 표시된 값
+			let number = resultElement.innerText;
+
+			// 더하기/빼기
+			if (type === 'plus') {
+				number = parseInt(number) + 1;
+			} else if (type === 'minus') {
+				number = parseInt(number) - 1;
+			}
+
+			// 결과 출력
+			resultElement.innerText = number;
+		}
+		function count2(type) {
+			// 결과를 표시할 element
+			const resultElement = document.getElementById('resultC');
+
+			// 현재 화면에 표시된 값
+			let number = resultElement.innerText;
+
+			// 더하기/빼기
+			if (type === 'plus') {
+				number = parseInt(number) + 1;
+			} else if (type === 'minus') {
+				number = parseInt(number) - 1;
+			}
+
+			// 결과 출력
+			resultElement.innerText = number;
+		}
 	</script>
 
 </body>
