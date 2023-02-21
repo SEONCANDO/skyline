@@ -310,4 +310,9 @@ public class MyController {
 		session.getAttribute("user");
 		return "/bbs";
 	}
+	
+	@GetMapping("/a")
+	public void a() {
+		
+	}
 }

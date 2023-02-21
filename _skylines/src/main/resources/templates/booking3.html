@@ -527,7 +527,9 @@ tbody tr td{
 	     </div>
 	     
 	     <div class="tr mgt40 submitt">
-	      <input type="submit" name="payment" value="결제하기">
+	      <a href="#" id="kakao"><img src="images/카카오페이결제.png"></a>
+	      
+	      <input type="submit" name="payment" value="결제하기" style="margin-left:10px;">
 	     </div> 
 	    </form>
 	      
@@ -669,5 +671,24 @@ tbody tr td{
 	</div>
 	</footer>
 	
+<script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>	
+<script>
+$(function(){
+	 $('#kakao').click(function(){
+	  $.ajax({
+		url:'/booking3/kakaopay.cls',
+		data:'post',
+		dataType: 'json',
+		success:function(data){
+			var box = data.next_redirect_pc_url;
+			window.open(box);
+		},
+		error:function(error){
+			alert(error);  
+		}
+	  });
+	});
+ });
+</script>
 </body>
 </html>
