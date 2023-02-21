@@ -1,474 +1,934 @@
 <!DOCTYPE html>
-
 <html xmlns:th="http://www.thymeleaf.org"
-	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-	layout:decorate="~{/templates/home.html}">
+   xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+   layout:decorate="~{templates/home.html}">
 <head>
 <script type="text/javascript"
-	src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+   src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
 <script type="text/javascript"
-	src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+   src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
 <script type="text/javascript"
-	src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+   src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
 <link rel="stylesheet" type="text/css"
-	href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
-<script type="text/javascript">
-	$(function() {
-
-		$('input[name="datefilter"]').daterangepicker({
-			autoUpdateInput : false,
-			locale : {
-				cancelLabel : 'Clear'
-			}
-		});
-
-		$('input[name="datefilter"]').on(
-				'apply.daterangepicker',
-				function(ev, picker) {
-					$(this).val(
-							picker.startDate.format('MM/DD/YYYY') + ' - '
-									+ picker.endDate.format('MM/DD/YYYY'));
-				});
-
-		$('input[name="datefilter"]').on('cancel.daterangepicker',
-				function(ev, picker) {
-					$(this).val('');
-				});
-
-	});
-</script>
+   href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
 <style>
 body {
-	min-width: 1000px;
-	font-size: 13px;
-	font-family: "Nanum Gothic", dutom, Arial, sans-serif;
-	vertical-align: middle;
-	line-height: 20px;
-	color: #666;
+   min-width: 1000px;
+   font-size: 13px;
+   font-family: "Nanum Gothic", dutom, Arial, sans-serif;
+   vertical-align: middle;
+   line-height: 20px;
+   color: #666;
+}
+
+#contents {
+    min-height: 926px;
 }
 
 h3, ul, a, label, th, td, img, span {
-	margin: 0;
-	padding: 0;
-	border: 0;
+   margin: 0;
+   padding: 0;
+   border: 0;
 }
 
 a {
-	color: #666;
-	text-decoration: none;
+   color: #666;
+   text-decoration: none;
 }
 
-#container.noneSnb #contents .reservation {
-	padding: 65px 0 100px 0;
-	margin: 0 auto;
-	width: 1000px;
+.reservation {
+   padding: 65px 0 70px 0;
+   margin: 0 auto;
+   width: 1000px;
+   min-height: 926px;
 }
 
-/* .path {
-    position: absolute;
-    top: -40px;
-    right: 0;
-    height: 11px;
-} */
 .path .icon {
-	padding-right: 3px;
-	margin-top: 1px;
-	vertical-align: top;
+   padding-right: 3px;
+   margin-top: 1px;
+   vertical-align: top;
 }
 
 .icon {
-	overflow: hidden;
-	display: inline-block;
-	background:
-		url(//story.airbusan.com/content/assets/images/common/ico_total.png) 0
-		0 no-repeat;
+   overflow: hidden;
+   display: inline-block;
+   background:
+      url(//story.airbusan.com/content/assets/images/common/ico_total.png) 0
+      0 no-repeat;
 }
 
 .icon a {
-	overflow: hidden;
-	display: inline-block;
-	width: 100%;
-	height: 100%;
-	text-indent: -200px;
+   overflow: hidden;
+   display: inline-block;
+   width: 100%;
+   height: 100%;
+   text-indent: -200px;
 }
 
 .iconPathHome {
-	width: 9px;
-	height: 9px;
-	background-position: -150px 0;
+   width: 9px;
+   height: 9px;
+   background-position: -150px 0;
 }
 
 .path .pathLists {
-	display: inline-block;
-	margin-left: 6px;
-	padding-left: 12px;
-	background:
-		url(//story.airbusan.com/content/assets/images/common/icon_path_arrow01.gif)
-		no-repeat 0 2px;
-	font-size: 11px;
-	line-height: 11px;
-	vertical-align: top;
+   display: inline-block;
+   margin-left: 6px;
+   padding-left: 12px;
+   background:
+      url(//story.airbusan.com/content/assets/images/common/icon_path_arrow01.gif)
+      no-repeat 0 2px;
+   font-size: 11px;
+   line-height: 11px;
+   vertical-align: top;
 }
 
 .path .pathLists.on * {
-	font-weight: 700;
-	color: #33479e;
+   font-weight: 700;
+   color: #33479e;
 }
 
 .path .pathLists * {
-	font-size: 11px;
-	vertical-align: top;
+   font-size: 11px;
+   vertical-align: top;
 }
 
-#wrap .mgl40, .mgl40 {
-	margin-left: 40px;
+.mgl40, .mgl40 {
+   margin-left: 40px;
 }
 
-#wrap .mgt60, .mgt60 {
-	margin-top: 60px;
+.mgt60, .mgt60 {
+   margin-top: 60px;
 }
 
 div {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	display: block;
+   margin: 0;
+   padding: 0;
+   border: 0;
+   display: block;
 }
 
-ul {
-	display: block;
-	list-style-type: disc;
-	margin-block-start: 1em;
-	margin-block-end: 1em;
-	margin-inline-start: 0px;
-	margin-inline-end: 0px;
-	padding-inline-start: 40px;
-}
-
-/* .reservation .reservationSearch .box01 .searchTbl .fakeTbl>span {
-    display: table;
-    table-layout: fixed;
-} */
 table {
-	width: 100%;
-	min-width: 100%;
-	border-collapse: collapse;
-	border-spacing: 0;
+   width: 100%;
+   min-width: 100%;
+   border-collapse: collapse;
+   border-spacing: 0;
 }
 
 .reservation .reservationSearch .tabSearch {
-	background:
-		url(//story.airbusan.com/content/assets/images/reservation/bg_search_top.png)
-		repeat-x 0 100%;
+   background:
+      url(//story.airbusan.com/content/assets/images/reservation/bg_search_top.png)
+      repeat-x 0 100%;
 }
 
 .reservation .reservationSearch .box01 {
-	position: relative;
-	padding: 25px 31px 25px;
-	background:
-		url(//story.airbusan.com/content/assets/images/reservation/bg_search_bot.png)
-		no-repeat 0 100%;
+   position: relative;
+   padding: 25px 31px 25px;
+   background:
+      url(//story.airbusan.com/content/assets/images/reservation/bg_search_bot.png)
+      no-repeat 0 100%;
 }
 
 .reservation .reservationSearch .tabSearch li.on a {
-	color: #333;
-	border-bottom: 1px solid #FFF;
+   color: #333;
+   border-bottom: 1px solid #FFF;
 }
 
 .ctit {
-	font-weight: 700;
-	font-size: 38px;
-	line-height: 1em;
-	color: #333;
+   font-weight: 700;
+   font-size: 38px;
+   line-height: 1em;
+   color: #333;
 }
 
 .reservation .reservationSearch .tabSearch:after {
-	content: "";
-	display: block;
-	clear: both;
+   content: "";
+   display: block;
+   clear: both;
 }
 
 .bBtn01 * {
-	display: inline-block;
-	min-width: 128px;
-	height: 50px;
-	padding: 0 30px 0 25px;
-	color: #FFF;
-	font-size: 18px;
-	font-weight: 700;
-	text-align: center;
-	background-position: 100% -100px;
-	line-height: 50px;
+   display: inline-block;
+   min-width: 128px;
+   height: 50px;
+   padding: 0 30px 0 25px;
+   color: #FFF;
+   font-size: 18px;
+   font-weight: 700;
+   text-align: center;
+   background-position: 100% -100px;
+   line-height: 50px;
+   border: none;
+   border-radius: 5px;
+   margin-left: 450px;
 }
 
 .btn * {
-	display: inline-block;
-	background-image:
-		url(//story.airbusan.com/content/assets/images/common/btn_total.png);
+   display: inline-block;
+   background-image:
+      url(//story.airbusan.com/content/assets/images/common/btn_total.png);
 }
 
-#wrap .mgt20, .mgt20 {
-	margin-top: 20px;
-	margin-bottom: 20px;
-}
-
-.radioBox.on {
-	background:
-		url(//story.airbusan.com/content/assets/images/common/btn_radio_on.png)
-		no-repeat 0 0;
+.mgt20 {
+   margin-top: 20px;
+   margin-bottom: 20px;
 }
 
 .radioBox {
-	display: inline-block;
-	position: relative;
-	min-height: 18px;
-	padding-left: 24px;
-	font-size: 13px;
-	background:
-		url(//story.airbusan.com/content/assets/images/common/btn_radio_off.png)
-		no-repeat 0 0;
-	line-height: 18px;
+   display: inline-block;
+   position: relative;
+   min-height: 18px;
+   font-size: 15px;
+   line-height: 18px;
 }
 
 input[type=submit], input[type=button], label {
-	cursor: pointer;
+   cursor: pointer;
 }
 
 .reservation .reservationSearch .box01 .searchTbl th {
-	padding: 8px 0;
-	vertical-align: middle;
-	line-height: 15px;
+   padding: 8px 0;
+   vertical-align: middle;
+   line-height: 15px;
 }
 
 .tl {
-	text-align: left !important;
+   text-align: left !important;
 }
 
-.reservation .reservationSearch .box01 .searchTbl .fakeTbl {
-	height: 30px;
+.grown {
+    text-align: center;
+    font-weight: 700;
+    font-size: 15px;
+}
+
+.grown p {
+   margin-top: 0px !important;
+}
+
+#resultA, #resultC {
+   margin-bottom: 8px;
 }
 
 .reservation .reservationSearch .box01 .searchTbl td {
-	padding: 8px 3px;
-	vertical-align: top;
-	line-height: 15px;
+   padding: 8px 3px;
+   vertical-align: top;
+   line-height: 15px;
 }
 
 img {
-	vertical-align: top;
+   vertical-align: top;
 }
 
-.reservation .designNumberBoxWrap .val {
-	height: 28px;
-	text-align: center;
-	font-weight: 700;
-	color: #333;
+.mgt15, .mgt15 {
+   margin-top: 15px;
 }
 
-#wrap .mgt15, .mgt15 {
-	margin-top: 15px;
+.reservation .dateList {
+   position: relative;
+   width: 720px;
+   height: 53px;
+   padding-top: 1px;
+   padding-bottom: 2px;
+   background:
+      url(//story.airbusan.com/content/assets/images/reservation/bg_list_date.png)
+      no-repeat 0 0;
+}
+
+.reservation .dateList .dateUlist {
+   overflow: hidden;
+   width: 660px;
+   margin-left: 30px;
+}
+
+ul {
+   list-style: none;
+}
+
+.reservation .titFlightTo {
+   padding-left: 38px;
+   color: rgb(0, 95, 167);
+   font-size: 18px;
+   background:
+      url(//story.airbusan.com/content/assets/images/reservation/ico_airplan_to.png)
+      0px 0px no-repeat;
+   line-height: 24px;
+}
+
+.nativeTable01 thead th {
+   padding: 10px 0;
+   background-color: #fafafc;
+   color: #333;
+   border-bottom: 1px solid #b0bbc4;
+}
+
+.nativeTable01 {
+   overflow: hidden;
+   border-top: 2px solid #616e7b;
+   border-bottom: 1px solid #b0bbc4;
+}
+
+.nativeTable01 td {
+   border-left: 1px solid #efefef;
+   border-top: 1px solid #efefef;
+   text-align: center;
+   border-bottom: 1px solid #efefef;
+}
+
+a.btnPrev {
+   left: 0;
+   font-size: 0;
+   line-height: 0;
+   background:
+      url(//story.airbusan.com/content/assets/images/reservation/bg_btnPrev.png)
+      no-repeat 50% 50%;
+}
+
+a.btnNext {
+   right: 0;
+   font-size: 0px;
+   line-height: 0;
+   background:
+      url(//story.airbusan.com/content/assets/images/reservation/bg_btnNext.png)
+      no-repeat 50% 50%;
+} 
+
+.reservation .dateList>a {
+    position: absolute;
+    top: 0;
+    width: 30px;
+    height: 53px;
+}
+
+.dateUlist li {
+   float: left;
+   width: 131px;
+   height: 53px;
+   margin-left: 1px;
+   text-align: center;
+}
+
+.dateUlist li a {
+   display: block;
+   width: 100%;
+   height: 100%;
+   padding-top: 3px;
+}
+
+li a span.stamp {
+   margin-top: 14px;
+   display: block;
+   text-align: center;
+}
+
+.partitionCont {
+   position: relative;
+   float: left;
+   width: 720px;
+}
+
+.mgb50 {
+   margin-top: 50px;
+}
+
+.notAvailable {
+   line-height: 35px;
+}
+
+#wrap .nativeFlightCls label {
+   display: block;
+   line-height: 35px;
+}
+
+.dateUlist li a span {
+   display: block;
+   text-align: center;
+}
+
+.reservation .reservationArea {
+   width: 250px;
+   float: right;
+}
+
+.reservation .reservationArea .reservationAreaTit {
+   padding: 13px 0;
+   font-size: 16px;
+   border: 1px solid #c2cad0;
+   border-top: 2px solid #616e7b;
+   border-bottom: 1px solid #c2cad0;
+   background: #eef0f6;
+   line-height: 20px;
+   text-align: center;
+}
+
+.reservation .reservationArea .reservationAreaMid .emphasizeTxt p {
+    color: #ef36a7;
+    font-weight: 700;
+}
+
+#wrap .mgb10, .mgb10 {
+    margin-bottom: 10px;
+}
+
+.reservation .reservationArea .reservationAreaMid .period {
+    padding: 0 18px;
+    color: #333;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.reservation .reservationArea .reservationAreaMid .reservationAreaMidTb2 {
+    padding-bottom: 8px;
+    margin: 5px 18px 0;
+    border-top: 1px dotted #878787;
+}
+
+.reservation .reservationArea .reservationAreaMid .reservationAreaMidTb2 table tfoot.totalSum th {
+    text-align: left;
+    padding: 10px 0 0;
+}
+
+.reservation .reservationArea .reservationAreaMid .reservationAreaMidTb2 table tfoot.totalSum th {
+    font-size: 14px;
+    font-weight: 700;
+    border-top: 1px solid #c2cad0;
+}
+
+.reservation .reservationArea .reservationAreaBot {
+    margin-top: 10px;
+    padding: 25px 20px;
+    color: #FFF;
+    font-size: 16px;
+    background: #333;
+}
+
+.reservation .reservationArea .reservationAreaBot th {
+    text-align: left;
+}
+
+.tr {
+    text-align: right!important;
+    font-weight: 600;
+}
+
+.reservation .reservationArea .reservationAreaMid .reservationAreaMidTb2 table tbody td, .reservation .reservationArea .reservationAreaMid .reservationAreaMidTb2 table tbody th {
+    padding: 3px 0;
+    font-size: 12px;
+    font-weight: 400;
+    text-align: left;
+}
+
+.reservation .reservationArea .reservationAreaMid {
+    padding-top: 15px;
+    border: 1px solid #c2cad0;
+    border-top: none;
+}
+
+.reservation .reservationArea .reservationAreaMid .emphasizeTxt {
+    border-top: 1px solid #c2cad0;
+    padding: 10px;
+}
+
+.reservation .dateList .dateUlist li.on {
+    background: #005FA7;
+}
+
+.reservation .dateList .dateUlist li.on a {
+    color: #FFF;
 }
 </style>
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
 <body>
-	<div layout:fragment="content"></div>
-</body>
-<div id="container" class="noneSnb container_2018">
-	<div id="contents">
-		<div class="reservation">
-			<div class="ctitArea">
-				<h3 class="ctit">항공권 예매</h3>
-			</div>
-			<div
-				class="reservationSearch jsTab mgt60 nativeAvailSearchForm modeRT">
-				<div class="box01 jsTabCont1" style="BORDER: 1PX SOLID BLACK;">
-					<div class="searchTbl">
-						<div class="rdoTab">
-							<label class="radioBox nativeTripTypeRT on"> <input
-								type="radio" name="tripType" class="radioTripType" value="RT"
-								checked="checked">왕복
-							</label>
-						</div>
-						<div class="tripTypeOWRT" style="position: relative;">
-						
-							<form name="formSearchOWRT" action="/booking.gogo" method="post">
-								<table>
-									<!-- <caption>노선, 구간, 탑승객 정보으로 구성된 국제선 일반예약 검색입니다.</caption> -->
-									<colgroup>
-										<col style="width: 70px;">
-										<col style="width: 170px;">
-										<col style="width: 70px;">
-										<col style="width: 170px;">
-										<col>
-									</colgroup>
-									<tbody>
-										<tr>
-											<th class="tl">출발지</th>
-											<td><span class="selectbox" style="width: 150px;">
-													<span class="selectform"> <!-- <span class="txt"id="txtCareer">---- 한국 ----</span> -->
-														<span class="arrow"></span>
-												</span> <select name="depCity" title="여정 출발지" style="width: 150px;">
-														<option value="" data-ctlval1="KR1">---- 한국 ----</option>
-														<option value="GMP">김포(GMP)</option>
-														<option value="USN">울산(USN))</option>
-														<option value="CJU">제주(CJU)</option>
-														<option value="HIN">사천(HIN)</option>
-														<option value="MWX">무안(MWX)</option>
-												</select>
-											</span></td>
-											<th class="tl">도착지</th>
-											<td><span class="selectbox" style="width: 150px;">
-													<a href="#" onclick="checkDepEmpty(this);">
-														<span class="selectform"> <span class="txt"
-															id="txtCareer"></span> <span class="arrow"></span>
-													</span> <select name="arrCity" title="여정 도착지"
-														style="width: 150px;">
-															<option value="" data-ctlval1="KR1">---- 한국 ----</option>
-															<option value="GMP">김포(GMP)</option>
-															<option value="USN">울산(USN))</option>
-															<option value="CJU">제주(CJU)</option>
-															<option value="HIN">사천(HIN)</option>
-															<option value="MWX">무안(MWX)</option>
-													</select>
-												</a>
-											</span></td>
-											<td rowspan="2">
-												<div class="fakeTbl">
-													<div style="display: inline-block">
-														<p>성인</p>
-														<div id='resultA'>0</div>
-														<input type='button' onclick='count("plus")' value='+' />
-														<input type='button' onclick='count("minus")' value='-' />
-													</div>
-													<div style="display: inline-block">
-														<p>유아</p>
-														<div id='resultC'>0</div>
-														<input type='button' onclick='count2("plus")' value='+' />
-														<input type='button' onclick='count2("minus")' value='-' />
-													</div>
-												</div>
-											</td>
-										</tr>
-										<tr>
-											<th class="tl">일정</th>
-											<td><input type="text" name="datefilter" value="" /></td>
-											<!-- 											<td><label> <span class="jqueryDatePickerSpan"><span
-														class="jqueryDatePickerSpan"><input
-															id="datePickerDeparture" type="text" class="inpPicker"
-															name="depDate1" style="width: 106px" title="가는날 입력"
-															data-buttontitle="가는날 달력 레이어 팝업 열기"
-															data-selectedtitle="가는날 선택됨"><a
-															class="calendarIcon" href="#" title="가는날 달력 레이어 팝업 열기"
-															style="width: 30px; height: 30px;"></a></span></span>
-											</label></td> -->
+   <div layout:fragment="content">
+      <div id="container" class="noneSnb container_2018">
+         <div id="contents">
+            <div class="reservation">
+               <div class="ctitArea">
+                  <h3 class="ctit">항공권 예매</h3>
+               </div>
+               <div
+                  class="reservationSearch jsTab mgt60 nativeAvailSearchForm modeRT">
+                  <div class="box01 jsTabCont1" style="BORDER: 1PX SOLID BLACK;">
+                     <div class="searchTbl">
+                        <div class="rdoTab">
+                           <label class="radioBox nativeTripTypeRT on"> <input
+                              type="radio" name="tripType" class="radioTripType" value="RT"
+                              checked="checked">왕복
+                           </label>
+                        </div>
+                        <div class="tripTypeOWRT" style="position: relative;">
 
-										</tr>
-									</tbody>
-								</table>
-							</form>
-						</div>
-						<div class="tripTypeFREE">
-							<form name="formSearchFREE" action="/booking.go" method="post">
-								<table>
-									<!-- <caption>노선, 구간, 탑승객 정보로 구성된 국제선 일반예약 검색입니다.</caption> -->
-									<colgroup>
-										<col style="width: 80px;">
-										<col style="width: 60px;">
-										<col style="width: 170px;">
-										<col style="width: 60px;">
-										<col style="width: 170px;">
-										<col style="width: 60px;">
-										<col>
-									</colgroup>
-								</table>
-						   </form>
-						</div>
-					</div>
-				</div>
-				<div class="mgt20 tc">
-					<span class="btn bBtn01"><a href="#" id="buttonSearchAvail"
-						onclick="">검색</a></span>
-				</div>
-				
-			</div>
-			<div class="step memberStep mgt40 nativeSearchAfterShowing"
-				style="display: block;">
-				<img
-					src="//story.airbusan.com/content/assets/images/reservation/img_reservation_step0101_ko.png"
-					alt="">
-				<!-- 				<ol>
-					<li>STEP1. 여정선택 (현재 단계)</li>
-					<li>STEP2. 탑승고객정보</li>
-					<li>STEP3. 부가서비스 선택</li>
-					<li>STEP4. 항공권결제</li>
-				</ol> -->
-			</div>
-		</div>
-	</div>
+                           <form name="formSearchOWRT" action="/booking.gogo"
+                              method="post">
+                              <table>
+                                 <!-- <caption>노선, 구간, 탑승객 정보으로 구성된 국제선 일반예약 검색입니다.</caption> -->
+                                 <colgroup>
+                                    <col style="width: 70px;">
+                                    <col style="width: 170px;">
+                                    <col style="width: 70px;">
+                                    <col style="width: 170px;">
+                                    <col>
+                                 </colgroup>
+                                 <tbody>
+                                    <tr>
+                                       <th class="tl">출발지</th>
+                                       <td><span class="selectbox" style="width: 150px;">
+                                             <span class="selectform"> <!-- <span class="txt"id="txtCareer">---- 한국 ----</span> -->
+                                                <span class="arrow"></span>
+                                          </span> <select name="depCity" title="여정 출발지"
+                                             style="width: 150px;">
+                                                <option value="" data-ctlval1="KR1">---- 한국
+                                                   ----</option>
+                                                <option value="GMP">김포(GMP)</option>
+                                                <option value="USN">울산(USN))</option>
+                                                <option value="CJU">제주(CJU)</option>
+                                                <option value="HIN">사천(HIN)</option>
+                                                <option value="MWX">무안(MWX)</option>
+                                          </select>
+                                       </span></td>
+                                       <th class="tl">도착지</th>
+                                       <td><span class="selectbox" style="width: 150px;">
+                                             <a href="#" onclick="checkDepEmpty(this); return false;">
+                                                <span class="selectform"> <span class="txt"
+                                                   id="txtCareer"></span> <span class="arrow"></span>
+                                             </span> <select name="arrCity" title="여정 도착지"
+                                                style="width: 150px;">
+                                                   <option value="" data-ctlval1="KR1">---- 한국
+                                                      ----</option>
+                                                   <option value="GMP">김포(GMP)</option>
+                                                   <option value="USN">울산(USN))</option>
+                                                   <option value="CJU">제주(CJU)</option>
+                                                   <option value="HIN">사천(HIN)</option>
+                                                   <option value="MWX">무안(MWX)</option>
+                                             </select>
+                                          </a>
+                                       </span></td>
+                                       <td rowspan="2">
+                                          <div class="fakeTbl">
+                                             <div style="display: inline-block" class="grown">
+                                                <p>성인</p>
+                                                <div id='resultA'>0</div>
+                                                <input type='button' onclick='count("plus")' value='+'/>
+                                                <input type='button' onclick='count("minus")' value='-' />
+                                             </div>
+                                             <div style="display: inline-block" class="grown">
+                                                <p>유아</p>
+                                                <div id='resultC'>0</div>
+                                                <input type='button' onclick='count2("plus")' value='+' />
+                                                <input type='button' onclick='count2("minus")' value='-' />
+                                             </div>
+                                          </div>
+                                       </td>
+                                    </tr>
+                                    <tr>
+                                       <th class="tl">일정</th>
+                                       <td><input type="text" name="datefilter" value="" /></td>
+                                       <!--                                  <td><label> <span class="jqueryDatePickerSpan"><span
+                                          class="jqueryDatePickerSpan"><input
+                                             id="datePickerDeparture" type="text" class="inpPicker"
+                                             name="depDate1" style="width: 106px" title="가는날 입력"
+                                             data-buttontitle="가는날 달력 레이어 팝업 열기"
+                                             data-selectedtitle="가는날 선택됨"><a
+                                             class="calendarIcon" href="#" title="가는날 달력 레이어 팝업 열기"
+                                             style="width: 30px; height: 30px;"></a></span></span>
+                                 </label></td> -->
 
-</div>
+                                    </tr>
+                                 </tbody>
+                              </table>
+                           </form>
+                        </div>
+                        <div class="tripTypeFREE">
+                           <form name="formSearchFREE" action=" /booking.go" method="post">
+                              <table>
+                                 <!-- <caption>노선, 구간, 탑승객 정보로 구성된 국제선 일반예약 검색입니다.</caption> -->
+                                 <colgroup>
+                                    <col style="width: 80px;">
+                                    <col style="width: 60px;">
+                                    <col style="width: 170px;">
+                                    <col style="width: 60px;">
+                                    <col style="width: 170px;">
+                                    <col style="width: 60px;">
+                                    <col>
+                                 </colgroup>
+                              </table>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="mgt20 tc">
+                     <span class="btn bBtn01"><button type="submit" href="#"
+                           id="buttonSearchAvail">검색</button></span>
+                  </div>
+                  </form>
+               </div>
+               <div class="step memberStep mgt40 nativeSearchAfterShowing"
+                  style="display: block;">
+                  <img
+                     src="//story.airbusan.com/content/assets/images/reservation/img_reservation_step0101_ko.png"
+                     alt="">
+                  <!--             <ol>
+               <li>STEP1. 여정선택 (현재 단계)</li>
+               <li>STEP2. 탑승고객정보</li>
+               <li>STEP3. 부가서비스 선택</li>
+               <li>STEP4. 항공권결제</li>
+            </ol> -->
+               </div>
+
+               <div class="partitionCont">
+                  <div class="posR">
+                     <h4 class="titFlightTo ">
+                        1구간 <span> <label class="depCityName">부산</label> <img
+                           src="//story.airbusan.com/content/assets/images/reservation/bg_to_from.png"
+                           alt="에서"> <label class="arrCityName">서울(김포)</label> <label
+                           class="depDate_MMDDddd">02/20(월)</label>
+                        </span> <span class="currency">통화 : KRW</span>
+                     </h4>
+                  </div>
+                  <div class="dateList mgt20 dateRibbonPrice " data-dateselected="">
+                     <a href="#none" class="btnPrev" onclick="return false;">이전</a>
+                     <ul class="dateUlist" data-itinno="1">
+                        <li class="on"><a href="#none" class="buttonDateRibbon"
+                           data-depdate="20230220"><span class="stamp">02/20
+                                 (월)</span></a></li>
+                        <li class=""><a href="#none" class="buttonDateRibbon"
+                           data-depdate="20230221"><span class="stamp">02/21
+                                 (화)</span></a></li>
+                        <li class=""><a href="#none" class="buttonDateRibbon"
+                           data-depdate="20230222"><span class="stamp">02/22
+                                 (수)</span></a></li>
+                        <li class=""><a href="#none" class="buttonDateRibbon"
+                           data-depdate="20230223"><span class="stamp">02/23
+                                 (목)</span></a></li>
+                        <li class=""><a href="#none" class="buttonDateRibbon"
+                           data-depdate="20230224"><span class="stamp">02/24
+                                 (금)</span></a></li>
+                     </ul>
+                     <a href="#none" class="btnNext" onclick="return false;">이후</a>
+                  </div>
+                  <div class="scrollTbl mgt20">
+                     <div class="nativeTable01">
+                        <table>
+                           <colgroup>
+                              <col style="width: 140px;">
+                              <col style="width: 130px;">
+                              <col style="width: 150px;">
+                              <col style="width: 150px;">
+                              <col style="width: 150px;">
+                           </colgroup>
+                           <thead>
+                              <tr>
+                                 <th scope="col">출발-도착시간</th>
+                                 <th scope="col">항공편</th>
+                                 <th scope="col">특가항공권<br> <strong class="point01">(무료
+                                       위탁수하물 별도)</strong></th>
+                                 <th scope="col">실속항공권</th>
+                                 <th scope="col">일반항공권</th>
+                              </tr>
+                           </thead>
+                           <tbody class="nativeListFlight">
+                              <tr data-flightno="BX8803" data-flighttime="07:30 - 08:30">
+                                 <td rowspan="1">07:30 - 08:30</td>
+                                 <td rowspan="1">BX8803</td>
+                                 <td class="nativeFlightCls">
+                                    <div class="notAvailable">마감</div>
+                                 </td>
+                                 <td class="nativeFlightCls">
+                                    <div class="notAvailable">마감</div>
+                                 </td>
+                                 <td class="nativeFlightCls">
+                                    <div class="infoToolTip" style="display: none;">
+                                       <h3>운임종류</h3>
+                                       <p class="nativeFareTypeName">일반 항공운임 (A)</p>
+                                       <h3>여정변경</h3>
+                                       <p>가능</p>
+
+                                       <h3>환불수수료</h3>
+                                       <p>운임규정 필독사항 참고</p>
+
+                                       <h3>스탬프 적립</h3>
+                                       <p>가능</p>
+                                       <h3>무료 위탁수하물</h3>
+                                       <p>1개/15kg(유아 미제공)</p>
+                                    </div> <label class="nativeClsLabel" data-itinno="2"
+                                    data-flightno="BX8803" data-cls="A" data-subcls="">
+                                       <input type="radio" name="itinNo2_flightNo_subCls"
+                                       value="BX8803_"> <span class="nativePrice"
+                                       data-value="86000">86,000</span>
+                                 </label>
+                                 </td>
+                              </tr>
+                           </tbody>
+                        </table>
+                     </div>
+                  </div>
+
+                  <div class="nativeAvail mgb50" data-itinno="2" data-depcity="GMP"
+                     data-arrcity="PUS" data-depdate="20230221">
+                     <div class="posR">
+                        <h4 class="titFlightTo ">
+                           2구간 <span> <label class="depCityName">서울(김포)</label> <img
+                              src="//story.airbusan.com/content/assets/images/reservation/bg_to_from.png"
+                              alt="에서"> <label class="arrCityName">부산</label> <label
+                              class="depDate_MMDDddd">02/21(화)</label>
+                           </span> <span class="currency">통화 : KRW</span>
+                        </h4>
+                     </div>
+                     <div class="dateList mgt20 dateRibbonPrice " data-dateselected="">
+                        <a href="#none" class="btnPrev" onclick="return false;"><</a>
+                        <ul class="dateUlist" data-itinno="2">
+                           <li class=""><a href="#none" class="buttonDateRibbon"
+                              data-depdate="20230220"><span class="stamp">02/20
+                                    (월)</span></a></li>
+                           <li class="on"><a href="#none" class="buttonDateRibbon"
+                              data-depdate="20230221"><span class="stamp">02/21
+                                    (화)</span></a></li>
+                           <li class=""><a href="#none" class="buttonDateRibbon"
+                              data-depdate="20230222"><span class="stamp">02/22
+                                    (수)</span></a></li>
+                           <li class=""><a href="#none" class="buttonDateRibbon"
+                              data-depdate="20230223"><span class="stamp">02/23
+                                    (목)</span></a></li>
+                           <li class=""><a href="#none" class="buttonDateRibbon"
+                              data-depdate="20230224"><span class="stamp">02/24
+                                    (금)</span></a></li>
+                        </ul>
+                        <a href="#none" class="btnNext" onclick="return false;">></a>
+                     </div>
+                     <div class="scrollTbl mgt20">
+                        <div class="nativeTable01">
+                           <table>
+                              <colgroup>
+                                 <col style="width: 140px;">
+                                 <col style="width: 130px;">
+                                 <col style="width: 150px;">
+                                 <col style="width: 150px;">
+                                 <col style="width: 150px;">
+                              </colgroup>
+                              <thead>
+                                 <tr>
+                                    <th scope="col">출발-도착시간</th>
+                                    <th scope="col">항공편</th>
+                                    <th scope="col">특가항공권<br> <strong class="point01">(무료
+                                          위탁수하물 별도)</strong></th>
+                                    <th scope="col">실속항공권</th>
+                                    <th scope="col">일반항공권</th>
+                                 </tr>
+                              </thead>
+                              <tbody class="nativeListFlight">
+                                 <tr data-flightno="BX8803" data-flighttime="07:30 - 08:30">
+                                    <td rowspan="1">07:30 - 08:30</td>
+                                    <td rowspan="1">BX8803</td>
+                                    <td class="nativeFlightCls">
+                                       <div class="notAvailable">마감</div>
+                                    </td>
+                                    <td class="nativeFlightCls">
+                                       <div class="notAvailable">마감</div>
+                                    </td>
+                                    <td class="nativeFlightCls">
+                                       <div class="infoToolTip" style="display: none;">
+                                          <h3>운임종류</h3>
+                                          <p class="nativeFareTypeName">일반 항공운임 (A)</p>
+                                          <h3>여정변경</h3>
+                                          <p>가능</p>
+
+                                          <h3>환불수수료</h3>
+                                          <p>운임규정 필독사항 참고</p>
+
+                                          <h3>스탬프 적립</h3>
+                                          <p>가능</p>
+                                          <h3>무료 위탁수하물</h3>
+                                          <p>1개/15kg(유아 미제공)</p>
+                                       </div> <label class="nativeClsLabel" data-itinno="2"
+                                       data-flightno="BX8803" data-cls="A" data-subcls="">
+                                          <input type="radio" name="itinNo2_flightNo_subCls"
+                                          value="BX8803_"> <span class="nativePrice"
+                                          data-value="86000">86,000</span>
+                                    </label>
+                                    </td>
+                                 </tr>
+                              </tbody>
+                           </table>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+
+               <div class="reservationArea">
+                  <div class="reservationFix">
+                     <div class="reservationAreaTit mgt20 nativeSummary"
+                        style="display: block; margin-bottom: 0 !important;">
+                        <strong class="iconReturn">선택항공편</strong>
+                     </div>
+                     <div class="reservationAreaMid nativeSummary "
+                        style="display: block;">
+                        <div class="nativeSummaryItinerary">
+                           <p class="period mgb10">
+                              1구간 : 부산 - 서울(김포)<br> <span>2023/02/21 (화) 18:00 -
+                                 19:00</span>
+                           </p>
+                           <p class="period mgb10">
+                              2구간 : 서울(김포) - 부산<br> <span>2023/02/21 (화) 20:10 -
+                                 21:10</span>
+                           </p>
+                        </div>
+                        <div class="reservationAreaMidTb2">
+                           <table>
+                              <colgroup>
+                                 <col>
+                                 <col style="width: 60px;">
+                                 <col>
+                              </colgroup>
+                              <tbody class="tbodySummaryPassenger">
+                                 <tr>
+                                    <th scope="row">성인</th>
+                                    <td><strong>1명</strong></td>
+                                    <td class="tr"><strong><span
+                                          class="nativePrice" data-value="172000">172,000</span></strong> <strong>KRW</strong>
+                                    </td>
+                                 </tr>
+                                 <tr class="bdTop">
+                                    <th scope="row" colspan="2">공항사용료</th>
+                                    <td class="tr"><strong><span
+                                          class="nativeTotalTax nativePrice" data-value="8000">8,000</span></strong>
+                                       <span class="nativeViewCurrency">KRW</span></td>
+                                 </tr>
+                                 <tr class="pdBottom">
+                                    <th scope="row" colspan="2">유류할증료</th>
+                                    <td class="tr"><strong><span
+                                          class="nativeTotalFuel nativePrice" data-value="26400">26,400</span></strong>
+                                       <span class="nativeViewCurrency">KRW</span></td>
+                                 </tr>
+                              </tbody>
+                              <tfoot class="totalSum">
+                                 <tr>
+                                    <th scope="col" colspan="3">지불예상</th>
+                                 </tr>
+                                 <tr>
+                                    <td class="tr" colspan="3"><strong><span
+                                          class="nativeTotalPrice nativePrice" data-value="206400">206,400</span></strong>
+                                       <span class="nativeViewCurrency">KRW</span></td>
+                                 </tr>
+                              </tfoot>
+                           </table>
+                        </div>
+                        <div class="emphasizeTxt">
+                           <p>상기 운임은 결제완료 전까지 좌석상황에 따라 실시간 변동될 수 있습니다.</p>
+                           <p class="bpTaxInfo">
+                              <br>※ 한국출발 세금(BP)은 국제여객공항이용료 12,000원(인천 발 17,000원), 출국납부금
+                              10,000원, 국제빈곤퇴치기여금 1,000원이 포함되어 있습니다.
+                           </p>
+                        </div>
+                     </div>
+                     <div class="reservationAreaBot nativeSummary"
+                        style="display: block;">
+                        <table>
+                           <colgroup>
+                              <col>
+                           </colgroup>
+                           <tbody>
+                              <tr>
+                                 <th scope="col">지불예상 총액</th>
+                              </tr>
+                              <tr>
+                                 <td class="tr"><span
+                                    class="nativeTotalTotal nativePrice" data-value="206400">206,400</span>
+                                    <span class="nativeViewCurrency">KRW</span></td>
+                              </tr>
+                           </tbody>
+                        </table>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
 </body>
 <script>
-	function count(type) {
-		// 결과를 표시할 element
-		const resultElement = document.getElementById('resultA');
+   function count(type) {
+      // 결과를 표시할 element
+      const resultElement = document.getElementById('resultA');
 
-		// 현재 화면에 표시된 값
-		let number = resultElement.innerText;
+      // 현재 화면에 표시된 값
+      let number = resultElement.innerText;
 
-		// 더하기/빼기
-		
-		if (type === 'plus') {
-			number = parseInt(number) + 1;
-		} else if (number >= 1 ) {
-		 if (type === 'minus') {
-			number = parseInt(number) - 1;
-		}
-		}
+      // 더하기/빼기
 
-		// 결과 출력
-		resultElement.innerText = number;
-	}
-	function count1(type) {
-		// 결과를 표시할 element
-		const resultElement = document.getElementById('resultB');
+      if (type === 'plus') {
+         number = parseInt(number) + 1;
+      } else if (number >= 1) {
+         if (type === 'minus') {
+            number = parseInt(number) - 1;
+         }
+      }
 
-		// 현재 화면에 표시된 값
-		let number = resultElement.innerText;
+      // 결과 출력
+      resultElement.innerText = number;
+   }
+   function count1(type) {
+      // 결과를 표시할 element
+      const resultElement = document.getElementById('resultB');
 
-		// 더하기/빼기
-		if (type === 'plus') {
-			number = parseInt(number) + 1;
-		} else if (number >= 1 ) {
-		 if (type === 'minus') {
-			number = parseInt(number) - 1;
-		}
-		}
+      // 현재 화면에 표시된 값
+      let number = resultElement.innerText;
 
-		// 결과 출력
-		resultElement.innerText = number;
-	}
-	function count2(type) {
-		// 결과를 표시할 element
-		const resultElement = document.getElementById('resultC');
+      // 더하기/빼기
+      if (type === 'plus') {
+         number = parseInt(number) + 1;
+      } else if (number >= 1) {
+         if (type === 'minus') {
+            number = parseInt(number) - 1;
+         }
+      }
 
-		// 현재 화면에 표시된 값
-		let number = resultElement.innerText;
+      // 결과 출력
+      resultElement.innerText = number;
+   }
+   function count2(type) {
+      // 결과를 표시할 element
+      const resultElement = document.getElementById('resultC');
 
-		// 더하기/빼기
-		if (type === 'plus') {
-			number = parseInt(number) + 1;
-		} else if (number >= 1 ) {
-		 if (type === 'minus') {
-			number = parseInt(number) - 1;
-		}
-		}
+      // 현재 화면에 표시된 값
+      let number = resultElement.innerText;
 
-		// 결과 출력
-		resultElement.innerText = number;
-	}
+      // 더하기/빼기
+      if (type === 'plus') {
+         number = parseInt(number) + 1;
+      } else if (number >= 1) {
+         if (type === 'minus') {
+            number = parseInt(number) - 1;
+         }
+      }
+
+      // 결과 출력
+      resultElement.innerText = number;
+   }
 </script>
+<script type="text/javascript">
+   $(function() {
 
+      $('input[name="datefilter"]').daterangepicker({
+         autoUpdateInput : false,
+         locale : {
+            cancelLabel : 'Clear'
+         }
+      });
+
+      $('input[name="datefilter"]').on(
+            'apply.daterangepicker',
+            function(ev, picker) {
+               $(this).val(
+                     picker.startDate.format('MM/DD/YYYY') + ' - '
+                           + picker.endDate.format('MM/DD/YYYY'));
+            });
+
+      $('input[name="datefilter"]').on('cancel.daterangepicker',
+            function(ev, picker) {
+               $(this).val('');
+            });
+
+   });
+</script>
 </html>
