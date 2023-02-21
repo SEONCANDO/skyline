@@ -277,4 +277,19 @@ public class MyController {
 		bbsMapper.delete(bbsId);
 		return "redirect:/bbs";
 	}
+	
+	@GetMapping("/myPage2")
+	public void myPage2() {
+		
+	}
+	
+	@GetMapping("/booking")
+	public void booking() {
+		
+	}
+	
+	@GetMapping("/booking2")
+	public void booking2() {
+		
+	}
 }
