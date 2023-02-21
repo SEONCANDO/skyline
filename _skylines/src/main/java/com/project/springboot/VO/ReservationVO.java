@@ -1,20 +1,26 @@
 package com.project.springboot.VO;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
+import org.springframework.format.annotation.DateTimeFormat;
+
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 @Data
-@NoArgsConstructor
-@AllArgsConstructor
-@Builder
 public class ReservationVO {
+	
 	private int reservationNum;
+	private String userId;
 	private int flightScheduleNum;
 	private int fromPlatformNum;
 	private int toPlatformNum;
-	private int adult;
-	private int children;
-	private String userId;
+	private int agedPerson;
+	private int youngPerson;
+	private int totalPrice;
+	private String flightTicket;
+	
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
+	private DateTimeFormat toTime;
+	private DateTimeFormat fromTime;
+	
+
+	
 }

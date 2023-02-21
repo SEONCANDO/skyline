@@ -7,4 +7,16 @@
 	<select id="selectAll" resultType="com.project.springboot.VO.ReservationVO">
 		select * from Reservation
 	</select>
+
+	<insert id="insert">
+	insert into reservation ( reservationNum, userId, flightScheduleNum,fromPlatformNum,
+	toPlatformNum,agedPerson,youngPerson,youngPerson,totalPrice,flightTicket, toTime
+	,fromTime ) values (#{reservationNum}, #{userId},#{flightScheduleNum},#{fromPlatformNum},
+	#{toPlatformNum},#{agedPerson},#{youngPerson},#{totalPrice},#{flightTicket},#{toTime},#{fromTime}) 
+	</insert>
+	
+	<delete id="delete"> 
+        delete from reservation where reservationNum = #{reservationNum} 
+    </delete>    
+	
 </mapper>
