@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+
+<!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+.twoblock {
+	height: 35px;
+	background-color: #015fa9;
+}
+
+.oneblock {
+	height: 83px;
+	border-bottom: 2px solid #015fa9;
+}
+
+.hShortcut a {
+	top: 6px;
+	right: 120px;
+	height: auto;
+	text-decoration: none;
+	color: white;
+	font-size: 13px;
+	padding: 0 9px 0 12px;
+}
+
+.gnb {
+	margin-top: 25px;
+}
+
+.depth01Lists a {
+	text-decoration: none;
+	color: black;
+	letter-spacing: -2px;
+	font-size: 20px;
+	margin-left: 50px;
+}
+
+.row {
+ height: 100%;
+}
+
+#snb {
+ position: absolute;
+ width: 210px;
+ min-height: 800px;
+ z-index: 1;
+}
+
+.subTitBox {
+	background-color: #005FA7;
+	padding: 60px 20px 20px;
+	text-align:center;
+}
+
+.snbTit {
+	font-size: 24px;
+	font-weight: 700;
+	color: #fff;
+	line-height: 1em;
+	text-align: left;
+}
+
+depth02Lists{
+  border-top: 1px solid #ddd;
+  
+}
+
+.text1 {
+	color: #333;
+	font-size: 18px;
+	letter-spacing: -3px;
+	text-decoration: none;
+	text-align: center;
+	
+}
+
+.mgt60 {
+ min-height: 150px;
+ margin-top: 30px;
+}
+
+.ctit {
+ margin-top: 30px;
+ font-weight: 700;
+ font-size: 38px;
+ line-height: 1em;
+ color: #333;
+}
+
+.table3 {
+ width: 100%;
+ min-width: 100%;
+ border-collapse: collapse;
+ border-spacing: 0;
+}
+
+
+
+tbody tr td{
+ padding: 15px 0 15px 25px;
+ vertical-align: middle;
+}
+
+
+.borderRight {
+ border-right: 1px solid #efefef;
+}
+
+.tbody {
+ border : 1px solid #efefef;
+}
+
+.partitionCont {
+ position: relative;
+ float: left;
+ width: 720px;
+}
+
+.infoBox {
+ position: relative;
+ padding: 20px;
+ border: 1px solid #ddd;
+ background-color: #f7f7f7;
+ font-size: 12px;
+}
+
+.point01 {
+ color : #005fa7!important;
+}
+
+.tblColData01 thead th {
+ padding: 10px 0;
+ background-color: #fafafc;
+ color: #333;
+ border-bottom: 1px solid #b0bbc4;
+}
+
+.nativePassenger td {
+ font-size: 12px;
+}
+
+.imgback {
+ width: 250px;
+ height: 170px;
+}
+
+.summaryFare{
+ width: 250px;
+}
+
+.reservationAreaTit {
+ padding: 13px 0;
+ font-size: 16px;
+ border: 1px solid #c2cad0;
+ border-top: 2px solid #616e7b;
+ border-bottom: 1px solid #c2cad0;
+ background: #eef0f6;
+ line-height: 20px;
+ text-align: center;
+}
+
+.reservationAreaMid {
+ padding-top: 15px;
+ border: 1px solid #c2cad0;
+ border-top: none;
+}
+
+.period {
+ padding: 0 18px;
+ color: #333;
+ font-size: 14px;
+ font-weight: 700;
+}
+
+.reservationAreaMidTb {
+ padding-bottom: 8px;
+ border-top: 1px dotted #878787;
+}
+
+.reservationAreaMidTb td{
+ padding: 3px 0;
+ font-size: 12px;
+ font-weight: 400;
+}
+
+.summaryFare table{
+ width:250px;
+ 
+}
+
+.totalSum {
+ border-top: 1px solid #c2cad0;
+ font-size: 14px;
+ padding: 10px 0;
+ color: #333;
+}
+
+.reservationAreaBot {
+ margin-top: 10px;
+ padding: 25px 20px;
+ color: #fff;
+ font-size: 16px;
+ background: #333;
+}
+
+.telInfo {
+	list-style: none;
+	display: flex;
+	margin-top: 70px;
+	justify-content: space-between;
+	padding-left: 0px;
+}
+
+.reser-tel1 {
+	font-weight: 400;
+	font-size: 23px;
+	color: #0072bc;
+	margin-bottom: 10px;
+}
+
+.fotBox {
+	border-bottom: 1px solid #C0C0C0;
+}
+
+.smallTxt {
+	color: #333;
+	font-size: 15px;
+}
+
+.footername {
+	text-decoration: none;
+	font-size: 12px;
+	color: black;
+}
+
+.footername::before {
+	content: ' ';
+	position: absoulute;
+	top: 50%;
+	left: -10px;
+	width: 1px;
+	height: 11px;
+	margin-top: -5px;
+	background-color: #6c6c6c;
+}
+
+.radio {
+	list-style: none;
+}
+
+.radioBox {
+	width: 90px;
+	padding: 11px 0;
+	text-align: center;
+	border-radius: 3px;
+	background: rgba(30, 64, 154, 7);
+	min-width: 68px;
+	font-weight: 600;
+	font-size: 15px;
+	color: #fff;
+	display: inline-block;
+	position: relative;
+	min-height: 18px;
+	line-height: 18px;
+}
+
+.searchForFlightsArea {
+	width: 1100px;
+	height: 152px;
+	left: 0;
+/* 	top: 467px; */
+	border-radius: 5px;
+	padding: 20px 20px 20px 90px;
+	box-sizing: border-box;
+	border: 2px solid black;
+	margin-top: 30px;
+	text-align: center;
+}
+
+.bottomBoxBooking {
+ clear: both;
+ float: left;
+ width: 720px;
+}
+
+.bBtn01 {
+ display: inline-block;
+ min-width: 128px;
+ height: 50px;
+ padding: 0 30px 0 25px;
+ color: #fff;
+ font-size: 18px;
+ font-weight: 700;
+ text-align: center;
+ background-position: 100% -100px;
+ line-height: 50px;
+ background-color: #005fa7;
+ margin-left: 300px;
+ margin-bottom: 40px;
+ border: 0px;
+}
+
+.sumData{
+ position: relative;
+ margin-top: 20px;
+ padding: 10px 0;
+ color: #fff;
+ background: #333;
+}
+.sumData > strong {
+ position: absoulte;
+ top: 16px;
+ left: 30px;
+ font-size: 18px;
+ margin-left: 10px;
+}
+
+.sumData > p {
+ padding-right: 25px;
+ text-align: right;
+}
+
+.sumData>p>strong{
+ font-size: 24px;
+ line-height: 30px;
+}
+.sumData>p>strong>span {
+ font-size: 26px;
+ vertical-align: bottom;
+}
+
+.infoBox {
+ margin-top: 40px;
+}
+
+.submitt{
+ margin-top: 30px;
+ display:flex;
+ justify-content: center;
+
+}
+
+.submitt>input {
+ min-width: 128px;
+ height: 50px;
+ padding: 0 30px 0 25px;
+ color: #fff;
+ font-size: 18px;
+ font-weight: 700;
+ text-align: center;
+ background-position: 100%-100px;
+ line-height: 50px;
+ background-color: #005fa7;
+}
+</style>
+</head>
+<body>
+<!-- 헤더 -->
+
+	<div class="container-fluid">
+		<div class="row twoblock">
+			<div class="col-sm-8"></div>
+			<div class="col-sm-4">
+				<div class="hShortcut">
+					<div th:if="${session.user} == null">
+					<a href="/login">로그인</a>
+					<a href="/signup">회원가입</a> 
+					<a href="#">고객센터</a>
+					</div>
+					<div th:if="${session.user} != null">
+					<span th:if="${session.user.userFirstName} != null">[[${session.user.userFirstName}]]님</span>
+					<span th:if="${session.user.userFirstName} == null">[[${session.user.userId}]]님</span>
+					<a href="/logout">로그아웃</a> 
+					<a href="/mypage">마이페이지</a> 
+					<a href="#">고객센터</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="row oneblock">
+			<div class="col-sm-12" style="display: flex;">
+				<div class="container i2" style="max-width: 900px; display: flex;">
+					<div class="caicon" style="margin-top: 25px;">
+						<a href="/home"> <img src="images/img_logo.png">
+						</a>
+					</div>
+
+					<div class="gnb">
+						<div class="depth01">
+							<ul style="display: flex; list-style: none; margin-top: 6px;">
+								<li class="depth01Lists depth01List01"><a href="/booking"><b>항공권
+											예약</b></a></li>
+								<li class="depth01Lists depth01List02"><a href="/mypage"><b>마이
+											페이지</b></a></li>
+								<li class="depth01Lists depth01List03"><a href="/bbs"><b>공지
+											사항</b></a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<!-- 본문 -->
+	
+	<div class="container">
+	  <div class="ctitArea">
+	   <h3 class="ctit">국내선 예약</h3>
+	  </div>
+	  <div class="reservationSearch mgt60" style="margin-top:60px;">
+	   <div class="findTb1">
+	     <table class="table3">
+	       <colgroup style="display:table-column-group;">
+	        <col>
+	        <col>
+	        <col>
+	        <col style="width:45%;">
+	       </colgroup>
+	       <tbody class="tbody">
+	        <tr>
+	         <td>
+	          <strong class="sectionInfo">
+	           dd
+	          </strong>
+	         </td>
+	         <td>날짜</td>
+	         <td class="borderRight">편명</td>
+	         <td rowspan="2">
+	          <span class="btnTxt">인원</span>
+	         </td>
+	        </tr>
+	        <tr class="borderTop">
+	          <td>
+	           <strong class="sectionInfo">
+	           dd
+	           </strong>
+	          </td>
+	          <td>시간</td>
+	          <td class="borderRight">편명</td>
+	        </tr>
+	       </tbody>
+	     </table>
+	   </div>
+	  </div>
+	 </div>
+	 
+	 <div class="step memberStep mgt40" style="display: flex; justify-content: center;">
+	  <img src="//story.airbusan.com/content/assets/images/reservation/img_reservation_step03_ko.png" alt>
+	 </div>
+	 
+	 <!-- 왼쪽 라인 -->
+	  <div class="container">
+	 <div class="partitionR mgt40" style="margin-top:40px;">
+	 
+	  <div class="row">
+	   <div class="col-sm-8">
+	    <div class="partitionCont">
+	     <h4 class="ttit mgb20">탑승고객 정보 및 운임</h4>
+	     <div class="tblColData01">
+	      <table style="width:721px;">
+	       <thead>
+	         <tr>
+	          <th scope="col">구분</th>
+	          <th scope="col">탑승고객</th>
+	          <th scope="col">구간</th>
+	          <th scope="col">총액</th>
+	         </tr>
+	       </thead>
+	       <tbody>
+	         <tr>
+	          <td rowspan="2">성인</td>
+	          <td rowspan="2">이동규</td>
+	          <td>가는 여정</td>
+	          <td class="tr">
+	           <strong class="point01 nativePrice">111,100</strong>
+	          </td>
+	         </tr>
+	         <tr>
+	          <td>오는 여정</td>
+	          <td class="tr">
+	           <strong class="point01 nativePrice">111,100</strong>
+	         </tr>
+	       </tbody>
+	       
+	       <tfoot>
+	         <tr class="nativePromotionCouponSummary">
+	          <th scope="col" class="bdr t1" colspan="3" style="background: #fafafc; color:#000;">총 결제 금액</th>
+	          <td colspan="2" class="t1">222,200</td>
+	         </tr>
+	       </tfoot>
+	      </table>
+	       <h4 style="margin-top: 30px;">결제하기</h4>
+	       <div class="sumData">
+	        <strong>최종 결제 금액</strong>
+	        <p>
+	         <strong>
+	          <span class="nativePrice nativeTotalPayment">206,400</span>
+	         </strong>
+	        </p>
+	       </div>
+	     </div>
+	     
+	     <!-- 결제 창 -->
+	    <form name="Payment" method="post" action="">
+	     <input type="hidden" name="kakaopay">
+	     <div class="infoBox mgt20">
+	      <p class="mgt10">
+	       <input type="radio" name="paytype" id="kakaopay">
+	       <label for="kakaopay">
+	        <strong>카카오페이</strong>
+	       </label>
+	      </p>
+	      <p class="mgt10">
+	       <input type="radio" name="paytype" id="card">
+	       <label for="card">
+	        <strong>카드 결제</strong>
+	       </label>
+	      </p>
+	     </div>
+	     
+	     <div class="tr mgt40 submitt">
+	      <input type="submit" name="payment" value="결제하기">
+	     </div> 
+	    </form>
+	      
+	    </div>
+	     
+	     
+	    
+	   </div>
+	   <div class="col-sm-4">
+	   
+	    <div class="reservationArea">
+	     <div class="reservationBanner">
+	      <img src="images/무안.jpg" class="imgback">
+	     </div>
+	     <div class="summaryFare">
+	      <p class="fs14" style="font-size: 14px; margin-top:10px;">
+	       <strong class="point00">에어중앙 서비스 혜택</strong>
+	      </p>
+	      <p class="mgt05" style="font-size: 12px;">
+	       "항공료는 스마트하게, 서비스는 풍부하게"
+	       <br>
+	       "고객을 먼저 생각합니다."
+	      </p>
+	       
+	      
+	     
+	       
+	     </div>
+	    </div>
+	   </div>
+	 </div>
+	</div>
+	</div>
+	
+	
+	<!-- footer -->
+	<footer id="footer">
+
+				<div class="footer_2019">
+					<div>
+						<div class="fotTel" style="list-style: none;">
+							<div class="fotBox">
+								<ul class="telInfo">
+									<li>
+
+										<ul class="reser_tel" style="list-style: none;">
+											<li><b>예약센터</b>
+												<p class="reser-tel1">xxxx-xxxx</p>
+												<p class="smallTxt">09:00~19:00(연중무휴)</p></li>
+										</ul>
+									<li><b>단체문의</b><span class="smallTxt">(10명 이상)</span>
+										<p class="reser-tel1">xxxx-xxxx</p>
+										<p class="smallTxt">09:00~17:00(주말, 공휴일 제외)</p></li>
+									<li><b>마케팅/광고 문의</b>
+										<p class="reser-tel1">choongang.atsoft.net</p>
+										<p class="smallTxt">제휴, 광고 등 다양한 제안을 기다립니다.</p></li>
+
+									<li>
+										<p class="smallTxt">
+											<strong class="mgb05 disblock"><b>시스템 정기점검 안내</b></strong> <br>아래
+											점검시간 외에 이용해주시기 바랍니다.<br> <strong>수~월요일 </strong>
+											23:50~24:10<br> <strong>화요일 </strong> 23:00~24:00
+										</p>
+									</li>
+								</ul>
+								<div class="mobile">
+									<div class="mobile_app"></div>
+									<div class="mobile_app"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="fotTop">
+						<div class="fotBox">
+							<div class="row">
+								<div class="col-sm-8"
+									style="margin-top: 15px; display: flex; justify-content: space-around;">
+									<a href="#" class="footername">회사소개</a> <a href="#"
+										class="footername">투자정보</a> <a href="#" target="_new"
+										title="새창" class="footername">채용정보</a> <a href="#"
+										target="_new" class="footername">운송약관</a> <a href="#"
+										target="_new" class="footername">이용약관</a> <a href="#"
+										target="_new" class="footername"> <span
+										style="font-weight: 900 !important; padding-bottom: 2px;">개인정보처리방침</span></a>
+									<a href="#" target="_new" class="footername">이메일무단수집거부</a> <a
+										href="#" onclick="popupHelpRemote();" title="새창"
+										class="footername">인터넷 도우미</a> <br>
+								</div>
+
+								<div class="col-sm-4"
+									style="display: flex; justify-content: flex-end;">
+									<a href="https://www.instagram.com/airbusan/"
+										rel="noopener noreferrer"> <img
+										src="//story.airbusan.com/content/assets/images/common/footer_sns_inst.png"
+										alt="에어부산 인스타그램">
+									</a> <a href="https://www.youtube.com/c/airbusan_official"
+										rel="noopener noreferrer"> <img
+										src="//story.airbusan.com/content/assets/images/common/footer_sns_youtube.png"
+										alt="에어부산 유튜브">
+									</a>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-sm-12" style="padding-left: 25px;">
+									<a
+										href="//story.airbusan.com/content/assets/download/pdf/flightTrafficServiceKo_01.pdf"
+										target="_blank" rel="noopener noreferrer" title="새창"
+										class="bgnull firstTag footername">항공교통이용자서비스계획</a> <a
+										href="//story.airbusan.com/content/assets/download/pdf/damageHelp_03.pdf"
+										target="_blank" rel="noopener noreferrer" title="새창"
+										class="footername" style="margin-left: 10px;">항공교통이용자피해구제신청서</a>
+									<a
+										href="//story.airbusan.com/content/assets/download/pdf/항공안전투자공시_표준서식__별지_제4호서식__에어부산.pdf"
+										target="_blank" rel="noopener noreferrer" title="새창"
+										class="footername" style="margin-left: 10px;">항공안전투자공시</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="fotInfo">
+						<div class="fotBox">
+							<address class="address"
+								style="margin-bottom: 0px; margin-top: 15px; margin-left: 10px;">
+								<b>에어중앙㈜</b> 대표이사 이동규 서울 마포구 신촌로 176<br> 사업자등록번호 :
+								010-2114-1128 <a href="#" target="_blank"
+									rel="noopener noreferrer" title="새창"><img
+									src="//story.airbusan.com/content/assets/images/common/btn_footer_address03.png"
+									alt="사업자정보확인"></a> 통신판매업 신고번호 : 있을리가..
+							</address>
+							<div class="copyright"
+								style="margin-bottom: 20px; margin-left: 10px;">Copyright
+								2023 BY AIR BUSAN CO., LTD. All Rights reserved</div>
+						</div>
+					</div>
+				</div>
+		</div>
+
+	</div>
+	</footer>
+	
+</body>
+</html>

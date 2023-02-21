@@ -35,7 +35,7 @@ public class ReservationController {
 		return "rs_list";
 	}
 	
-	@PostMapping("/insert")
+	@PostMapping("/rs_insert")
 	public String insert(ReservationVO rs_vo,Model model) {
 		//System.out.println(rs_vo);
 		int res = rsMapper.save(rs_vo);
@@ -45,7 +45,7 @@ public class ReservationController {
 		// redirect는 값을 못 넘김
 	}
 	
-	@GetMapping("/delete")
+	@GetMapping("/rs_delete")
 	public String delete(int reservationNum) {
 		rsMapper.delete(reservationNum);
 		return "redirect:/rs_list";

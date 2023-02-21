@@ -271,13 +271,6 @@ public class MyController {
 		
 	}
 	
-	@GetMapping("/delete")
-	public String delete(BbsVO bbsVO, HttpSession session) {
-		int bbsId = bbsVO.getBbsId();
-		bbsMapper.delete(bbsId);
-		return "redirect:/bbs";
-	}
-	
 	@GetMapping("/myPage2")
 	public void myPage2() {
 		
@@ -291,5 +284,17 @@ public class MyController {
 	@GetMapping("/booking2")
 	public void booking2() {
 		
+	}
+	
+	@GetMapping("/booking3")
+	public void booking3() {
+		
+	}
+	
+	@GetMapping("/delete")
+	public String delete(BbsVO bbsVO, HttpSession session) {
+		int bbsId = bbsVO.getBbsId();
+		bbsMapper.delete(bbsId);
+		return "/bbs";
 	}
 }
