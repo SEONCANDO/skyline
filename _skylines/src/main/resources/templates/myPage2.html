@@ -192,7 +192,7 @@ body {
 								<div class="ribbonBox01">개인</div>
 								<div class="info">
 									<p class="txt">
-										이경선 님께서는<br>에어부산 <em class="point01">개인 회원</em>이십니다.
+										[[${user.userLastName}]]님께서는<br>에어중앙 <em class="point01">개인 회원</em>이십니다.
 									</p>
 								</div>
 							</div>
@@ -200,31 +200,28 @@ body {
 						<div class="oh posr">
 							<div class="posR">
 								<h4 class="ttit">나의 정보</h4>
-								<span class="btn ssBtn txtRT"><a href="#"
+								<span class="btn ssBtn txtRT"><a href="/userInformationEdit"
 									onclick="openCheckPasswordPopup();">개인정보 수정</a></span>
 							</div>
 							<div class="tblRowData01 mgt20">
-								<table>
+								<table th:object="${user}">
 									<colgroup>
 										<col style="width: 27%">
 										<col>
 									</colgroup>
 									<tbody>
+										
 										<tr>
-											<th scope="row">회원번호</th>
-											<td><span class="txt">152196535</span></td>
+											<th scope="row">회원명(last Name)</th>
+											<td>[[*{userLastName}]]</td>
 										</tr>
 										<tr>
-											<th scope="row">회원명</th>
-											<td>이경선</td>
-										</tr>
-										<tr>
-											<th scope="row">휴대폰번호</th>
-											<td>010-9695-2076</td>
+											<th scope="row">로그인 방법</th>
+											<td>[[*{signLocation}]]</td>
 										</tr>
 										<tr>
 											<th scope="row">이메일</th>
-											<td>lgso0909@hanmail.net</td>
+											<td>[[*{userEmail}]]</td>
 										</tr>
 									</tbody>
 								</table>

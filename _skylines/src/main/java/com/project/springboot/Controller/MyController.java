@@ -174,13 +174,16 @@ public class MyController {
 	}
 	
 	@GetMapping("/userInformationEdit")
-	public String userEdit(HttpSession session) {
+	public String userEdit(HttpSession session, Model mo) {
 		String userSession = String.valueOf(session.getAttribute("user"));
 		if(userSession != null) {
 			System.out.println(userSession);
 			return "/userInformationEdit";
 		}else {
-			return "/login";
+			mo.addAttribute("alert", "로그인 하세요");
+			mo.addAttribute("url", "/login");
+			return "/alert";
+			
 		}
 	}
 	
@@ -257,29 +260,54 @@ public class MyController {
 	}
 	
 	@GetMapping("/myPage2")
-	public void myPage2() {
+	public String myPage2(HttpSession session, Model mo) {
+		String userSession = String.valueOf(session.getAttribute("user"));
+		UserVO user = (UserVO) session.getAttribute("user");
+		if(userSession != null) {
+		 mo.addAttribute("user",  user);
+			System.out.println(user.getUserId() + "허허");
+		    	
+			return "/mypage2";
+		}else {
+			mo.addAttribute("alert", "로그인 하세요");
+			mo.addAttribute("url", "/login");
+			return "/alert";
+		}
+		
 		
 	}
 	
+	
 	@GetMapping("/booking")
-	public void booking() {
-		
+	public String booking(HttpSession session, Model mo) {
+	   session.getAttribute("user");
+	   String userSession = String.valueOf(session.getAttribute("user"));
+		if(userSession != "null") {
+			System.out.println(userSession + "허허");
+			return "/booking";
+		}else {
+			mo.addAttribute("alert", "로그인 하세요");
+			mo.addAttribute("url", "/login");
+			return "/alert";
+		}
 	}
 	
 	@GetMapping("/booking2")
-	public void booking2() {
+	public void booking2(HttpSession session) {
+		session.getAttribute("user");
 		
 	}
 	
 	@GetMapping("/booking3")
-	public void booking3() {
-		
+	public void booking3(HttpSession session) {
+		session.getAttribute("user");
 	}
 	
 	@GetMapping("/delete")
 	public String delete(BbsVO bbsVO, HttpSession session) {
 		int bbsId = bbsVO.getBbsId();
 		bbsMapper.delete(bbsId);
+		session.getAttribute("user");
 		return "/bbs";
 	}
 }
