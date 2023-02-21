@@ -109,33 +109,12 @@ public class MyController {
 	
 	@PostMapping("/signup")
 	public String signupSkyline(UserVO user,Model mo,HttpSession session) {
-		if(user.getUserId() == null || user.getUserId().equals("")) {
-			mo.addAttribute("alert","아이디를 입력해주세요");
-			mo.addAttribute("url","document.referrer");
-			return "/alert";
-		}else if(user.getUserPw() == null||user.getUserPw().equals("")) {
-			mo.addAttribute("alert","비밀번호를 입력해주세요");
-			mo.addAttribute("url","document.referrer");
-			return "/alert";
-		}else if(user.getUserFirstName() == null|| user.getUserFirstName().equals("")) {
-			mo.addAttribute("alert","영문 이름을 입력해주세요");
-			mo.addAttribute("url","document.referrer");
-			return "/alert";
-		}else if(user.getUserLastName() == null|| user.getUserLastName().equals("")) {
-			mo.addAttribute("alert","영문 성을 입력해주세요");
-			mo.addAttribute("url","document.referrer");
-			return "/alert";
-		}else if(user.getUserEmail() == null|| user.getUserEmail().equals("")) {
-			mo.addAttribute("alert","이메일을 입력해주세요");
-			mo.addAttribute("url","document.referrer");
-			return "/alert";
-		}else {
-		/* int i = userMapper.fullSign(user); */
+		
+		int i = userMapper.fullSign(user);
 		mo.addAttribute("alert","회원가입이 완료되었습니다.");
 		mo.addAttribute("url","/home");
 		session.setAttribute("user", user);
 		return "/alert";
-		}
 	}
 	
 	
@@ -207,12 +186,18 @@ public class MyController {
 	
 	@PostMapping("/userInformationEdit")
 	public String userEdit2(UserVO user, Model mo, HttpSession session) {
-		int i = userMapper.userInformationEdit(user);
-		mo.addAttribute("alert","회원정보수정이 완료되었습니다.");
-		mo.addAttribute("url","/home");
-		session.setAttribute("user", user);
-		return "/alert";
-	}
+		if(user.getUserPw().equals("")||user.getUserPw()==null) {
+			mo.addAttribute("alert","비밀번호를 정확하게 입력해주세요.");
+			mo.addAttribute("url","/userInformationEdit");
+			return "/alert";
+		}else {
+			int i = userMapper.userInformationEdit(user);
+			mo.addAttribute("alert","회원정보수정이 완료되었습니다.");
+			mo.addAttribute("url","/home");
+			session.setAttribute("user", user);
+			return "/alert";
+		}
+		}
 	
 	@GetMapping("/bbs")
 	public void bbs(BbsVO bbsVO, Model model, HttpSession session) {
