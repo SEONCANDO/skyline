@@ -49,7 +49,13 @@ public class MyController {
 	}
 	
 	@GetMapping("/")
-	public String index() {
+	public String index(Model model, HttpSession session) {
+		List<BbsVO> list1 = bbsMapper.selectmain1();
+		List<BbsVO> list2 = bbsMapper.selectmain2();
+		model.addAttribute("list", list1);
+		model.addAttribute("list2", list2);
+		System.out.println(list1);
+		session.getAttribute("user");
 		return "/home";
 	}
 
@@ -117,9 +123,14 @@ public class MyController {
 		return "/alert";
 	}
 	
-	
 	@GetMapping("/home")
-	public void home() {
+	public void home(HttpSession session, Model model, BbsVO bbsVO) {
+		List<BbsVO> list1 = bbsMapper.selectmain1();
+		List<BbsVO> list2 = bbsMapper.selectmain2();
+		model.addAttribute("list", list1);
+		model.addAttribute("list2", list2);
+		System.out.println(list1);
+		session.getAttribute("user");
 	}
 	
 	@GetMapping("/mypage")
@@ -315,4 +326,6 @@ public class MyController {
 	public void a() {
 		
 	}
+	
+	
 }

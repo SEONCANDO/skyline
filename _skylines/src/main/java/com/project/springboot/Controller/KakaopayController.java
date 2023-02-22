@@ -16,23 +16,24 @@ import java.util.LinkedHashSet;
 import java.util.Set;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;  
+import org.springframework.web.bind.annotation.ResponseBody;
 
 
 @Controller
 @RequestMapping("/a")
 public class KakaopayController {
 	
-	@RequestMapping("/kakaopay")
+	@GetMapping("/kakaopay")
 	@ResponseBody
 	public String kakaopay(){
 		
 		try {
 			URL location = new URL("http://kapi.kakao.com/v1/payment/ready");
 			HttpURLConnection connection = (HttpURLConnection) location.openConnection();
-			connection.setRequestMethod("post");
-			allowMethods("post");
+			connection.setRequestMethod("POST");
 			connection.setRequestProperty("Authorization", "KakaoAK 6ce5d068dcbd34d03d2ac455428d94af");
 			connection.setRequestProperty("Content-type", "application/x-www-form-urlencoded;charset=utf-8");
 			connection.setDoOutput(true);
@@ -64,24 +65,5 @@ public class KakaopayController {
 		return "{\'result\':\'NO\'}";
 	}
 	
-	private static void allowMethods(String string) {
-        try {
-            Field methodsField = HttpURLConnection.class.getDeclaredField("methods");
-
-            Field modifiersField = Field.class.getDeclaredField("modifiers");
-            modifiersField.setAccessible(true);
-            modifiersField.setInt(methodsField, methodsField.getModifiers());
-
-            methodsField.setAccessible(true);
-
-            String[] oldMethods = (String[]) methodsField.get(null);
-            Set<String> methodsSet = new LinkedHashSet<>(Arrays.asList(oldMethods));
-            methodsSet.addAll(Arrays.asList());
-            String[] newMethods = methodsSet.toArray(new String[0]);
-
-            methodsField.set(null/*static field*/, newMethods);
-        } catch (NoSuchFieldException | IllegalAccessException e) {
-            throw new IllegalStateException(e);
-        }
-    }
+	
 }

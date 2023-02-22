@@ -663,33 +663,33 @@ body {
 
 								</a>
 							</ul>
-							<div class="jsTabCont" style="display: block">
-								<ul class=ulNotice1>
-									<li><a href="#">1</a> <span class="iconNew" title="New"></span>
-										<span class="date">2023-02-07</span></li>
-									<li><a href="#">1</a> <span class="iconNew" title="New"></span>
-										<span class="date">2023-02-07</span></li>
-								</ul>
-								<ul class=ulNotice2>
-									<li><a href="#">1</a> <span class="iconNew" title="New"></span>
-										<span class="date">2023-02-07</span></li>
-									<li><a href="#">1</a> <span class="iconNew" title="New"></span>
-										<span class="date">2023-02-07</span></li>
-								</ul>
-								<ul class="ulNotice3">
-									<li><a href="#">1</a> <span class="iconNew" title="New"></span>
-										<span class="date">2023-02-07</span></li>
-									<li><a href="#">1</a> <span class="iconNew" title="New"></span>
-										<span class="date">2023-02-07</span></li>
-								</ul>
-								<ul class=ulNotice4>
-									<li><a href="#">1</a> <span class="iconNew" title="New"></span>
-										<span class="date">2023-02-07</span></li>
-									<li><a href="#">1</a> <span class="iconNew" title="New"></span>
-										<span class="date">2023-02-07</span></li>
-								</ul>
-
+							<div class="jsTabCont container">
+							   <div class="row">
+							    <div class="col-sm-6">
+								<table style="margin-left:100px; color:#0072bc;">
+									<tbody>
+									  <tr style="display:flex; overflow:hidden;" th:each="test:${list}">
+									   <td th:text="${test.bbsHead}">
+									   </td>
+									  </tr>
+									</tbody>
+								</table>
+								
 							</div>
+							
+							<div class="col-sm-6">
+								<table style="margin-left:100px; color:#0072bc;">
+									<tbody>
+									  <tr style="display:flex; overflow:hidden;" th:each="test2:${list2}">
+									   <td th:text="${test2.bbsHead}">
+									   </td>
+									  </tr>
+									</tbody>
+								</table>
+								
+								</div>
+								
+								
 						</div>
 					</div>
 				</div>

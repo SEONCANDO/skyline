@@ -12,6 +12,14 @@ select bbsId,userId,DATE_FORMAT(writeTime,'%Y%m%d'), bbsHead,bbsContent from bbs
 select bbsId, bbsContent, DATE_FORMAT(writeTime,'%Y%m%d') from bbs where bbsId = ${bbsId}
 </select>
 
+<select id="selectmain1" resultType="com.project.springboot.VO.BbsVO">
+ select bbsId, bbsHead from bbs order by bbsId desc limit 0,4
+</select>
+
+<select id="selectmain2" resultType="com.project.springboot.VO.BbsVO">
+ select bbsId, bbsHead from bbs order by bbsId desc limit 5,4
+</select>
+
 <insert id="write2">
   insert into bbs(userId ,bbsHead, bbsContent)
   values ('test3', #{bbsHead}, #{bbsContent})
