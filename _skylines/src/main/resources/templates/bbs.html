@@ -10,35 +10,35 @@
 <title>Insert title here</title>
 <style>
 .twoblock {
-	height: 35px;
-	background-color: #015fa9;
+   height: 35px;
+   background-color: #015fa9;
 }
 
 .oneblock {
-	height: 83px;
-	border-bottom: 2px solid #015fa9;
+   height: 83px;
+   border-bottom: 2px solid #015fa9;
 }
 
 .hShortcut a {
-	top: 6px;
-	right: 120px;
-	height: auto;
-	text-decoration: none;
-	color: white;
-	font-size: 13px;
-	padding: 0 9px 0 12px;
+   top: 6px;
+   right: 120px;
+   height: auto;
+   text-decoration: none;
+   color: white;
+   font-size: 13px;
+   padding: 0 9px 0 12px;
 }
 
 .gnb {
-	margin-top: 25px;
+   margin-top: 25px;
 }
 
 .depth01Lists a {
-	text-decoration: none;
-	color: black;
-	letter-spacing: -2px;
-	font-size: 20px;
-	margin-left: 50px;
+   text-decoration: none;
+   color: black;
+   letter-spacing: -2px;
+   font-size: 20px;
+   margin-left: 50px;
 }
 
 .row {
@@ -53,17 +53,17 @@
 }
 
 .subTitBox {
-	background-color: #005FA7;
-	padding: 60px 20px 20px;
-	text-align:center;
+   background-color: #005FA7;
+   padding: 60px 20px 20px;
+   text-align:center;
 }
 
 .snbTit {
-	font-size: 24px;
-	font-weight: 700;
-	color: #fff;
-	line-height: 1em;
-	text-align: left;
+   font-size: 24px;
+   font-weight: 700;
+   color: #fff;
+   line-height: 1em;
+   text-align: left;
 }
 
 depth02Lists{
@@ -72,12 +72,12 @@ depth02Lists{
 }
 
 .text1 {
-	color: #333;
-	font-size: 18px;
-	letter-spacing: -3px;
-	text-decoration: none;
-	text-align: center;
-	
+   color: #333;
+   font-size: 18px;
+   letter-spacing: -3px;
+   text-decoration: none;
+   text-align: center;
+   
 }
 
 .mgt60 {
@@ -163,137 +163,137 @@ tbody tr td a{
 
 <!-- 헤더 -->
 <div class="container-fluid">
-		<div class="row twoblock">
-			<div class="col-sm-8"></div>
-			<div class="col-sm-4">
-				<div class="hShortcut">
-					<div th:if="${session.user} == null">
-					<a href="/login">로그인</a>
-					<a href="/signup">회원가입</a> 
-					<a href="#">고객센터</a>
-					</div>
-					<div th:if="${session.user} != null">
-					<span th:if="${session.user.userFirstName} != null" style="color:white;">[[${session.user.userFirstName}]]님</span>
-					<span th:if="${session.user.userFirstName} == null">[[${session.user.userId}]]님</span>
-					<a href="/logout">로그아웃</a> 
-					<a href="/mypage">마이페이지</a> 
-					<a href="#">고객센터</a>
-					</div>
-				</div>
-			</div>
-		</div>
+      <div class="row twoblock">
+         <div class="col-sm-8"></div>
+         <div class="col-sm-4">
+            <div class="hShortcut">
+               <div th:if="${session.user} == null">
+               <a href="/login">로그인</a>
+               <a href="/signup">회원가입</a> 
+               <a href="#">고객센터</a>
+               </div>
+               <div th:if="${session.user} != null">
+               <span th:if="${session.user.userFirstName} != null" style="color:white;">[[${session.user.userFirstName}]]님</span>
+               <span th:if="${session.user.userFirstName} == null">[[${session.user.userId}]]님</span>
+               <a href="/logout">로그아웃</a> 
+               <a href="/mypage">마이페이지</a> 
+               <a href="#">고객센터</a>
+               </div>
+            </div>
+         </div>
+      </div>
 
-		<div class="row oneblock">
-			<div class="col-sm-12" style="display: flex;">
-				<div class="container i2" style="max-width: 900px; display: flex;">
-					<div class="caicon" style="margin-top: 25px;">
-						<a href="/home"> <img src="images/img_logo.png">
-						</a>
-					</div>
+      <div class="row oneblock">
+         <div class="col-sm-12" style="display: flex;">
+            <div class="container i2" style="max-width: 900px; display: flex;">
+               <div class="caicon" style="margin-top: 25px;">
+                  <a href="/home"> <img src="images/img_logo.png">
+                  </a>
+               </div>
 
-					<div class="gnb">
-						<div class="depth01">
-							<ul style="display: flex; list-style: none; margin-top: 6px;">
-								<li class="depth01Lists depth01List01"><a href="/booking"><b>항공권
-											예약</b></a></li>
-								<li class="depth01Lists depth01List02"><a href="/mypage"><b>마이
-											페이지</b></a></li>
-								<li class="depth01Lists depth01List03"><a href="/bbs"><b>공지
-											사항</b></a></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+               <div class="gnb">
+                  <div class="depth01">
+                     <ul style="display: flex; list-style: none; margin-top: 6px;">
+                        <li class="depth01Lists depth01List01"><a href="/booking"><b>항공권
+                                 예약</b></a></li>
+                        <li class="depth01Lists depth01List02"><a href="/mypage"><b>마이
+                                 페이지</b></a></li>
+                        <li class="depth01Lists depth01List03"><a href="/bbs"><b>공지
+                                 사항</b></a></li>
+                     </ul>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
 
-	<!-- 본문 시작 -->
+   <!-- 본문 시작 -->
 
     <!-- 게시판 -->
    <div class="container">
-   		<div class="row">
-   		
-   		
-   		 	<div class="col-sm-4">
-   		 		<div id="snb">
-   		 		 <ul style="list-style:none;">
-   		 		 	<li class="dept01Lists depth01List06" style="display: list-item;">
-   		 		 		<div class="subTitBox">
-   		 		 		  <h2 class="snbTit">고객센터</h2>
-   		 		 		</div>
-   		 		 		<div class="depth02" style="border-bottom: 2px solid #ddd;">
-   		 		 		  <ul style="list-style:none;">
-   		 		 		   <li class="depth02Lists depth02List01 off"
-   		 		 		   style="border-bottom: 1px solid #ddd;">
-   		 		 		     <a href='/bbs' class="text1">공지사항</a>
-   		 		 		   </li>
-   		 		 		   <li class="depth02Lists depth02List02 off">
-   		 		 		     <a href='/mypage' class="text1">마이 페이지</a>
-   		 		 		  </ul>
-   		 		 		</div>
-   		 		 	</li>
-   		 		 </ul>
-   		 		</div>
-   		 	</div>
-   		 	
-   		 	
-   		 	<div class="col-sm-8">
-   		 	  <div class="customerCenter">
-   		 	    <div class="ctitArea">
-   		 	    	<h3 class="ctit">공지사항</h3>
-   		 	    </div>
-   		 	    <div class="boardList mgt60" style="min-height: 519px;">
-   		 	      <table id="table3">
-   		 	        <colgroup>
-   		 	         <col style="width:10%">
-   		 	         <col>
-   		 	         <col style="width:12%">
-   		 	         <col style="width:15%">
-   		 	        </colgroup>
-   		 	        <thead>
-   		 	         <tr>
-   		 	          <th scope="col">번호</th>
-   		 	          <th scope="col">제목</th>
-   		 	          <th scope="col">등록일</th>
-   		 	         </tr>
-   		 	        </thead>
-   		 	        <tbody class="tbodyList">
-   		 	         <tr th:each="bbs : ${list}">
-   		 	          <td th:text="${bbs?.bbsId}"></td>
-   		 	          <td><a th:href="@{/view(bbsId=${bbs?.bbsId})}" th:text="${bbs?.bbsHead}"></a></td>
-   		 	          <td th:text="${bbs?.writeTime}"></td>
-   		 	         </tr>
-   		 	        </tbody>
-   		 	        
-   		 	      </table>
-   		 	      
-   		 	    </div>
-   		 	    <div class="boardListPaging mgt30" data-pagecurrent="1" data-pagemax="26">
-   		 	    	<nav aria-label="Page navigation example">
-					  <ul class="pagination">
-					    <li class="page-item">
-					      <a class="page-link" href="#" aria-label="Previous">
-					        <span aria-hidden="true">&laquo;</span>
-					      </a>
-					    </li>
-					    <li class="page-item"><a class="page-link" href="#">1</a></li>
-					    <li class="page-item"><a class="page-link" href="#">2</a></li>
-					    <li class="page-item"><a class="page-link" href="#">3</a></li>
-					    <li class="page-item">
-					      <a class="page-link" href="#" aria-label="Next">
-					        <span aria-hidden="true">&raquo;</span>
-					      </a>
-					    </li>
-					  </ul>
-					</nav>
-   		 	    </div>
-   		 	    <div th:if="${session.user} != null">
-   		 	      <div th:if="${#strings.equals(session.user.userId, 'test3')}">
-   		 	        <a href="/write" class="btn btn-primary" style="width: 75px;margin-left: 380px;">글쓰기</a>
-   		 	  </div>
-   		 	</div>
-   		</div>
+         <div class="row">
+         
+         
+             <div class="col-sm-4">
+                <div id="snb">
+                 <ul style="list-style:none;">
+                    <li class="dept01Lists depth01List06" style="display: list-item;">
+                       <div class="subTitBox">
+                         <h2 class="snbTit">고객센터</h2>
+                       </div>
+                       <div class="depth02" style="border-bottom: 2px solid #ddd;">
+                         <ul style="list-style:none;">
+                          <li class="depth02Lists depth02List01 off"
+                          style="border-bottom: 1px solid #ddd;">
+                            <a href='/bbs' class="text1">공지사항</a>
+                          </li>
+                          <li class="depth02Lists depth02List02 off">
+                            <a href='/mypage' class="text1">마이 페이지</a>
+                         </ul>
+                       </div>
+                    </li>
+                 </ul>
+                </div>
+             </div>
+             
+             
+             <div class="col-sm-8">
+               <div class="customerCenter">
+                 <div class="ctitArea">
+                    <h3 class="ctit">공지사항</h3>
+                 </div>
+                 <div class="boardList mgt60" style="min-height: 519px;">
+                   <table id="table3">
+                     <colgroup>
+                      <col style="width:10%">
+                      <col>
+                      <col style="width:12%">
+                      <col style="width:15%">
+                     </colgroup>
+                     <thead>
+                      <tr>
+                       <th scope="col">번호</th>
+                       <th scope="col">제목</th>
+                       <th scope="col">등록일</th>
+                      </tr>
+                     </thead>
+                     <tbody class="tbodyList">
+                      <tr th:each="bbs : ${list}">
+                       <td th:text="${bbs?.bbsId}"></td>
+                       <td><a th:href="@{/view(bbsId=${bbs?.bbsId})}" th:text="${bbs?.bbsHead}"></a></td>
+                       <td th:text="${bbs?.writeTime}"></td>
+                      </tr>
+                     </tbody>
+                     
+                   </table>
+                   
+                 </div>
+                 <div class="boardListPaging mgt30" data-pagecurrent="1" data-pagemax="26">
+                    <nav aria-label="Page navigation example">
+                 <ul class="pagination">
+                   <li class="page-item">
+                     <a class="page-link" href="#" aria-label="Previous">
+                       <span aria-hidden="true">&laquo;</span>
+                     </a>
+                   </li>
+                   <li class="page-item"><a class="page-link" href="#">1</a></li>
+                   <li class="page-item"><a class="page-link" href="#">2</a></li>
+                   <li class="page-item"><a class="page-link" href="#">3</a></li>
+                   <li class="page-item">
+                     <a class="page-link" href="#" aria-label="Next">
+                       <span aria-hidden="true">&raquo;</span>
+                     </a>
+                   </li>
+                 </ul>
+               </nav>
+                 </div>
+                 <div th:if="${session.user} != null">
+                   <div th:if="${#strings.equals(session.user.userId, 'test3')}">
+                     <a href="/write" class="btn btn-primary" style="width: 75px;margin-left: 380px;">글쓰기</a>
+               </div>
+             </div>
+         </div>
    </div>
    
 </body>
