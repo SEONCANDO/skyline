@@ -460,7 +460,7 @@ li a span.stamp {
                         </div>
                         <div class="tripTypeOWRT" style="position: relative;">
 
-                           <form name="formSearchOWRT" action="/booking.gogo"
+                           <form name="formSearchOWRT" action="/booking"
                               method="post">
                               <table>
                                  <!-- <caption>노선, 구간, 탑승객 정보으로 구성된 국제선 일반예약 검색입니다.</caption> -->
@@ -477,7 +477,8 @@ li a span.stamp {
                                        <td><span class="selectbox" style="width: 150px;">
                                              <span class="selectform"> <!-- <span class="txt"id="txtCareer">---- 한국 ----</span> -->
                                                 <span class="arrow"></span>
-                                          </span> <select name="depCity" title="여정 출발지"
+                                          </span> 
+                                          <select name="depCity" title="여정 출발지"
                                              style="width: 150px;">
                                                 <option value="" data-ctlval1="KR1">---- 한국
                                                    ----</option>
@@ -541,7 +542,7 @@ li a span.stamp {
                            </form>
                         </div>
                         <div class="tripTypeFREE">
-                           <form name="formSearchFREE" action=" /booking.go" method="post">
+                          
                               <table>
                                  <!-- <caption>노선, 구간, 탑승객 정보로 구성된 국제선 일반예약 검색입니다.</caption> -->
                                  <colgroup>
@@ -558,10 +559,12 @@ li a span.stamp {
                      </div>
                   </div>
                   <div class="mgt20 tc">
-                     <span class="btn bBtn01"><button type="submit" href="#"
+                     <span class="btn bBtn01">
+                     
+                     <button type="submit" href="#"
                            id="buttonSearchAvail">검색</button></span>
                   </div>
-                  </form>
+                  
                </div>
                <div class="step memberStep mgt40 nativeSearchAfterShowing"
                   style="display: block;">
@@ -587,7 +590,7 @@ li a span.stamp {
                      </h4>
                   </div>
                   <div class="dateList mgt20 dateRibbonPrice " data-dateselected="">
-                     <a href="#none" class="btnPrev" onclick="return false;">이전</a>
+                     <a href="#none" class="btnPrev" onclick=>이전</a>
                      <ul class="dateUlist" data-itinno="1">
                         <li class="on"><a href="#none" class="buttonDateRibbon"
                            data-depdate="20230220"><span class="stamp">02/20
@@ -605,7 +608,7 @@ li a span.stamp {
                            data-depdate="20230224"><span class="stamp">02/24
                                  (금)</span></a></li>
                      </ul>
-                     <a href="#none" class="btnNext" onclick="return false;">이후</a>
+                     <a href="#none" class="btnNext" >이후</a>
                   </div>
                   <div class="scrollTbl mgt20">
                      <div class="nativeTable01">
@@ -676,7 +679,7 @@ li a span.stamp {
                         </h4>
                      </div>
                      <div class="dateList mgt20 dateRibbonPrice " data-dateselected="">
-                        <a href="#none" class="btnPrev" onclick="return false;"><</a>
+                        <a href="#none" class="btnPrev"></a>
                         <ul class="dateUlist" data-itinno="2">
                            <li class=""><a href="#none" class="buttonDateRibbon"
                               data-depdate="20230220"><span class="stamp">02/20
@@ -694,7 +697,7 @@ li a span.stamp {
                               data-depdate="20230224"><span class="stamp">02/24
                                     (금)</span></a></li>
                         </ul>
-                        <a href="#none" class="btnNext" onclick="return false;">></a>
+                        <a href="#none" class="btnNext" ></a>
                      </div>
                      <div class="scrollTbl mgt20">
                         <div class="nativeTable01">
@@ -838,7 +841,14 @@ li a span.stamp {
                               </tr>
                            </tbody>
                         </table>
+                        
                      </div>
+                      <div class="btnNext" style="margin-top: 30px; margin-left:60px;">
+                         <form action="/booking2">
+                          <input type="hidden">
+                          <input type="submit" value = "다음단계" style="width:100px; height:50px; color:white; background-color:#333;">
+                         </form>
+                        </div>
                   </div>
                </div>
             </div>

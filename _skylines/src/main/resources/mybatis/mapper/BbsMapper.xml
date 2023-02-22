@@ -5,7 +5,7 @@
     
 <mapper namespace="com.project.springboot.DAO.BbsDAO">
 <select id="selectBbs" resultType="com.project.springboot.VO.BbsVO">
-select bbsId,userId,DATE_FORMAT(writeTime,'%Y%m%d'), bbsHead,bbsContent from bbs order by bbsId desc
+select bbsId,userId,DATE_FORMAT(writeTime,'%Y%m%d'), bbsHead,bbsContent from bbs order by bbsId desc limit 0,10
 </select>
 
 <select id="selectOne" resultType="com.project.springboot.VO.BbsVO">

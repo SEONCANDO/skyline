@@ -530,54 +530,7 @@ body {
 			</button>
 		</div>
 
-		<!-- 중간 비행기 예약 -->
-		<div class="importantArea">
-			<div class="searchForFlightsArea jsTab" style="margin-left: 0px;">
-				<div class="box01 jsTabCont" style="">
-					<li class="radio" style="display: inline-block;"><label class="radioBox on"> <input
-							type="radio" name="domesticTripType" value="RT" checked="checked">
-							왕복
-					</label></li>
-					<form name="formDomesticAvail"  action="/" method="POST" style="display: inline-block;">
-						<div class="select">
-							<span class="placeholder">출발지</span>
-							<ul>
-								<li>김포(GMP)</li>
-								<li>울산(USN)</li>
-								<li>제주(CJU)</li>
-								<li>사천(HIN)</li>
-								<li>무안(MWX)</li>
-							</ul>
-						</div>
-						<div class="select select--white">
-							<span class="placeholder">도착지</span>
-							<ul>
-								<li>김포(GMP)</li>
-								<li>울산(USN)</li>
-								<li>제주(CJU)</li>
-								<li>사천(HIN)</li>
-								<li>무안(MWX)</li>
-							</ul>
-						</div>
-						<input type="text" name="datefilter" value=""
-							style="display: inline-block" />
-						<div style="display: inline-block">
-							<p style="font-weight: 600;">성인</p>
-							<div id='resultA' name="adult">0</div>
-							<input type='button' onclick='count("plus")' value='+' /> <input
-								type='button' onclick='count("minus")' value='-' />
-						</div>
-						<div style="display: inline-block">
-							<p style="font-weight: 600;">유아</p>
-							<div id='resultC'>0</div>
-							<input type='button' onclick='count2("plus")' value='+' /> <input
-								type='button' onclick='count2("minus")' value='-' />
-						</div>
-						<button id="bookingBtn" type='submit'>항공권 검색</button>
-					</form>
-				</div>
-			</div>
-		</div>
+		
 		<!-- 중앙에어 수하물 -->
 		<div class="container">
 			<div class="lightning_banner lightning_banner_01">
@@ -669,7 +622,7 @@ body {
 								<table style="margin-left:100px; color:#0072bc;">
 									<tbody>
 									  <tr style="display:flex; overflow:hidden;" th:each="test:${list}">
-									   <td th:text="${test.bbsHead}">
+									   <td><a th:href="@{/view(bbsId=${test?.bbsId})}" th:text="${test?.bbsHead}" style="text-decoration: none; color:#333;"></a>
 									   </td>
 									  </tr>
 									</tbody>
@@ -681,7 +634,7 @@ body {
 								<table style="margin-left:100px; color:#0072bc;">
 									<tbody>
 									  <tr style="display:flex; overflow:hidden;" th:each="test2:${list2}">
-									   <td th:text="${test2.bbsHead}">
+									   <td><a th:href="@{/view(bbsId=${test2?.bbsId})}" th:text="${test2?.bbsHead}" style="text-decoration: none; color:#333;"></a>
 									   </td>
 									  </tr>
 									</tbody>
@@ -820,6 +773,7 @@ body {
 							$(this).text());
 				});
 	</script>
+	
 	<script type="text/javascript">
 		$(function() {
 
@@ -895,6 +849,8 @@ body {
 			// 결과 출력
 			resultElement.innerText = number;
 		}
+		
+		
 	</script>
 
 </body>
