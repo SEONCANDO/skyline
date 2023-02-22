@@ -134,13 +134,15 @@ public class MyController {
 	}
 	
 	@GetMapping("/mypage")
-	public String mypage(HttpSession session) {
+	public String mypage(HttpSession session , Model mo) {
 		String userSession = String.valueOf(session.getAttribute("user"));
-		if(userSession != null) {
-			System.out.println(userSession);
+		if(userSession != "null") {
+			System.out.println(userSession + "허허");
 			return "/mypage";
 		}else {
-			return "/login";
+			mo.addAttribute("alert", "로그인 하세요");
+			mo.addAttribute("url", "/login");
+			return "/alert";
 		}
 	}
 	
