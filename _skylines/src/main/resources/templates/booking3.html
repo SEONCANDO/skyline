@@ -516,6 +516,7 @@ tbody tr td{
 	     <!-- 결제 창 -->
 	    <form name="Payment" method="post" action="">
 	     <input type="hidden" name="kakaopay">
+	     <input type="hidden" name="card">
 	     <div class="infoBox mgt20">
 	      <p class="mgt10">
 	       <input type="radio" name="paytype" id="kakaopay">
@@ -534,7 +535,7 @@ tbody tr td{
 	     <div class="tr mgt40 submitt">
 	      <a href="javacsript:void(0);" onclick="requestPay()" id="kakao"><img src="images/카카오페이결제.png"></a>
 	   
-	      <input type="button" name="payment" value="결제하기" onclick="requestPay1()" style="margin-left:10px;">
+	      <input type="button" id="card" name="payment" value="결제하기" onclick="requestPay1()" style="margin-left:10px;">
 	     </div> 
 	    </form>
 	      
@@ -671,9 +672,7 @@ tbody tr td{
 						</div>
 					</div>
 				</div>
-		</div>
-
-	</div>
+		
 	</footer>
 	
 <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>	
@@ -722,6 +721,7 @@ $(function(){
             }, function (rsp) { // callback
                 if (rsp.success) {
                     console.log(rsp);
+                    location.href = "/booking4";
                 } else {
                     console.log(rsp);
                 }
@@ -742,7 +742,8 @@ $(function(){
                 buyer_postcode : '123-456'
             }, function (rsp) { // callback
                 if (rsp.success) {
-                    console.log(rsp);
+                	console.log(rsp);
+                    location.href = "/booking4";
                 } else {
                     console.log(rsp);
                 }
