@@ -20,6 +20,7 @@ import com.project.springboot.Service.UserServiceImp;
 import com.project.springboot.VO.BbsVO;
 import com.project.springboot.VO.UserVO;
 
+import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
@@ -134,13 +135,15 @@ public class MyController {
 	}
 	
 	@GetMapping("/mypage")
-	public String mypage(HttpSession session) {
+	public String mypage(HttpSession session , Model mo) {
 		String userSession = String.valueOf(session.getAttribute("user"));
-		if(userSession != null) {
-			System.out.println(userSession);
+		if(userSession != "null") {
+			System.out.println(userSession + "허허");
 			return "/mypage";
 		}else {
-			return "/login";
+			mo.addAttribute("alert", "로그인 하세요");
+			mo.addAttribute("url", "/login");
+			return "/alert";
 		}
 	}
 	
@@ -214,7 +217,7 @@ public class MyController {
 		}
 	
 	@GetMapping("/bbs")
-	public void bbs(BbsVO bbsVO, Model model, HttpSession session) {
+	public void bbs(BbsVO bbsVO, Model model, HttpSession session, HttpServletRequest request) {
 		List<BbsVO> list = bbsMapper.selectBbs();
 		model.addAttribute("list", list);
 		session.getAttribute("user");
@@ -240,11 +243,11 @@ public class MyController {
 		
 	}
 	@PostMapping("/write")
-	public String write2(BbsVO bbsVO ,Model model, HttpSession session) {
+	public String write2(BbsVO bbsVO , HttpSession session) {
 		bbsMapper.write2(bbsVO);
 		session.getAttribute("user");
 		
-		return "/bbs";
+		return "redirect:bbs";
 		
 	}
 	
@@ -288,6 +291,7 @@ public class MyController {
 		
 	}
 	
+
 	
 	@GetMapping("/booking")
 	public String booking(HttpSession session, Model mo) {
@@ -302,6 +306,8 @@ public class MyController {
 			return "/alert";
 		}
 	}
+	
+	
 	
 	@GetMapping("/booking2")
 	public void booking2(HttpSession session) {
@@ -319,7 +325,7 @@ public class MyController {
 		int bbsId = bbsVO.getBbsId();
 		bbsMapper.delete(bbsId);
 		session.getAttribute("user");
-		return "/bbs";
+		return "redirect:bbs";
 	}
 	
 	@GetMapping("/a")
