@@ -35,10 +35,10 @@ public class ReservationController {
 	
 	@PostMapping("/rs_search")
 	public @ResponseBody String search(@RequestBody FlightScheduleVO fs_vo) {
-		//System.out.println("정말 됨? "+ fs_vo);
-		
+		System.out.println("정말 됨? "+ fs_vo);
+		log.info("-----------------fs.vo"+fs_vo);
 		FlightScheduleVO res = fsMapper.search(fs_vo);
-		
+		log.info(res);
 		System.out.println("res>>>"+res);
 		
 		return res+""; 
