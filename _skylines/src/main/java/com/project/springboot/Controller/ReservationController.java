@@ -7,8 +7,12 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.project.springboot.DAO.FlightScheduleDAO;
 import com.project.springboot.DAO.ReservationDAO;
+import com.project.springboot.VO.FlightScheduleVO;
 import com.project.springboot.VO.ReservationVO;
 
 import lombok.extern.log4j.Log4j2;
@@ -17,20 +21,33 @@ import lombok.extern.log4j.Log4j2;
 @Log4j2
 public class ReservationController {
 
-	@Autowired
 	ReservationDAO rsMapper;
-
+	FlightScheduleDAO fsMapper;
+	
 	@Autowired
-	public ReservationController(ReservationDAO rsMapper) {
+	public ReservationController(ReservationDAO rsMapper ,FlightScheduleDAO fsMapper) {
 		super();
 
 		this.rsMapper = rsMapper;
-
+		this.fsMapper = fsMapper;
 	}
+	
+	
+	@PostMapping("/rs_search")
+	public @ResponseBody String search(@RequestBody FlightScheduleVO fs_vo) {
+		//System.out.println("정말 됨? "+ fs_vo);
+		
+		FlightScheduleVO res = fsMapper.search(fs_vo);
+		
+		System.out.println("res>>>"+res);
+		return res+""; 
+	}
+
+	
 	
 	@GetMapping("/rs_list")
 	public String list(Model model) {
-		List<ReservationVO> rs_vo = rsMapper.findAll();
+		List<ReservationVO> rs_vo = rsMapper.selectAll();
 		model.addAttribute("rs_list",rs_vo);
 		return "rs_list";
 	}
@@ -42,6 +59,9 @@ public class ReservationController {
 		//model.addAttribute("res",res);
 		//return "result";
 		return"redirect:/rs_list";
+		
+		
+		
 		// redirect는 값을 못 넘김
 	}
 	

@@ -1,9 +1,27 @@
 package com.project.springboot.VO;
 
-import lombok.Data;
+import java.util.Date;
 
-@Data
+import org.springframework.format.annotation.DateTimeFormat;
+
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
+
+@Getter
+@Setter
+@ToString
+@NoArgsConstructor
+@AllArgsConstructor
 public class FlightScheduleVO {
-	int flightscheduleNum;
-	String fromPlatform,toPlatform,date;
+	private int flightscheduleNum;
+	private String flightTicket;
+	private String fromPlatform;
+	private String toPlatform;
+	private String date;
+	private int limitSeat;
+	private int nowSeat;
+	
 }

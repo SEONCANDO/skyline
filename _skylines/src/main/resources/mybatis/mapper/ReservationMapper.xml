@@ -8,6 +8,7 @@
 		select * from Reservation
 	</select>
 
+
 	<insert id="insert">
 	insert into reservation ( reservationNum, userId, flightScheduleNum,fromPlatformNum,
 	toPlatformNum,agedPerson,youngPerson,youngPerson,totalPrice,flightTicket, toTime
@@ -18,5 +19,6 @@
 	<delete id="delete"> 
         delete from reservation where reservationNum = #{reservationNum} 
     </delete>    
+	
 	
 </mapper>
