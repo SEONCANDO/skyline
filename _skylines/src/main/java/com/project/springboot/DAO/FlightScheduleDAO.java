@@ -11,4 +11,5 @@ import com.project.springboot.VO.FlightScheduleVO;
 public interface FlightScheduleDAO {
 	List<FlightScheduleVO> search();
 	FlightScheduleVO search(@Param("fs_vo") FlightScheduleVO fs_vo);
+	List<FlightScheduleVO> searchName();
 }

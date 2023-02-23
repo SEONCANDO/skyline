@@ -10,5 +10,4 @@
 		 where fromPlatform = #{fs_vo.fromPlatform} and toPlatform = #{fs_vo.toPlatform}
 	</select>
 	
-	
 </mapper>

@@ -11,5 +11,4 @@ import com.project.springboot.VO.PlatformVO;
 public interface PlatformDAO {
 	List<PlatformVO> selectAll();
 	List<PlatformVO> selectNum(int platformNum);
-	List<PlatformVO> selectName(String platform);
 }

@@ -40,6 +40,7 @@ public class ReservationController {
 		FlightScheduleVO res = fsMapper.search(fs_vo);
 		
 		System.out.println("res>>>"+res);
+		
 		return res+""; 
 	}
 

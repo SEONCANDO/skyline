@@ -18,6 +18,7 @@ import com.project.springboot.DAO.ReservationDAO;
 import com.project.springboot.DAO.UserDAO;
 import com.project.springboot.Service.UserServiceImp;
 import com.project.springboot.VO.BbsVO;
+import com.project.springboot.VO.ReservationVO;
 import com.project.springboot.VO.UserVO;
 
 import jakarta.servlet.http.HttpServletRequest;
@@ -277,8 +278,11 @@ public class MyController {
 	public String myPage2(HttpSession session, Model mo) {
 		String userSession = String.valueOf(session.getAttribute("user"));
 		UserVO user = (UserVO) session.getAttribute("user");
+		List<ReservationVO> re = rsMapper.selectAll();
 		if(userSession != null) {
 		 mo.addAttribute("user",  user);
+		 mo.addAttribute("re", re);
+		 	System.out.println("허허" +re);
 			System.out.println(user.getUserId() + "허허");
 		    	
 			return "/mypage2";
@@ -334,8 +338,13 @@ public class MyController {
 	}
 	
 	@GetMapping("/booking4")
-	public void booking4() {
-		
+	public String booking4(HttpSession session, Model mo) {
+		String.valueOf(session.getAttribute("user"));
+		UserVO user = (UserVO) session.getAttribute("user");
+		List<ReservationVO> re = rsMapper.selectAll();
+		 mo.addAttribute("user",  user);
+		 mo.addAttribute("re", re);
+		 return "/booking4";
 	}
 	
 	

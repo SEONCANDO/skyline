@@ -5,7 +5,7 @@
     
 <mapper namespace="com.project.springboot.DAO.ReservationDAO">
 	<select id="selectAll" resultType="com.project.springboot.VO.ReservationVO">
-		select * from Reservation
+		select * from Reservation where ReservationNum = 1
 	</select>
 
 

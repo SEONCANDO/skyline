@@ -494,17 +494,17 @@ address {
 	</h3>
 	</div>
 	
-	<div class="ticket">
+	<div class="ticket" th:each=" re :${re}">
 	   <div class="ticketHead">
 	    <div class="row">
 	      <div class="col-8" id="boarding">
 	        Boarding pass CA AIR
 	      </div>
-	      <div class="col-2" id="flightnum">
-	       항공편 4H1607
+	      <div class="col-2" id="flightnum" th:text="|항공편: ${re.flightTicket}|">
+	      
 	      </div>
-	      <div class="col-2" id="passentgernum">
-	       고객수 1
+	      <div class="col-2" id="passentgernum" th:text="|인원: ${re.agedPerson}|"> 
+	       
 	      </div>
 	    </div>
 	   </div>
@@ -512,24 +512,24 @@ address {
 	    <div class="row">
 	     <div class="col-4 arrive">
 	        출발 도시 
-	        <span id ="arrivecity">
-	          GMP
+	        <span id ="arrivecity" th:text="|${re.fromPlatform}|">
+	          
 	        </span>
 	        <br>도착 도시
-	        <span id ="departcity">
-	          CJU
+	        <span id ="departcity" th:text="|${re.toPlatform}|">
+	          
 	        </span>
 	     </div>
 	     <div class="col-6">
 	      <table>
 	       <tr style="color: gray; letter-spacing:-1px;">
 	         <td>Boarding</td>
-	         <td>Departure</td>
+	         <td>Price</td>
 	         <td>Date</td>
 	       </tr>
 	       <tr>
 	         <td>13:50</td>
-	         <td>14:30</td>
+	         <td th:text="${re.totalPrice}"></td>
 	         <td>2023-02-24</td>
 	       <tr style="color: gray; letter-spacing:-1px;">
 	         <td>Passenger</td>
