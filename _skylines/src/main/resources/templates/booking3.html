@@ -461,7 +461,7 @@ tbody tr td{
 	    <div class="partitionCont">
 	     <h4 class="ttit mgb20">탑승고객 정보 및 운임</h4>
 	     <div class="tblColData01">
-	      <table style="width:721px;">
+	      <table style="width:721px;" th:object="${user}">
 	       <thead>
 	         <tr>
 	          <th scope="col">구분</th>
@@ -473,7 +473,7 @@ tbody tr td{
 	       <tbody>
 	         <tr>
 	          <td rowspan="2">성인</td>
-	          <td rowspan="2">이동규</td>
+	          <td rowspan="2" th:text="${user.userLastName}"></td>
 	          <td>가는 여정</td>
 	          <td class="tr">
 	           <strong class="point01 nativePrice">111,100</strong>
@@ -485,7 +485,7 @@ tbody tr td{
 	       <tfoot>
 	         <tr class="nativePromotionCouponSummary">
 	          <th scope="col" class="bdr t1" colspan="3" style="background: #fafafc; color:#000;">총 결제 금액</th>
-	          <td colspan="2" class="t1">222,200</td>
+	          <td colspan="2" class="t1">111,100</td>
 	         </tr>
 	       </tfoot>
 	      </table>
@@ -494,7 +494,7 @@ tbody tr td{
 	        <strong>최종 결제 금액</strong>
 	        <p>
 	         <strong>
-	          <span class="nativePrice nativeTotalPayment">206,400</span>
+	          <span class="nativePrice nativeTotalPayment">111,100</span>
 	         </strong>
 	        </p>
 	       </div>
@@ -535,7 +535,7 @@ tbody tr td{
 	   
 	    <div class="reservationArea">
 	     <div class="reservationBanner">
-	      <img src="images/무안.jpg" class="imgback">
+	      <img src="images/제주.jpg" class="imgback">
 	     </div>
 	     <div class="summaryFare">
 	      <p class="fs14" style="font-size: 14px; margin-top:10px;">

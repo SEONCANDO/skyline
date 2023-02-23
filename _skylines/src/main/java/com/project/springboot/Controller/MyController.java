@@ -310,14 +310,19 @@ public class MyController {
 	
 	
 	@GetMapping("/booking2")
-	public void booking2(HttpSession session) {
+	public void booking2(HttpSession session, Model mo) {
 		session.getAttribute("user");
-		
+		UserVO user = (UserVO) session.getAttribute("user");
+		mo.addAttribute("user",  user);
+		System.out.println(user);
 	}
 	
 	@GetMapping("/booking3")
-	public void booking3(HttpSession session) {
+	public void booking3(HttpSession session, Model mo) {
 		session.getAttribute("user");
+		UserVO user = (UserVO) session.getAttribute("user");
+		mo.addAttribute("user",  user);
+		System.out.println(user);
 	}
 	
 	@GetMapping("/delete")

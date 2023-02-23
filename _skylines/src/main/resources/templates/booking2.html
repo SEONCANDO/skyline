@@ -340,10 +340,10 @@ tbody tr td {
 							</colgroup>
 							<tbody class="tbody">
 								<tr>
-									<td><strong class="sectionInfo"> dd </strong></td>
-									<td>날짜</td>
-									<td class="borderRight">편명</td>
-									<td rowspan="2"><span class="btnTxt">인원</span></td>
+									<td><strong class="sectionInfo">GMP(김포) -> 제주(CJU)</strong></td>
+									<td>2023-02-24 13:50:00</td>
+									<td class="borderRight">편명 : 4H1607</td>
+									<td rowspan="2"><span class="btnTxt">성인: 1명</span></td>
 								</tr>
 							</tbody>
 						</table>
@@ -381,7 +381,7 @@ tbody tr td {
 								<!-- 이름 식별 -->
 								<div class="tblColData0 tblSmall mgt20"
 									style="margin-top: 20px;">
-									<table style="width: 721px;">
+									<table style="width: 721px;" th:object="${user}">
 										<thead>
 											<tr>
 												<th scope="col">유형</th>
@@ -395,7 +395,7 @@ tbody tr td {
 												<td>"성인" <input type="hidden" name="passengerType_p1"
 													value="AD">
 												</td>
-												<td class="t1"><input name="name" value="이동규"
+												<td class="t1"><input name="name" th:value="${user.userLastName}"
 													type="text"
 													class="inpTxt nativeName nativeFormReuired nativeReadonly"
 													style="width: 123px" title="탑승 고객의 정보" placeholder="이름"
@@ -403,7 +403,7 @@ tbody tr td {
 												<td class="t1">
 													<div class="infoTxtBot">
 														<div>
-															<input name="email" value="G@c.com" type="text"
+															<input name="email" th:value="${user.userEmail}" type="text"
 																placeholder="이메일"
 																class="inpTxt nativeForm nativeReadonly"
 																style="width: 121px;" title="이메일" readonly> <br>
@@ -411,7 +411,7 @@ tbody tr td {
 														</div>
 													</div>
 												</td>
-												<td class="t1"><input name="seat" value="잔여좌석"
+												<td class="t1"><input name="seat" value="28"
 													type="text" placeholder="잔여좌석"
 													class="inpTxt nativeForm nativeReadonly" title="좌석"
 													readonly></td>
