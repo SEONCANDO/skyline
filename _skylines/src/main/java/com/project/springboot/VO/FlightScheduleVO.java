@@ -23,5 +23,6 @@ public class FlightScheduleVO {
 	private String date;
 	private int limitSeat;
 	private int nowSeat;
-	
+	private String dates;
+	private String time;
 }

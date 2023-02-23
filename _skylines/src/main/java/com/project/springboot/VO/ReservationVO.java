@@ -21,7 +21,8 @@ public class ReservationVO {
 	private int agedPerson;
 	private int totalPrice;
 	private String flightTicket;
-	
+	private String dates;
+	private String time;
 
 	
 }
