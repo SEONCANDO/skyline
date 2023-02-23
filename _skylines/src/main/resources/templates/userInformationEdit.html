@@ -135,21 +135,21 @@ height: 25px;
 
 $(document).ready(function(){
 		
-	$("#upw2").on("focusout",function(){
+	$(".form-control").on("focusout",function(){
 		var userpw1 = $("#upw").val();
 		var userpw2 = $("#upw2").val();
 		if(userpw1.length <= 4){
 			$("#pwcheck").text("비밀번호를 5자 이상 입력해주세요.");
 			$("#pwcheck").css("display","block");
-			$("#btnsignup").attr("disabled",true);
+			$("#btnuserEdit").attr("disabled",true);
 		}else{
 			if(userpw1 != userpw2){
 				$("#pwcheck").text("비밀번호가 일치하지 않습니다.");
 				$("#pwcheck").css("display","block");
-				$("#btnsignup").attr("disabled",true);
+				$("#btnuserEdit").attr("disabled",true);
 			}else{
 				$("#pwcheck").css("display","none");
-				$("#btnsignup").attr("disabled",false);
+				$("#btnuserEdit").attr("disabled",false);
 			}
 		}
 	})
