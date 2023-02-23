@@ -49,35 +49,6 @@ body {
 	color: black;
 	display: flex;
 	border-bottom: 1px solid #333;
-	width: 80%;
-}
-
-.ulNotice1 {
-	display: flex;
-	justify-content: space-around;
-	text-decoration: none;
-	list-style: none;
-}
-
-.ulNotice2 {
-	display: flex;
-	justify-content: space-around;
-	text-decoration: none;
-	list-style: none;
-}
-
-.ulNotice3 {
-	display: flex;
-	justify-content: space-around;
-	text-decoration: none;
-	list-style: none;
-}
-
-.ulNotice4 {
-	display: flex;
-	justify-content: space-around;
-	text-decoration: none;
-	list-style: none;
 }
 
 #footer {
@@ -501,11 +472,39 @@ address {
     margin: 45px auto 0;
 }
 
-/* .noticeArea .ulNotice li a {
-    font-size: 16px;
-    font-weight: 700;
-    padding-top: 2px;
-} */
+.noticeArea .more {
+    position: absolute;
+    -ms-transform: rotate(-90deg);
+    -webkit-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+    width: 22px;
+    height: 22px;
+    left: 990px;
+    bottom: 135px;
+}
+
+.more img {
+/*     vertical-align: top; */
+}
+
+.box02 .noticeArea {
+    position: relative;
+    float: left;
+    width: 1100px;
+}
+
+.eventArea .box02 {
+    width: 100%;
+    overflow: hidden;
+    display: inline-block;
+}
+
+.noticeArea {
+    position: relative;
+    float: left;
+    width: 490px;
+    margin-left: 400px;
+}
 </style>
 </head>
 <body>
@@ -671,11 +670,9 @@ address {
 								<li class="tit on"><a href="#"
 									style="text-decoration: none; color: grey; margin-left: 12px;">변경운항공지</a>
 								</li>
-								<a href="/bbs" class="more"> <img src="images/버튼.png"
-									alt="공지사항 더보기" style="margin-left: 770px;">
-								</a>
+								
 							</ul>
-							<div class="jsTabCont container">
+							<div class="jsTabCont" style="display: block;">
 								<div class="row">
 									<div class="col-sm-6">
 										<table style="margin-left: 100px; color: #0072bc;">
@@ -702,7 +699,9 @@ address {
 												</tr>
 											</tbody>
 										</table>
-
+										<a href="/bbs" class="more"> <img src="images/버튼.png"
+									alt="공지사항 더보기" style="">
+								</a>
 									</div>
 
 
