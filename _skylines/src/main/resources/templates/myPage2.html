@@ -19,7 +19,7 @@ body {
 
 #container #contents {
 	padding: 65px 0 100px 270px;
-	min-height: 1000px;
+	min-height: 850px;
 }
 
 #container.noneSnb #contents {
@@ -172,6 +172,76 @@ body {
 	color: #333;
 	border-bottom: 1px solid #b0bbc4;
 }
+
+.ticket {
+ width: 800px;
+ margin-top: 30px;
+}
+
+.ticketHead{
+ background-color : #005fa7;
+ height: 50px;
+ border-radius: 15px 15px 0px 0px;
+}
+
+.ticketContent{
+ background-color : #d5d6da;
+ height: 150px;
+ border-radius: 0px 0px 15px 15px;
+}
+
+#boarding {
+ font-size : 35px; 
+ color: white;
+ text-align: center;
+ letter-spacing: -1px;
+ margin-top: 13px;
+}
+
+#success{
+ text-align: center;
+ margin-top: 30px;
+}
+
+#flightnum {
+ color: white;
+ margin-top: 15px;
+ font-size: 15px;
+ letter-spacing: -1px;
+}
+
+#passentgernum {
+ color: white;
+ margin-top: 15px;
+ font-size: 15px;
+ letter-spacing: -1px;
+}
+.arrive{
+ color: gray;
+ text-align: center;
+ margin-top: 40px;
+}
+
+#arrivecity {
+ color: #005fa7;
+ font-size: 30px;
+}
+
+#departcity {
+ color: #005fa7;
+ font-size: 30px;
+}
+
+#qr { 
+ width: 80px;
+ height: 80px;
+ margin-top: 30px;
+}
+
+tbody tr td {
+ padding: 0 0 15px 25px;
+ vertical-align: middle;
+}
 </style>
 </head>
 <body>
@@ -229,41 +299,66 @@ body {
 							</div>
 						</div>
 					</div>
+					
+					
 					<div class="scheduleBox mgt50">
 						<h4 class="ttit">예약내역(탑승기간 1개월 이내, 최대 5건)</h4>
-						<div class="tblColData01 mgt20">
-							<table style="width: 1001px;">
-								<colgroup>
-									<col style="width: 13%">
-									<col style="width: 13%">
-									<col style="width: 13%">
-									<col style="width: 13%">
-									<col style="width: 13%">
-									<col style="width: 13%">
-									<col style="width: 13%">
-									<col style="width: 13%">
-									<col>
-								</colgroup>
-								<thead>
-									<tr>
-										<th scope="col">예약번호</th>
-										<th scope="col">승객명</th>
-										<th scope="col">일자</th>
-										<th scope="col">출발-도착지</th>
-										<th scope="col">편명</th>
-									</tr>
-								</thead>
-								<tbody class="tbodyListPnr">
-								  <tr>
-								   <td>1234</td>
-								   <td>[[${user.userLastName}]]</td>
-								   <td>ㅎㅎ</td>
-								   <td>ㅎㅎ</td>
-								   <td>ㅎㅎ</td>
-								  </tr>
-								</tbody>
-							</table>
-						</div>
+						<!-- 결제 완료 표시 -->
+	
+	<div class="ticket">
+	   <div class="ticketHead">
+	    <div class="row">
+	      <div class="col-8" id="boarding">
+	        Boarding pass CA AIR
+	      </div>
+	      <div class="col-2" id="flightnum">
+	       항공편 B1A4
+	      </div>
+	      <div class="col-2" id="passentgernum">
+	       고객수 2
+	      </div>
+	    </div>
+	   </div>
+	   <div class="ticketContent">
+	    <div class="row">
+	     <div class="col-4 arrive">
+	        출발 도시 
+	        <span id ="arrivecity">
+	          ICN
+	        </span>
+	        <br>도착 도시
+	        <span id ="departcity">
+	          CJU
+	        </span>
+	     </div>
+	     <div class="col-6">
+	      <table>
+	       <tr style="color: gray; letter-spacing:-1px;">
+	         <td>Boarding</td>
+	         <td>Departure</td>
+	         <td>Date</td>
+	       </tr>
+	       <tr>
+	         <td>4:20</td>
+	         <td>5:00</td>
+	         <td>2019-06-28</td>
+	       <tr style="color: gray; letter-spacing:-1px;">
+	         <td>Passenger</td>
+	         <td>Seat</td>
+	       </tr>
+	       <tr>
+	         <td>님 환영합니다.</td>
+	         <td>B1</td>
+	       </tr>
+	      </table>
+	     </div>
+	     <div class="col-2">
+	       <img src="images/qr코드.png" id="qr">
+	     </div>
+	    </div>
+	   </div>
+	</div>
+	
 						
 						<!-- <a href="/web/individual/reserve/pnr" class="more"><img
 						src="//story.airbusan.com/content/assets/images/common/btn_more01.gif"

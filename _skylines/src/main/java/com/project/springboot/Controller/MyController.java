@@ -328,8 +328,8 @@ public class MyController {
 		return "redirect:bbs";
 	}
 	
-	@GetMapping("/a")
-	public void a() {
+	@GetMapping("/booking4")
+	public void booking4() {
 		
 	}
 	
