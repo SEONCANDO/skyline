@@ -362,6 +362,76 @@ tbody tr td{
  line-height: 50px;
  background-color: #005fa7;
 }
+
+.ticket {
+ width: 800px;
+ margin-top: 100px;
+ margin-left: 300px;
+}
+
+.ticketHead{
+ background-color : #005fa7;
+ height: 50px;
+ border-radius: 15px 15px 0px 0px;
+}
+
+.ticketContent{
+ background-color : #d5d6da;
+ height: 150px;
+ border-radius: 0px 0px 15px 15px;
+}
+
+#boarding {
+ font-size : 35px; 
+ color: white;
+ text-align: center;
+ letter-spacing: -1px;
+}
+
+#success{
+ text-align: center;
+ margin-top: 30px;
+}
+
+#flightnum {
+ color: white;
+ margin-top: 15px;
+ font-size: 15px;
+ letter-spacing: -1px;
+}
+
+#passentgernum {
+ color: white;
+ margin-top: 15px;
+ font-size: 15px;
+ letter-spacing: -1px;
+}
+.arrive{
+ color: gray;
+ text-align: center;
+ margin-top: 30px;
+}
+
+#arrivecity {
+ color: #005fa7;
+ font-size: 30px;
+}
+
+#departcity {
+ color: #005fa7;
+ font-size: 30px;
+}
+
+#qr { 
+ width: 80px;
+ height: 80px;
+ margin-top: 30px;
+}
+
+tbody tr td {
+ padding: 0 0 15px 25px;
+ vertical-align: middle;
+}
 </style>
 </head>
 <body>
@@ -413,6 +483,169 @@ tbody tr td{
 		</div>
 	</div>
 	
+	<!-- 결제 완료 표시 -->
+	<div class="container">
+	<h3 class="ctit" style="text-align:center;">
+	  예약 완료
+	</h3>
+	</div>
+	
+	<div class="ticket">
+	   <div class="ticketHead">
+	    <div class="row">
+	      <div class="col-8" id="boarding">
+	        Boarding pass CA AIR
+	      </div>
+	      <div class="col-2" id="flightnum">
+	       항공편 B1A4
+	      </div>
+	      <div class="col-2" id="passentgernum">
+	       고객수 2
+	      </div>
+	    </div>
+	   </div>
+	   <div class="ticketContent">
+	    <div class="row">
+	     <div class="col-4 arrive">
+	        출발 도시 
+	        <span id ="arrivecity">
+	          ICN
+	        </span>
+	        <br>도착 도시
+	        <span id ="departcity">
+	          CJU
+	        </span>
+	     </div>
+	     <div class="col-6">
+	      <table>
+	       <tr style="color: gray; letter-spacing:-1px;">
+	         <td>Boarding</td>
+	         <td>Departure</td>
+	         <td>Date</td>
+	       </tr>
+	       <tr>
+	         <td>4:20</td>
+	         <td>5:00</td>
+	         <td>2019-06-28</td>
+	       <tr style="color: gray; letter-spacing:-1px;">
+	         <td>Passenger</td>
+	         <td>Seat</td>
+	       </tr>
+	       <tr>
+	         <td>님 환영합니다.</td>
+	         <td>B1</td>
+	       </tr>
+	      </table>
+	     </div>
+	     <div class="col-2">
+	       <img src="images/qr코드.png" id="qr">
+	     </div>
+	    </div>
+	   </div>
+	</div>
+	
+	
+	<!-- footer -->
+
+		<footer id="footer">
+			<div class="footer_2019">
+				<div>
+					<div class="fotTel" style="list-style: none;">
+						<div class="fotBox">
+							<ul class="telInfo">
+								<li>
+
+									<ul class="reser_tel" style="list-style: none;">
+										<li><b>예약센터</b>
+											<p class="reser-tel1">xxxx-xxxx</p>
+											<p class="smallTxt">09:00~19:00(연중무휴)</p></li>
+									</ul>
+								<li><b>단체문의</b><span class="smallTxt">(10명 이상)</span>
+									<p class="reser-tel1">xxxx-xxxx</p>
+									<p class="smallTxt">09:00~17:00(주말, 공휴일 제외)</p></li>
+								<li><b>마케팅/광고 문의</b>
+									<p class="reser-tel1">choongang.atsoft.net</p>
+									<p class="smallTxt">제휴, 광고 등 다양한 제안을 기다립니다.</p></li>
+
+								<li>
+									<p class="smallTxt">
+										<strong class="mgb05 disblock"><b>시스템 정기점검 안내</b></strong> <br>아래
+										점검시간 외에 이용해주시기 바랍니다.<br> <strong>수~월요일 </strong>
+										23:50~24:10<br> <strong>화요일 </strong> 23:00~24:00
+									</p>
+								</li>
+							</ul>
+							<div class="mobile">
+								<div class="mobile_app"></div>
+								<div class="mobile_app"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="fotTop">
+					<div class="fotBox">
+						<div class="row">
+							<div class="col-sm-8"
+								style="margin-top: 15px; display: flex; justify-content: space-around;">
+								<a href="#" class="footername">회사소개</a> <a href="#"
+									class="footername">투자정보</a> <a href="#" target="_new"
+									title="새창" class="footername">채용정보</a> <a href="#"
+									target="_new" class="footername">운송약관</a> <a href="#"
+									target="_new" class="footername">이용약관</a> <a href="#"
+									target="_new" class="footername"> <span
+									style="font-weight: 900 !important; padding-bottom: 2px;">개인정보처리방침</span></a>
+								<a href="#" target="_new" class="footername">이메일무단수집거부</a> <a
+									href="#" onclick="popupHelpRemote();" title="새창"
+									class="footername">인터넷 도우미</a> <br>
+							</div>
+
+							<div class="mobile_app"
+								style="display: flex; justify-content: flex-end;">
+								<a href="https://www.instagram.com/airbusan/"
+									rel="noopener noreferrer"> <img
+									src="//story.airbusan.com/content/assets/images/common/footer_sns_inst.png"
+									alt="에어부산 인스타그램">
+								</a> <a href="https://www.youtube.com/c/airbusan_official"
+									rel="noopener noreferrer"> <img
+									src="//story.airbusan.com/content/assets/images/common/footer_sns_youtube.png"
+									alt="에어부산 유튜브">
+								</a>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-sm-12" style="padding-left: 25px;">
+								<a
+									href="//story.airbusan.com/content/assets/download/pdf/flightTrafficServiceKo_01.pdf"
+									target="_blank" rel="noopener noreferrer" title="새창"
+									class="bgnull firstTag footername">항공교통이용자서비스계획</a> <a
+									href="//story.airbusan.com/content/assets/download/pdf/damageHelp_03.pdf"
+									target="_blank" rel="noopener noreferrer" title="새창"
+									class="footername" style="margin-left: 10px;">항공교통이용자피해구제신청서</a>
+								<a
+									href="//story.airbusan.com/content/assets/download/pdf/항공안전투자공시_표준서식__별지_제4호서식__에어부산.pdf"
+									target="_blank" rel="noopener noreferrer" title="새창"
+									class="footername" style="margin-left: 10px;">항공안전투자공시</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="fotInfo">
+					<div class="fotBox">
+						<address class="address"
+							style="">
+							<b>에어중앙㈜</b> 대표이사 이동규 서울 마포구 신촌로 176<br> 사업자등록번호 :
+							010-2114-1128 <a href="#" target="_blank"
+								rel="noopener noreferrer" title="새창"><img
+								src="//story.airbusan.com/content/assets/images/common/btn_footer_address03.png"
+								alt="사업자정보확인"></a> 통신판매업 신고번호 : 있을리가..<br/>
+							<b>Copyright 2023 BY AIR BUSAN CO., LTD. All Rights reserved</b>
+						</address>
+					</div>
+				</div>
+			</div>
+		</footer>
+	</div>
 	
 	
 <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>	
