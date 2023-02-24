@@ -9,11 +9,12 @@
 	</select>
 
 
-	<insert id="insert">
-	insert into reservation ( reservationNum, userId, flightScheduleNum,fromPlatformNum,
-	toPlatformNum,agedPerson,youngPerson,youngPerson,totalPrice,flightTicket, toTime
-	,fromTime ) values (#{reservationNum}, #{userId},#{flightScheduleNum},#{fromPlatformNum},
-	#{toPlatformNum},#{agedPerson},#{youngPerson},#{totalPrice},#{flightTicket},#{toTime},#{fromTime}) 
+	<insert id="insertreservation">
+	insert into reservation ( userId, flightScheduleNum, fromPlatform,
+	toPlatform,agedPerson, totalPrice, flightTicket, dates, time) 
+	
+	values (#{userId},#{flightScheduleNum},#{fromPlatform},
+	#{toPlatform},1,111200,#{flightTicket},#{dates},#{time}) 
 	</insert>
 	
 	<delete id="delete"> 

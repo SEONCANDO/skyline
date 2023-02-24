@@ -452,6 +452,7 @@ li a span.stamp {
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <script>
+	var ddd;
 	function count(type) {
 		// 결과를 표시할 element
 		const resultElement = document.getElementById('resultA');
@@ -586,7 +587,7 @@ $(function() {
         contentType: "application/json; charset=utf-8",
 
          success : function(data) {
-			
+        	 ddd = data.flightscheduleNum;
             // result는 서버로부터 전송받은 결과(JSON)이므로 바로 사용한다
         	console.log(data);	
             $('.posR').html(
@@ -606,9 +607,6 @@ $(function() {
 				    </p>`	
             
             );
-            
-            
-            
             
             $(".nativeTable01").html(
             `<table>
@@ -663,6 +661,15 @@ $(function() {
 				</tbody>
 			</table>`		
             );	
+            
+            $('.btnNext2').html(
+            		`<form action="/booking" method="post">
+					<input type="hidden" name="flightscheduleNum" value="${data.flightscheduleNum}"> <input type="submit" value="다음단계"
+						style="width: 100px; height: 50px; color: white; background-color: #333; border: none;">
+				</form>`
+            
+            ); 
+            
         },
         
         
@@ -859,7 +866,7 @@ $(function() {
 											</tr>
 										</thead>
 										<tbody class="nativeListFlight">
-											<tr data-flightno="BX8803" data-flighttime="07:30 - 08:30">
+											<tr>
 												<td rowspan="1" th:text="${res.date}">2023-02-24(금) 13:50~14:30</td>
 												<td rowspan="1" th:text="${res.flightTicket}">ggg</td>
 												<td class="nativeFlightCls">
@@ -978,8 +985,8 @@ $(function() {
 								</table>
 
 							</div>
-							<div class="btnNext" style="margin-top: 30px; margin-left: 60px;">
-								<form action="/booking2">
+							<div class="btnNext2" style="margin-top: 30px; margin-left: 60px;">
+								<form action="/booking" method="post">
 									<input type="hidden"> <input type="submit" value="다음단계"
 										style="width: 100px; height: 50px; color: white; background-color: #333; border: none;">
 								</form>
@@ -1078,11 +1085,15 @@ $(function() {
 	});
 
  $(function(){
+	 
    $('#buttonSearchAvail').click(function(){
       $('.partitionCont').show();
       $('.reservationArea').show();
    });
  });
+ 
+ 
+
     
 </script>
 

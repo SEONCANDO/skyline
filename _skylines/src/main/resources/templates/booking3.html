@@ -446,7 +446,7 @@ address {
 		</div>
 		<div class="reservationSearch mgt60" style="margin-top: 60px;">
 			<div class="findTb1">
-				<table class="table3">
+				<table class="table3" th:object=${vo}>
 					<colgroup style="display: table-column-group;">
 						<col>
 						<col>
@@ -455,10 +455,10 @@ address {
 					</colgroup>
 					<tbody class="tbody">
 						<tr>
-							<td><strong class="sectionInfo"> GMP(김포) -> 제주(CJU)
+							<td><strong class="sectionInfo"> [[*{fromPlatform}]] -> [[*{toPlatform}]]
 							</strong></td>
-							<td>2023-02-24 13:50:00</td>
-							<td class="borderRight">편명 : 4H1607</td>
+							<td>[[*{date}]]</td>
+							<td class="borderRight">편명 : [[*{flightTicket}]]</td>
 							<td rowspan="2"><span class="btnTxt">성인: 1명</span></td>
 						</tr>
 					</tbody>

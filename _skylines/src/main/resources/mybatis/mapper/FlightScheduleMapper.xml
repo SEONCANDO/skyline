@@ -10,4 +10,8 @@
 		 where fromPlatform = #{fs_vo.fromPlatform} and toPlatform = #{fs_vo.toPlatform}
 	</select>
 	
+	<select id="searchnum" resultType="com.project.springboot.VO.FlightScheduleVO">
+	    select * from FlightSchedule 
+	     where flightscheduleNum = (select flightscheduleNum from semires where flightnum = (select max(flightnum) from semires))
+	</select>
 </mapper>

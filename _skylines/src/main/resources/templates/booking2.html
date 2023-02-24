@@ -331,7 +331,7 @@ tbody tr td {
 				</div>
 				<div class="reservationSearch mgt60" style="margin-top: 60px;">
 					<div class="findTb1">
-						<table class="table3">
+						<table class="table3" th:object=${vo}>
 							<colgroup style="display: table-column-group;">
 								<col>
 								<col>
@@ -340,9 +340,9 @@ tbody tr td {
 							</colgroup>
 							<tbody class="tbody">
 								<tr>
-									<td><strong class="sectionInfo">GMP(김포) -> 제주(CJU)</strong></td>
-									<td>2023-02-24 13:50:00</td>
-									<td class="borderRight">편명 : 4H1607</td>
+									<td><strong class="sectionInfo">[[*{fromPlatform}]] -> [[*{toPlatform}]]</strong></td>
+									<td>[[*{date}]]</td>
+									<td class="borderRight">편명 : [[*{flightTicket}]]</td>
 									<td rowspan="2"><span class="btnTxt">성인: 1명</span></td>
 								</tr>
 							</tbody>
@@ -441,10 +441,10 @@ tbody tr td {
 									</div>
 								</div>
 							</div>
-							<div class="col-sm-4">
+							<div class="col-sm-4" th:object="${vo}">
 								<div class="reservationArea">
 									<div class="reservationBanner">
-										<img src="images/무안.jpg" class="imgback">
+										<img src="images/제주.jpg" class="imgback">
 									</div>
 									<div class="summaryFare">
 										<div class="reservationAreaTit mgt20">
@@ -452,7 +452,7 @@ tbody tr td {
 										</div>
 										<div class="reservationAreaMid">
 											<p class="period">
-												"김포 - 제주" <br> <span>2023/02/24(금) 13:50~14:30</span>
+												"[[*{fromPlatform}]] - [[*{toPlatform}]]" <br> <span>[[*{Date}]]</span>
 											</p>
 										</div>
 										<div class="reservationAreaMidTb">
@@ -503,6 +503,9 @@ tbody tr td {
 									</div>
 								</div>
 							</div>
+							
+							
+							
 						</div>
 					</div>
 				</div>

@@ -15,10 +15,13 @@ import com.project.springboot.DAO.BbsDAO;
 import com.project.springboot.DAO.FlightScheduleDAO;
 import com.project.springboot.DAO.PlatformDAO;
 import com.project.springboot.DAO.ReservationDAO;
+import com.project.springboot.DAO.SemiResDAO;
 import com.project.springboot.DAO.UserDAO;
 import com.project.springboot.Service.UserServiceImp;
 import com.project.springboot.VO.BbsVO;
+import com.project.springboot.VO.FlightScheduleVO;
 import com.project.springboot.VO.ReservationVO;
+import com.project.springboot.VO.SemiResVO;
 import com.project.springboot.VO.UserVO;
 
 import jakarta.servlet.http.HttpServletRequest;
@@ -39,15 +42,17 @@ public class MyController {
 	ReservationDAO rsMapper;
 	UserDAO userMapper;
 	BbsDAO bbsMapper;
+	SemiResDAO srMapper;
 	
 	@Autowired
-	public MyController(PlatformDAO pfMapper, FlightScheduleDAO fsMapper, ReservationDAO rsMapper, UserDAO userMapper,BbsDAO bbsMapper) {
+	public MyController(PlatformDAO pfMapper, FlightScheduleDAO fsMapper, ReservationDAO rsMapper, UserDAO userMapper,BbsDAO bbsMapper, SemiResDAO srMapper) {
 		super();
 		this.pfMapper = pfMapper;
 		this.fsMapper = fsMapper;
 		this.rsMapper = rsMapper;
 		this.userMapper = userMapper;
 		this.bbsMapper = bbsMapper;
+		this.srMapper = srMapper;
 	}
 	
 	@GetMapping("/")
@@ -311,20 +316,37 @@ public class MyController {
 		}
 	}
 	
+	@PostMapping("/booking")
+	public String bookingon(HttpSession session, Model model,@RequestParam("flightscheduleNum") String flightscheduleNum) {
+		System.out.println("????????"+flightscheduleNum);
+		int Num = Integer.parseInt(flightscheduleNum);
+		SemiResVO sr = SemiResVO.builder().flightscheduleNum(Num).build();
+		int res1 = srMapper.insertres(sr);
+		//System.out.println("res1값 : " + res1);
+		return "redirect:booking2";
+		
+	}
+	
 	
 	
 	@GetMapping("/booking2")
-	public void booking2(HttpSession session, Model mo) {
+	public void booking2(HttpSession session, Model mo, FlightScheduleVO fsVO) {
 		session.getAttribute("user");
+		FlightScheduleVO vo = fsMapper.searchnum();
+		System.out.println("나오나?" + vo);
 		UserVO user = (UserVO) session.getAttribute("user");
+		mo.addAttribute("vo", vo);
 		mo.addAttribute("user",  user);
 		System.out.println(user);
 	}
 	
 	@GetMapping("/booking3")
-	public void booking3(HttpSession session, Model mo) {
+	public void booking3(HttpSession session, Model mo, FlightScheduleVO fsVO) {
 		session.getAttribute("user");
 		UserVO user = (UserVO) session.getAttribute("user");
+		FlightScheduleVO vo = fsMapper.searchnum();
+		System.out.println("나오나?" + vo);
+		mo.addAttribute("vo", vo);
 		mo.addAttribute("user",  user);
 		System.out.println(user);
 	}
